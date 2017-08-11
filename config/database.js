@@ -1,12 +1,13 @@
 var mongoose =require('mongoose');
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/adopted')
-var db = mongoose.connection;
+mongoose.connect(process.env.DATABASE_URL);
 
-db.once('open', () => {
-    console.log(`Connected to Mongodb at ${db.host}:${db.port}`)
+mongoose.connection.once('open', () => {
+    console.log(`Mongoose connected to ${process.env.DATABASE_URL}`)
 });
 
-db.once('error', (err) => {
+mongoose.connection.once('error', (err) => {
     console.log(`database error:\n${err}` )
 });
+
+module.exports = mongoose;
