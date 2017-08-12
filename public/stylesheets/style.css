@@ -7,5 +7,21 @@ a {
   color: #00B7FF;
 }
 
+#find {
+  float: right;
+}
 
+
+#primaryToolbar {
+  float: right;
+}
+
+
+.container {
+  float: left;
+}
+
+#block {
+  display: inline-block;
+}
 
