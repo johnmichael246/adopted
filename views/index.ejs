@@ -1,39 +1,21 @@
 <%- include('./partials/header') %>
-
-
-
-
 <h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
   <% if (user) { %>
+    
+    <p> <img alt="Brand" src='<%=user.photo%>'> | Hello <%=user.first_name%><a href="/logout">Logout</a></p>
     <nav class="navbar-inverse navbar">
         <div class="container-fluid">
           <div class="navbar-header">
-            <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'>
-
             <ul id="primaryToolbar" class="clearfix">
-              <li><a href="#">SIGN IN </a></li>
               <li><a href="#">ABOUT US</a></li>
               <li><a href="#">OTHER THING</a></li>
           </div>
         </div>
-
-        <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
         <% } else { %>
         <li><a href="/auth/google">Login with Google</a></li>
         <% } %>
-
-
-  </nav>
-<<<<<<< HEAD
-  <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
-  <% } else { %>
-  <li><a href="/auth/google">Login with Google</a></li>
-  <% } %>
-  <button onclick="fetchAPI()">test</button>
-=======
-
-  <div class="container">
+    </nav>
+    <div class="container">
       <div class="dropdown" id="block">
         <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Looking for:
         <span class="caret"></span></button>
@@ -61,11 +43,11 @@
           <button class="btn btn-secondary" type="button">Go!</button>
         </div>
     </div>
+    <button id="action"></button>
  
 
 
 
->>>>>>> 52fe23b0b554fc01feddab667184f822c0504b1f
 
 
 <%- include('./partials/footer') %>
