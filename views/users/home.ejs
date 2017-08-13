@@ -1,7 +1,6 @@
 <%- include('./../partials/header') %>
 <h1><%= title %></h1>
   <% if (user) { %>
-    
     <p> <img alt="Brand" src="<%=user.photo%>"class="round"> Hello <%=user.first_name%>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/logout">Logout</a></p>
     <nav class="navbar-inverse navbar">
         <div class="container-fluid">
