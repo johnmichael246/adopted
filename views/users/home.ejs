@@ -2,7 +2,7 @@
 <h1><%= title %></h1>
   <% if (user) { %>
     
-    <p> <img alt="Brand" src='<%=user.photo%>'> | Hello <%=user.first_name%><a href="/logout">Logout</a></p>
+    <p> <img alt="Brand" src="<%=user.photo%>"class="round"> Hello <%=user.first_name%>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/logout">Logout</a></p>
     <nav class="navbar-inverse navbar">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -44,12 +44,10 @@
         </div>
     </div>
     <button id="action"></button>
- 
     <!-- Button trigger modal -->
 <button hidden class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModalNorm" id="modalTrigger">
     Launch Preferences Form
 </button>
-
 <!-- Modal -->
 <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
      aria-labelledby="myModalLabel" aria-hidden="true">

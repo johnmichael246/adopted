@@ -20,3 +20,6 @@ a {
 .hidden {
   display: hidden;
 }
+.round {
+  border-radius: 50%;
+}
