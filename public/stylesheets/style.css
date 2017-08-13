@@ -21,20 +21,16 @@ a:hover {
   font-size: 15px;
   padding-right: 100px;
 }
-<<<<<<< HEAD
 
 
 .container-fluid {
-=======
 .container {
->>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
   float: left;
   color: transparent;
 }
 #block {
   display: inline-block;
 }
-<<<<<<< HEAD
 
 .img-fluid {
   max-width: 100%;
@@ -146,8 +142,6 @@ background: gray;
 
 
 
-=======
 .hidden {
   display: hidden;
 }
->>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
