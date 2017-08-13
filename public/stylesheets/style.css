@@ -22,6 +22,7 @@ a:hover {
   padding-right: 100px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,12 +43,16 @@ a:hover {
 >>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
 >>>>>>> chels
 >>>>>>> master
+=======
+.container-fluid {
+>>>>>>> 3c84ab1fdc90f7357aa026ad5655695d290d5ec7
   float: left;
   color: transparent;
 }
 #block {
   display: inline-block;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -60,43 +65,34 @@ a:hover {
 >>>>>>> chels
 >>>>>>> master
 
+=======
+>>>>>>> 3c84ab1fdc90f7357aa026ad5655695d290d5ec7
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
-
 .banner {
   background-repeat: no-repeat;
   background-position: right top;
 }
-
-
 .affix-top {
   /* navbar style at top */
   background:transparent;
   border-color:transparent;
   padding: 15px;
 }
-
 /* navbar-brand {
   color: transparent;
 } */
-
-
 .navbar {
   width: 100%;
   text-align: center;
 }
-
 li {
     float: none;
     display: inline-block;
 }
-
-
 /* carousel!!! ________ */
-
-
 .carousel {
     margin-bottom: 0;
     padding: 0 40px 30px 40px;
@@ -128,28 +124,22 @@ li {
 .carousel-indicators .active {
 background: gray;
 }
-
-
 #petsuccess {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   text-align: center;
   font-size: 50px;
 }
-
-
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
   height: 400px;
 }
-
 #main-page-image {
   background-repeat: no-repeat;
   padding-top: 40px;
   padding-bottom: 40px;
   display: inline-block;
 }
-
 #save-life {
   float: right;
   padding-top: 20px;
@@ -157,15 +147,13 @@ background: gray;
   height: 370px;
   background-color: yellow;
 }
-
 #subtext {
   text-align: right;
 }
-
-
 #main-search {
   align-content: center;
 }
+<<<<<<< HEAD
 
 
 
@@ -185,3 +173,11 @@ background: gray;
 >>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
 >>>>>>> chels
 >>>>>>> master
+=======
+.hidden {
+  display: hidden;
+}
+.round {
+  border-radius: 50%;
+}
+>>>>>>> 3c84ab1fdc90f7357aa026ad5655695d290d5ec7
