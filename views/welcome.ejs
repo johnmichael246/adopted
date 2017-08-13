@@ -1,19 +1,102 @@
 <%- include('./partials/header') %>
 
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<!-- <h1><%= title %></h1>
+<h3> Perfecting Your Pet Adoption Experience</h3>  -->
   <% if (user) { %>
-  <nav class="navbar-inverse navbar">
+  <!-- <nav class="navbar-inverse navbar navbar-transparent">
     <div class="container-fluid">
       <div class="navbar-header">
         <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'>
       </div>
     </div>
-  </nav>
-  <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
+  </nav> -->
+  <nav id="main-nav">
+  <ul id="primaryToolbar" class="clearfix">
+  <li> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
+  <li>Hello <%=user.first_name%> | <a href="/logout">  LOG OUT</a> |</li>
   <% } else { %>
-  <li><a href="/auth/google">Login with Google</a></li>
-  <% } %>  
+  <li><a href="/auth/google">Login with Google </a> | </li>
+  <% } %> 
+      <li><a href="#">ABOUT</a> |</li>
+      <li><a href="#"> SEARCH</a></li>
+  </ul> 
+</nav>
+
+
+<div id="main-page-image">
+    <img src="http://i.imgur.com/SyueVHd.jpg">
+</div>
+
+<div id="save-life">
+  <h3> FIND YOUR NEXT BEST FRIEND </h3>
+  <h4 id="subtext"><strong> SAVE A LIFE</strong> </h4>
+
+  <p> SOMETHING CAN GO HERE?!?!
+   
+  </p>
+
+
+
+
+
+</div>
+
+<div id="petsuccess"> 
+
+<p><u> PET SUCCESS STORIES </u> </P>
+
+</div> 
+
+<div class="carousel-container">
+    <div class="carousel-row">
+		<div class="col-md-12">
+                <div id="Carousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                	<div class="row">
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%;"></a></div>
+                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                <div class="item">
+                	<div class="row">
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                <div class="item">
+                	<div class="row">
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
+                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
+                	</div><!--.row-->
+                </div><!--.item-->
+                 
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+                 
+		</div>
+	</div>
+</div><!--.container-->
+
+
 
 
 
