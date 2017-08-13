@@ -20,11 +20,11 @@ passport.use(new GoogleStrategy(
                     return cb(null, user);
                  });
                  console.log("Aaaaaaaaaaaaaaaaaaaa")
-                //  console.log(profile)
-                //  console.log(profile.name.givenName)
-                //  console.log("++++++++++++++++++++++")
-                //  console.log(user)
-                //  console.log("++++++++++++++++++++++")
+                 console.log(profile)
+                 console.log(profile.name.givenName)
+                 console.log("++++++++++++++++++++++")
+                 console.log(user)
+                 console.log("++++++++++++++++++++++")
 
             } else {
                 let newUser = new User({
@@ -34,9 +34,6 @@ passport.use(new GoogleStrategy(
                     googleId:profile.id,
                     photo: profile.photos[0].value
                 });
-                console.log('Bbbbbbbbbbbbbbbbbbbb')
-                console.log(profile)
-                console.log('Bbbbbbbbbbbbbbbbbbbb')
                 newUser.save(function(err) { 
                     if(err) return cb(err);
                     return cb(null, newUser);

@@ -2,26 +2,21 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
 }
-
 #find {
   float: right;
 }
-
-
 #primaryToolbar {
   float: right;
 }
-
-
 .container {
   float: left;
 }
-
 #block {
   display: inline-block;
 }
-
+.hidden {
+  display: hidden;
+}
