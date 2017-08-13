@@ -10,6 +10,11 @@ var userSchema = new Schema ({
     phone_num:String,
     photo: String,
     googleId:String,
+    preferences: {
+        size:String,
+        species:String,
+        age: String
+    },
     favPets:[{type:ObjectId, ref:"favPet"}]
 }, {
     timestamps:true
