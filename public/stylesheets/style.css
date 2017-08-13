@@ -16,57 +16,18 @@ a:hover {
 #find {
   float: right;
 }
-#primaryToolbar { 
+#primaryToolbar {
   text-align: right;
   font-size: 15px;
   padding-right: 100px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-.container {
-=======
-
-
 .container-fluid {
->>>>>>> chels
-=======
->>>>>>> master
-
-
-.container-fluid {
-.container {
-<<<<<<< HEAD
-=======
->>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
->>>>>>> chels
->>>>>>> master
-=======
-.container-fluid {
->>>>>>> 3c84ab1fdc90f7357aa026ad5655695d290d5ec7
   float: left;
   color: transparent;
 }
 #block {
   display: inline-block;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-.hidden {
-  display: hidden;
-}
-=======
-=======
->>>>>>> chels
->>>>>>> master
-
-=======
->>>>>>> 3c84ab1fdc90f7357aa026ad5655695d290d5ec7
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -153,31 +114,9 @@ background: gray;
 #main-search {
   align-content: center;
 }
-<<<<<<< HEAD
-
-
-
-
-<<<<<<< HEAD
-.hidden {
-  display: hidden;
-}
-=======
-<<<<<<< HEAD
->>>>>>> chels
-=======
-=======
-.hidden {
-  display: hidden;
-}
->>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
->>>>>>> chels
->>>>>>> master
-=======
 .hidden {
   display: hidden;
 }
 .round {
   border-radius: 50%;
 }
->>>>>>> 3c84ab1fdc90f7357aa026ad5655695d290d5ec7
