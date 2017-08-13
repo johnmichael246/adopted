@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var db = require('./../config/database');
 
 const commentSchema = new Schema ({
-    content: Text,
+    content: String,
 }, {
     timestamps: true
 });
@@ -18,9 +18,9 @@ const favPetSchema = new Schema ({
     },
     petfinderId:String,
     photos:[String],
-    description:Text,
+    description:String,
     animal:String,
-    comments:[Comments]
+    comments:[commentSchema]
 }, {
     timestamps:true
 })
