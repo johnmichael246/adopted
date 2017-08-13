@@ -13,7 +13,8 @@ a {
 
 
 #primaryToolbar {
-  float: right;
+  text-align: right;
+  font-size: 18px;
 }
 
 
@@ -96,12 +97,15 @@ background: gray;
 }
 
 
-
 #petsuccess {
   font-family: 'Montserrat', sans-serif;
-  
   width: 100%;
   text-align: center;
   font-size: 50px;
 }
 
+
+#main-nav {
+  background-image: url(http://i.imgur.com/hWC1FPN.png);
+  height: 400px;
+}

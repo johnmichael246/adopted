@@ -7,12 +7,12 @@
     <nav class="navbar-transparent navbar navbar-fixed-top  data-spy="affix">
         <ul id="primaryToolbar" class="clearfix">
             <li> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li>
-            <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
+            <li>Hello <%=user.first_name%> | <a href="/logout">LOGOUT</a> | </li>
             <% } else { %>
-            <li><a href="/auth/google">Login with Google</a></li>
+            <li><a href="/auth/google">Login with Google</a> | </li>
             <% } %>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">OTHER THING</a></li>
+            <li><a href="#">ABOUT US</a> | </li>
+            <li><a href="#">OTHER THING</a> | </li>
         </ul>
   </nav>
 
