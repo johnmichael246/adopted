@@ -11,7 +11,7 @@
     </nav> -->
     <nav id="main-nav">
     <ul id="primaryToolbar" class="clearfix">
-    <li> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
+    <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
     <li>Hello <%=user.first_name%> | <a href="/logout">  LOG OUT</a> |</li>
     <% } else { %>
     <li><a href="/auth/google">Login with Google </a> | </li>
@@ -20,9 +20,6 @@
         <li><a href="#"> SEARCH</a></li>
     </ul> 
   </nav>
-
-
-
 
   <div class="container" id="main-search">
       <div class="dropdown" id="block">
