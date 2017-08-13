@@ -22,11 +22,20 @@ a:hover {
   padding-right: 100px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .container {
 =======
 
 
 .container-fluid {
+>>>>>>> chels
+=======
+
+
+.container-fluid {
+=======
+.container {
+>>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
 >>>>>>> chels
   float: left;
   color: transparent;
@@ -35,10 +44,13 @@ a:hover {
   display: inline-block;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .hidden {
   display: hidden;
 }
 =======
+=======
+>>>>>>> chels
 
 .img-fluid {
   max-width: 100%;
@@ -150,4 +162,12 @@ background: gray;
 
 
 
+<<<<<<< HEAD
+>>>>>>> chels
+=======
+=======
+.hidden {
+  display: hidden;
+}
+>>>>>>> 7da7c7827a9f4b7051cfe8e0d5e0b7a7bd585fe1
 >>>>>>> chels
