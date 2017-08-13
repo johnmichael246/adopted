@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
 <h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<h3> Perfecting Your Pet Adoption Experience</h3> 
   <% if (user) { %>
   <nav class="navbar-inverse navbar navbar-transparent">
     <div class="container-fluid">
@@ -10,14 +10,13 @@
       </div>
     </div>
   </nav>
-  <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
-  <% } else { %>
-  <li><a href="/auth/google">Login with Google</a></li>
-  <% } %> 
   <ul id="primaryToolbar" class="clearfix">
-      <li><a href="#">SIGN IN </a></li>
-      <li><a href="#">ABOUT US</a></li>
-      <li><a href="#">OTHER THING</a></li>
+  <li>Hello <%=user.first_name%> <a href="/logout"> Logout</a></li>
+  <% } else { %>
+  <li><a href="/auth/google">Login with Google </a> | </li>
+  <% } %> 
+      <li><a href="#">ABOUT US</a> | </li>
+      <li><a href="#">OTHER THING</a> | </li>
   </ul> 
 <div class="banner">
   <img src="http://i.imgur.com/znOTDpP.jpg" class="img-fluid" alt="Responsive image">

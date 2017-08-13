@@ -1,23 +1,16 @@
 <%- include('./partials/header') %>
 
 
-
-
 <h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
   <% if (user) { %>
     <nav class="navbar-transparent navbar navbar-fixed-top  data-spy="affix">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'>
-          </div>
-        </div>
-        <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
-        <% } else { %>
-        <li><a href="/auth/google">Login with Google</a></li>
-        <% } %>
         <ul id="primaryToolbar" class="clearfix">
-            <li><a href="#">SIGN IN </a></li>
+            <li> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li>
+            <li>Hello <%=user.first_name%><a href="/logout">Logout</a></li>
+            <% } else { %>
+            <li><a href="/auth/google">Login with Google</a></li>
+            <% } %>
             <li><a href="#">ABOUT US</a></li>
             <li><a href="#">OTHER THING</a></li>
         </ul>
