@@ -2,7 +2,7 @@ var router = require('express').Router();
 var passport = require('passport');
 
 router.get('/', loggedIn, function(req,res) {
-  res.render('index', {user:req.user, title:'Adopted'})
+  res.render('users/index', {user:req.user})
 })
 
 router.get('/logout', function(req,res) {
@@ -12,7 +12,6 @@ router.get('/logout', function(req,res) {
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
-  console.log('i hit this path')
   res.redirect('/auth/google');
 }
 
