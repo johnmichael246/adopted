@@ -21,54 +21,39 @@ a:hover {
   font-size: 15px;
   padding-right: 100px;
 }
-
-
 .container-fluid {
-.container {
   float: left;
   color: transparent;
 }
 #block {
   display: inline-block;
 }
-
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
-
 .banner {
   background-repeat: no-repeat;
   background-position: right top;
 }
-
-
 .affix-top {
   /* navbar style at top */
   background:transparent;
   border-color:transparent;
   padding: 15px;
 }
-
 /* navbar-brand {
   color: transparent;
 } */
-
-
 .navbar {
   width: 100%;
   text-align: center;
 }
-
 li {
     float: none;
     display: inline-block;
 }
-
-
 /* carousel!!! ________ */
-
-
 .carousel {
     margin-bottom: 0;
     padding: 0 40px 30px 40px;
@@ -100,28 +85,22 @@ li {
 .carousel-indicators .active {
 background: gray;
 }
-
-
 #petsuccess {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   text-align: center;
   font-size: 50px;
 }
-
-
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
   height: 400px;
 }
-
 #main-page-image {
   background-repeat: no-repeat;
   padding-top: 40px;
   padding-bottom: 40px;
   display: inline-block;
 }
-
 #save-life {
   float: right;
   padding-top: 20px;
@@ -129,19 +108,12 @@ background: gray;
   height: 370px;
   background-color: yellow;
 }
-
 #subtext {
   text-align: right;
 }
-
-
 #main-search {
   align-content: center;
 }
-
-
-
-
 .hidden {
   display: hidden;
 }
