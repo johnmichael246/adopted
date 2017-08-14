@@ -8,5 +8,7 @@ router.put('/:id', apiCtrl.updatePet);
 router.post('/', apiCtrl.createPet);
 router.delete('/:id', apiCtrl.deletePet);
 
+router.get('/search', petFinderCtrl.search);
+
 
 module.exports= router;
