@@ -33,7 +33,7 @@ function search(req,res,next) {
         console.log('+++++++++++++++++++++')
         // JSON.stringify(pet)
         // console.log(pet)
-        res.render('search', {doc});
+        res.render('pets', {doc});
     });
 }
 
