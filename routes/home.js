@@ -3,7 +3,7 @@ var passport = require('passport');
 require('./../controllers/userCtrl');
 
 router.get('/', loggedIn, function(req,res) {
-  res.render('index', {user:req.user, title:"poop"})
+  res.render('home', {user:req.user, title:"poop"})
 })
 
 router.get('/search', loggedIn, function(req,res) {

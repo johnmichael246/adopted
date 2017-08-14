@@ -1,68 +1,60 @@
 <%- include('./partials/header') %>
-
-<!-- <h1><%= title %></h1>
-<h3> Perfecting Your Pet Adoption Experience</h3>  -->
+<h3> Perfecting Your Pet Adoption Experience</h3>
 <nav id="main-nav">
-<ul id="primaryToolbar" class="clearfix">
-  <% if (user) { %>
-  <!-- <nav class="navbar-inverse navbar navbar-transparent">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'>
-      </div>
-    </div>
-  </nav> -->
-  <!-- <ul id="primaryToolbar" class="clearfix"> -->
-  <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
-  <li>Hello <%=user.first_name%> | <a href="/logout">  LOG OUT</a> |</li>
-  <% } else { %>
-    To Search Adoptable Pets, 
-  <li><a href="/auth/google">Login with Google </a> Here.</li>
-  <% } %> 
-      <% if (user) { %>
-      <li> | <a href="#">PROFILE</a> | </li>
+  <ul id="primaryToolbar" class="clearfix">
+    <% if (user) { %>
+    <!-- <ul id="primaryToolbar" class="clearfix"> -->
+      <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
+      <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+      <li><a href="#">PROFILE</a> | </li>
       <li><a href="#SEARCH_LINK">SEARCH</a></li>
-      <% } %> 
+    <% } else { %>
+    To Search Adoptable Pets, 
+      <li><a href="/auth/google">Login with Google </a> Here.</li>
+    <% } %>  
   </ul> 
 </nav>
-
-
-
 <div id="main-page-image">
     <img src="http://i.imgur.com/SyueVHd.jpg">
 </div>
-
-
 <div id="save-life">
-  <h3> <a id="SEARCH_LINK"> FIND YOUR NEXT BEST FRIEND </a> </h3>
-  <h4 id="subtext"><strong>  SAVE A LIFE </strong> </h4>
+  <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
+  <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
   <% if (user) { %>
-  <p> I'm looking to Adopt..
-      <br>
-      <input type="text" name="search" placeholder="dog or cat">
-      <br>
-      That Is A...
-      <br>
-      <input type="text" name="search" placeholder="Puppy, Adult, Senior..">
-      <br>
-      That is..
-      <br>
-      <input type="text" name="search" placeholder="small, medium, large">
-      <br>
-      <button class="btn-change">Search Pets!</button>
-  </p>
+  <form action ="/search" method="POST">
+    <div class="input-group">
+      <label for="Select1">Im looking to Adopt a..</label>
+      <select class="form-control" id="Select1">
+        <option>Dog</option>
+        <option>Cat</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select2">That is a..</label>
+      <select class="form-control" id="Select2">
+        <option>Puppy</option>
+        <option>Adult</option>
+        <option>Senior</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select3">And is..</label>
+      <select class="form-control" id="Select3">
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+    </div>
+      <span class="input-group-btn">
+        <button type="submit" class="btn-change">Search Pets!</button>
+      </span>
+    </div>
+  </form>
 
- 
-  <% } else { %>
-    <br>
-
-  
-
+  <% } else { %><br>
     <p> 
-        <b> Our Mission:</b>
-        <br>
-        To use Internet technology and the resources it can generate to:
-        <br>
+      <b> Our Mission:</b><br>
+        To use Internet technology and the resources it can generate to:<br>
         Increase public awareness of the availability of high-quality adoptable pets
         Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
         Elevate the status of pets to that of family member
@@ -70,68 +62,61 @@
     </p>
   <% } %> 
 </div>
-
 <br>
 <br>
-
-
 <div id="petsuccess"> 
-
-<u> PET SUCCESS STORIES </u> 
-
+  <u>PET SUCCESS STORIES</u> 
 </div> 
-
 <div class="carousel-container">
-    <div class="carousel-row">
-		<div class="col-md-12">
-                <div id="Carousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#Carousel" data-slide-to="1"></li>
-                    <li data-target="#Carousel" data-slide-to="2"></li>
-                </ol>    
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    
-                <div class="item active">
-                	<div class="row">
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%;"></a></div>
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%;"></a></div>
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%;"></a></div>
-                	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%;"></a></div>
-                	</div><!--.row-->
-                </div><!--.item-->
-                 
-                <div class="item">
-                	<div class="row">
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
-                	</div><!--.row-->
-                </div><!--.item-->
-                 
-                <div class="item">
-                	<div class="row">
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
-                		<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
-                	</div><!--.row-->
-                </div><!--.item-->
-                 
-                </div><!--.carousel-inner-->
-                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-                </div><!--.Carousel-->            
+  <div class="carousel-row">
+  <div class="col-md-12">
+    <div id="Carousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#Carousel" data-slide-to="1"></li>
+        <li data-target="#Carousel" data-slide-to="2"></li>
+      </ol>    
+<!-- Carousel items -->
+      <div class="carousel-inner">   
+        <div class="item active">
+        	<div class="row">
+        	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%;"></a></div>
+          </div><!--.row-->
+        </div><!--.item-->
+        <div class="item">
+        	<div class="row">
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
+          </div><!--.row-->
+        </div><!--.item-->
+        <div class="item">
+          <div class="row">
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
+          </div><!--.row-->
+        </div><!--.item-->
+      </div><!--.carousel-inner-->
+        <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+      </div><!--.Carousel-->            
 		</div>
 	</div>
 </div><!--.container-->
 
+  
+    <p> I'm looking to Adopt..<br>
+      <input type="text" name="search" placeholder="dog or cat"><br>
+      That Is A...<br>
+      <input type="text" name="search" placeholder="Puppy, Adult, Senior.."><br>
+      That is..<br>
+      <input type="text" name="search" placeholder="small, medium, large"><br>
 
-
-
-
-
-
+    </p>
 <%- include('./partials/footer') %>

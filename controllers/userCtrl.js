@@ -13,19 +13,29 @@ function updatePrefs(req,res) {
 }
 
 function search(req,res,next) {
-    let header = new Header({
-    'Access-Control-Allow-Origin':'*'
-    });
     var options = {
-        url: basePath + '&key=' + process.env.PETFINDER_KEY + 'pet.get?format=json&id=' + id,
-        headers: header,
+        url: basePath + 'pet.get?'+ '&key=' + process.env.PETFINDER_KEY + '&secret=' + process.env.PETFINDER_SECRET + '&format=json' + '&id=38860268',
+        header: {
+            'Access-Control-Allow-Origin':'*',
+        },
         mode: 'cors',
         method: 'GET'
     };
     request(options, function(err,response,body) {
-        console.log('body')
+        console.log(body)
+        console.log('+++++++++++++++++++++')
         let pet = JSON.parse(body);
-        res.render('search', {pet});
+        let details = pet.petfinder.pet.age;
+        let name = pet.petfinder.pet.name;
+        console.log(pet)
+        console.log('+++++++++++++++++++++')
+        console.log(details)
+        console.log('+++++++++++++++++++++')
+        console.log(name)
+        console.log('+++++++++++++++++++++')
+        // JSON.stringify(pet)
+        // console.log(pet)
+        res.render('search', {pet, details, name});
     });
 }
 

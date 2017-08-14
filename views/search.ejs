@@ -1,6 +1,11 @@
 <h1>this is the search page</h1>
+<%=JSON.stringify(pet)%>
+<h1>heres the bottom</h1>
+<%= details.$t %>
+<%= name.$t %>
+
  <div class="row col-xs-8 col-xs-offset-2">
-    <% if (pet.options.length) { %>
+    <% if (pet.options === null) { %>
     <div class="panel panel-default">
         <div class="panel-body">
         <h3>Pets Found:</h3>
