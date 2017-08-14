@@ -15,7 +15,7 @@ function updatePrefs(req,res) {
 function search(req,res,next) {
         console.log(req.body)
     var options = {
-        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=90293`,
+        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}`,
         method: 'GET'
     };
     console.log(options.url)

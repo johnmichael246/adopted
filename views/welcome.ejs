@@ -1,21 +1,23 @@
+
 <%- include('./partials/header') %>
 <nav id="main-nav">
-  <ul id="primaryToolbar" class="clearfix">
-    <% if (user) { %>
-    <!-- <ul id="primaryToolbar" class="clearfix"> -->
-      <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li> 
-      <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
-      <li><a href="#">PROFILE</a> | </li>
-      <li><a href="#SEARCH_LINK">SEARCH</a></li>
-    <% } else { %>
-    To Search Adoptable Pets, 
-      <li><a href="/auth/google">Login with Google </a> Here.</li>
-    <% } %>  
-  </ul> 
+<ul id="primaryToolbar" class="clearfix">
+<% if (user) { %>
+<!-- <ul id="primaryToolbar" class="clearfix"> -->
+<li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
+<li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+<li><a href="#">PROFILE</a> | </li>
+<li><a href="#SEARCH_LINK">SEARCH</a></li>
+<% } else { %>
+To Search Adoptable Pets,
+<li><a href="/auth/google">Login with Google </a> Here.</li>
+<% } %>
+</ul>
 </nav>
+<br>
 
 <div style="overflow: hidden" id="main-page-image">
-    <img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
+<img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
 </div>
 
 
@@ -51,7 +53,7 @@
     <div class="control-group">
       <label class="control-label">Near..</label>
       <div class="controls">
-          <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+          <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
           class="input-xlarge">
           <p class="help-block"></p>
       </div>
@@ -62,63 +64,63 @@
     </div>
   </form>
 
-  <% } else { %><br>
-    <p> 
-      <b> Our Mission:</b><br>
-        To use Internet technology and the resources it can generate to:<br>
-        Increase public awareness of the availability of high-quality adoptable pets
-        Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
-        Elevate the status of pets to that of family member
-        From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
-    </p>
-  <% } %> 
+<% } else { %><br>
+<p>
+<b> Our Mission:</b><br>
+To use Internet technology and the resources it can generate to:<br>
+Increase public awareness of the availability of high-quality adoptable pets
+Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
+Elevate the status of pets to that of family member
+From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
+</p>
+<% } %>
 </div>
 <br>
 <br>
 <div id="petsuccess" style="overflow: hidden"> 
-  <u>PET SUCCESS STORIES</u> 
+  PET SUCCESS PICTURES
 </div> 
 <div class="carousel-container">
-  <div class="carousel-row">
-  <div class="col-md-12">
-    <div id="Carousel" class="carousel slide">
-      <ol class="carousel-indicators">
-        <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#Carousel" data-slide-to="1"></li>
-        <li data-target="#Carousel" data-slide-to="2"></li>
-      </ol>    
+<div class="carousel-row">
+<div class="col-md-12">
+<div id="Carousel" class="carousel slide">
+<ol class="carousel-indicators">
+<li data-target="#Carousel" data-slide-to="0" class="active"></li>
+<li data-target="#Carousel" data-slide-to="1"></li>
+<li data-target="#Carousel" data-slide-to="2"></li>
+</ol>
 <!-- Carousel items -->
-      <div class="carousel-inner">   
-        <div class="item active">
-        	<div class="row">
-        	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="img-responsive"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%;"></a></div>
-          </div><!--.row-->
-        </div><!--.item-->
-        <div class="item">
-        	<div class="row">
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
-          </div><!--.row-->
-        </div><!--.item-->
-        <div class="item">
-          <div class="row">
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
-            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
-          </div><!--.row-->
-        </div><!--.item-->
-      </div><!--.carousel-inner-->
-        <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-      </div><!--.Carousel-->            
-		</div>
-	</div>
+<div class="carousel-inner">
+<div class="item active">
+  <div class="row">
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%"></a></div>
+</div><!--.row-->
+</div><!--.item-->
+<div class="item">
+  <div class="row">
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
+</div><!--.row-->
+</div><!--.item-->
+<div class="item">
+<div class="row">
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
+<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
+</div><!--.row-->
+</div><!--.item-->
+</div><!--.carousel-inner-->
+<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+</div><!--.Carousel-->
+    </div>
+  </div>
 </div><!--.container-->
 
 
