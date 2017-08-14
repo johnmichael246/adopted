@@ -104,27 +104,17 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   display: inline-block;
-<<<<<<< HEAD
-  }
-  #save-life {
-=======
 }
 #save-life {
->>>>>>> master
   padding-top: 20px;
   padding-right: 200px;
   height: 370px;
   display: inline-table;
   float: right;
   
-<<<<<<< HEAD
-  }
-  #subtext {
-=======
 
 }
 #subtext {
->>>>>>> master
   text-align: right;
   }
   #main-search {
