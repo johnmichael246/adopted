@@ -4,8 +4,6 @@ var petsCtrl = require('./../controllers/petsCtrl');
 
 router.post('/', loggedIn, petsCtrl.search);
 
-router.post('/', loggedIn, petsCtrl.search);
-
 router.get('/pets', loggedIn, function(req,res) {
   res.render('pets')
 })
