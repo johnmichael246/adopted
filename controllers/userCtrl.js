@@ -13,21 +13,19 @@ function updatePrefs(req,res) {
 }
 
 function search(req,res,next) {
+        console.log(req.body)
     var options = {
-        url: basePath + 'pet.get?'+ '&key=' + process.env.PETFINDER_KEY + '&secret=' + process.env.PETFINDER_SECRET + '&format=json' + '&id=38860268',
-        header: {
-            'Access-Control-Allow-Origin':'*',
-        },
-        mode: 'cors',
+        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=90293`,
         method: 'GET'
     };
-    request(options, function(err,response,body) {
-        console.log(body)
+    console.log(options.url)
+    request(options.url, function(err,response,body) {
         console.log('+++++++++++++++++++++')
-        let pet = JSON.parse(body);
-        let details = pet.petfinder.pet.age;
-        let name = pet.petfinder.pet.name;
-        console.log(pet)
+        let doc = JSON.parse(body);
+        console.log(Object.keys(doc.petfinder))
+        let details = doc.petfinder.pets.age;
+        let name = doc.petfinder.pets.name;
+        console.log(doc)
         console.log('+++++++++++++++++++++')
         console.log(details)
         console.log('+++++++++++++++++++++')
@@ -35,7 +33,7 @@ function search(req,res,next) {
         console.log('+++++++++++++++++++++')
         // JSON.stringify(pet)
         // console.log(pet)
-        res.render('search', {pet, details, name});
+        res.render('search', {doc, details, name});
     });
 }
 
