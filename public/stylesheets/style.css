@@ -107,6 +107,7 @@ background: gray;
   padding-top: 20px;
   padding-right: 200px;
   height: 370px;
+  display: inline-table;
 }
 #subtext {
   text-align: right;
@@ -138,12 +139,12 @@ input[type=text]:focus {
 .btn-change{
   height: 35px;
   width: 150px;
+  color: black;
   background: white;
   margin: 8px 0px;
   box-shadow: 0 0 1px #ccc;
   -webkit-transition: all 0.5s ease-in-out;
   border: 0px;
-  color: black;
 }
 .btn-change:hover{
   -webkit-transform: scale(1.1);
@@ -152,4 +153,13 @@ input[type=text]:focus {
 
 p {
   width: 500px;
+}
+
+
+h3 {
+  text-align: -webkit-right;
+}
+
+.main-search {
+  float: right;
 }

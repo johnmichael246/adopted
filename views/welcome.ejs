@@ -1,10 +1,9 @@
 <%- include('./partials/header') %>
-<h3> Perfecting Your Pet Adoption Experience</h3>
 <nav id="main-nav">
   <ul id="primaryToolbar" class="clearfix">
     <% if (user) { %>
     <!-- <ul id="primaryToolbar" class="clearfix"> -->
-      <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
+      <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li> 
       <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
       <li><a href="#">PROFILE</a> | </li>
       <li><a href="#SEARCH_LINK">SEARCH</a></li>
@@ -14,14 +13,14 @@
     <% } %>  
   </ul> 
 </nav>
-<div id="main-page-image">
-    <img src="http://i.imgur.com/SyueVHd.jpg">
+<div id="main-page-image" style="overflow: hidden">
+    <img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
 </div>
-<div id="save-life">
+<div id="save-life" style="overflow: hidden">
   <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
   <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
   <% if (user) { %>
-  <form action ="/search" method="POST">
+  <form action ="/search" method="POST" class:"main-search">
     <div class="input-group">
       <label for="Select1">Im looking to Adopt a..</label>
       <select class="form-control" id="Select1">
@@ -64,7 +63,7 @@
 </div>
 <br>
 <br>
-<div id="petsuccess"> 
+<div id="petsuccess" style="overflow: hidden"> 
   <u>PET SUCCESS STORIES</u> 
 </div> 
 <div class="carousel-container">
@@ -80,7 +79,7 @@
       <div class="carousel-inner">   
         <div class="item active">
         	<div class="row">
-        	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%;"></a></div>
+        	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="img-responsive"></a></div>
             <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%;"></a></div>
             <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%;"></a></div>
             <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%;"></a></div>
@@ -110,13 +109,5 @@
 	</div>
 </div><!--.container-->
 
-  
-    <p> I'm looking to Adopt..<br>
-      <input type="text" name="search" placeholder="dog or cat"><br>
-      That Is A...<br>
-      <input type="text" name="search" placeholder="Puppy, Adult, Senior.."><br>
-      That is..<br>
-      <input type="text" name="search" placeholder="small, medium, large"><br>
 
-    </p>
 <%- include('./partials/footer') %>
