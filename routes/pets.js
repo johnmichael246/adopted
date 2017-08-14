@@ -10,6 +10,8 @@ router.get('/pets', loggedIn, function(req,res) {
   res.render('pets')
 })
 
+router.get('/:id', loggedIn, petCtrl.show)
+
 router.post('/pets', loggedIn, function(req,res) {
   res.render('pets', {pet})
 })

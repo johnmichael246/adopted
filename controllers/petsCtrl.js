@@ -1,9 +1,8 @@
 var router = require('express').Router();
 var request = require('request');
 require('./../models/user');
+require('./../models/pet');
 const basePath = "http://api.petfinder.com/"
-
-
 
 function search(req,res,next) {
         console.log(req.body)
@@ -20,13 +19,17 @@ function search(req,res,next) {
         console.log('+++++++++++++++++++++')
         console.log(doc.petfinder.pets)
         console.log('+++++++++++++++++++++')
-        console.log('+++++++++++++++++++++')
         // JSON.stringify(pet)
         // console.log(pet)
         res.render('pets', {doc});
     });
 }
 
+function show(req,res,next) {
+    
+}
+
 module.exports = {
-    search
+    search,
+    show
 }
