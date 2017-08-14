@@ -1,6 +1,7 @@
 
 <%- include('./partials/header') %>
 <nav id="main-nav">
+<<<<<<< HEAD
 <ul id="primaryToolbar" class="clearfix">
 <% if (user) { %>
 <!-- <ul id="primaryToolbar" class="clearfix"> -->
@@ -19,6 +20,69 @@ To Search Adoptable Pets,
 <div style="overflow: hidden" id="main-page-image">
 <img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
 </div>
+=======
+  <ul id="primaryToolbar" class="clearfix">
+    <% if (user) { %>
+    <!-- <ul id="primaryToolbar" class="clearfix"> -->
+      <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li> 
+      <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+      <li><a href="#">PROFILE</a> | </li>
+      <li><a href="#SEARCH_LINK">SEARCH</a></li>
+    <% } else { %>
+    To Search Adoptable Pets, 
+      <li><a href="/auth/google">Login with Google </a> Here.</li>
+    <% } %>  
+  </ul> 
+</nav>
+
+<div style="overflow: hidden" id="main-page-image">
+    <img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
+</div>
+
+
+<div id="save-life" style="overflow: hidden">
+  <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
+  <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
+  <% if (user) { %>
+  <form action ="/pets" method="POST" class:"main-search">
+    <div class="input-group">
+      <label for="Select1">Im looking to Adopt a..</label>
+      <select class="form-control" id="Select1" name="animal">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select2">That is a..</label>
+      <select class="form-control" id="Select2" name="age">
+        <option>Baby</option>
+        <option>Young</option>
+        <option>Adult</option>
+        <option>Senior</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select3">And is..</label>
+      <select class="form-control" id="Select3" name="size">
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Near..</label>
+      <div class="controls">
+          <input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
+          class="input-xlarge">
+          <p class="help-block"></p>
+      </div>
+  </div>
+      <span class="input-group-btn">
+        <button type="submit" class="btn-change">Search Pets!</button>
+      </span>
+    </div>
+  </form>
+>>>>>>> master
 
 
 <div id="save-life" style="overflow: hidden">
@@ -77,10 +141,16 @@ From the comfort of their personal computers, pet lovers can search for a pet th
 </div>
 <br>
 <br>
+<<<<<<< HEAD
 <br>
 <div id="petsuccess" style="overflow: hidden">
 PET SUCCESS STORIES
 </div>
+=======
+<div id="petsuccess" style="overflow: hidden"> 
+  <u>PET SUCCESS STORIES</u> 
+</div> 
+>>>>>>> master
 <div class="carousel-container">
 <div class="carousel-row">
 <div class="col-md-12">
@@ -91,6 +161,7 @@ PET SUCCESS STORIES
 <li data-target="#Carousel" data-slide-to="2"></li>
 </ol>
 <!-- Carousel items -->
+<<<<<<< HEAD
 <div class="carousel-inner">
 <div class="item active">
   <div class="row">
@@ -122,6 +193,39 @@ PET SUCCESS STORIES
 </div><!--.Carousel-->
     </div>
   </div>
+=======
+      <div class="carousel-inner">   
+        <div class="item active">
+        	<div class="row">
+        	  <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="img-responsive"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%;"></a></div>
+          </div><!--.row-->
+        </div><!--.item-->
+        <div class="item">
+        	<div class="row">
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
+          </div><!--.row-->
+        </div><!--.item-->
+        <div class="item">
+          <div class="row">
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
+            <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
+          </div><!--.row-->
+        </div><!--.item-->
+      </div><!--.carousel-inner-->
+        <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+      </div><!--.Carousel-->            
+		</div>
+	</div>
+>>>>>>> master
 </div><!--.container-->
 
 

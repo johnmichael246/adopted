@@ -104,16 +104,27 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   display: inline-block;
+<<<<<<< HEAD
   }
   #save-life {
+=======
+}
+#save-life {
+>>>>>>> master
   padding-top: 20px;
   padding-right: 200px;
   height: 370px;
   display: inline-table;
   float: right;
   
+<<<<<<< HEAD
   }
   #subtext {
+=======
+
+}
+#subtext {
+>>>>>>> master
   text-align: right;
   }
   #main-search {
@@ -151,28 +162,27 @@ body {
   border: 1px solid darkgrey;
   font-size: 15px;
   text-align: center;
-  }
-  .btn-change:hover{
+}
+.btn-change:hover{
   -webkit-transform: scale(1.1);
   background: #B2E2BB;
   color: black;
-  }
-  
-  p {
+}
+
+p {
   width: 500px;
-  }
-  
-  
-  h3 {
+}
+
+
+h3 {
   text-align: -webkit-right;
-  }
-  
-  .main-search {
+}
+
+.main-search {
   float: right;
-  }
-  
-  
-  #SEARCH_LINK:hover {
+}
+
+
+#SEARCH_LINK:hover {
   text-decoration: none;
-  }
-  
+}
