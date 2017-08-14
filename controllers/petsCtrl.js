@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var request = require('request');
 require('./../models/user');
-require('./../models/pet');
+require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
 
 function search(req,res,next) {
@@ -26,7 +26,7 @@ function search(req,res,next) {
 }
 
 function show(req,res,next) {
-    
+
 }
 
 module.exports = {
