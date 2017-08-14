@@ -1,0 +1,17 @@
+<h1>this is the search page</h1>
+ <div class="row col-xs-8 col-xs-offset-2">
+    <% if (pet.options.length) { %>
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <h3>Pets Found:</h3>
+        <div class="list-group">
+            <% pet.items.forEach(function(pet) { %>
+            <a href="/?id=<%= pet.id %>"
+                class="list-group-item">
+                <%= pet.name %>
+            </a>
+            <% }); %>
+        </div>
+        <% } %>
+    </div>
+</div> 
