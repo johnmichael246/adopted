@@ -1,20 +1,18 @@
-<%- include('./../partials/header') %>
-<h1><%= title %></h1>
+<%- include('./partials/header') <%>
+</%>
   <% if (user) { %>
-    <p> <img alt="Brand" src="<%=user.photo%>"class="round"> Hello <%=user.first_name%>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/logout">Logout</a></p>
-    <nav class="navbar-inverse navbar">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <ul id="primaryToolbar" class="clearfix">
-              <li><a href="#">ABOUT US</a></li>
-              <li><a href="#">OTHER THING</a></li>
-          </div>
-        </div>
-        <% } else { %>
-        <li><a href="/auth/google">Login with Google</a></li>
-        <% } %>
-    </nav>
-    <div class="container">
+    <nav id="main-nav">
+    <ul id="primaryToolbar" class="clearfix">
+    <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
+    <li>Hello <%=user.first_name%> | <a href="/logout">  LOG OUT</a> |</li>
+    <% } else { %>
+    <li><a href="/auth/google">Login with Google </a> | </li>
+    <% } %> 
+        <li><a href="#">PROFILE</a> | </li>
+        <li><a href="#">SEARCH</a></li>
+    </ul> 
+  </nav>
+  <div class="container" id="main-search">
       <div class="dropdown" id="block">
         <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Looking for:
         <span class="caret"></span></button>
@@ -42,7 +40,20 @@
           <button class="btn btn-secondary" type="button">Go!</button>
         </div>
     </div>
-    <button id="action"></button>
+    <div class="row">
+      <div class="col-xs-6">
+        <form action="/search" method="POST">
+          <div class="input-group">
+            <input type="text" name="id" class="form-control"
+        		placeholder="Search Pets">
+            <span class="input-group-btn">
+              <button class="btn btn-success"
+          	type="submit">Search for a pet</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
     <!-- Button trigger modal -->
 <button hidden class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModalNorm" id="modalTrigger">
     Launch Preferences Form
@@ -93,4 +104,5 @@
         </div>
     </div>
 </div>
-<%- include('./../partials/footer') %>
+
+<%- include('./partials/footer') %>

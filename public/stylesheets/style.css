@@ -49,6 +49,7 @@ a:hover {
   width: 100%;
   text-align: center;
 }
+
 li {
     float: none;
     display: inline-block;
@@ -106,7 +107,6 @@ background: gray;
   padding-top: 20px;
   padding-right: 200px;
   height: 370px;
-  background-color: yellow;
 }
 #subtext {
   text-align: right;
@@ -119,4 +119,37 @@ background: gray;
 }
 .round {
   border-radius: 50%;
+}
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  padding: 12px 20px;
+  margin: 0px 0;
+  box-sizing: border-box;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 75%;
+}
+
+
+.btn-change{
+  height: 35px;
+  width: 150px;
+  background: white;
+  margin: 8px 0px;
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition: all 0.5s ease-in-out;
+  border: 0px;
+  color: black;
+}
+.btn-change:hover{
+  -webkit-transform: scale(1.1);
+  background: #B2E2BB;
+}
+
+p {
+  width: 500px;
 }
