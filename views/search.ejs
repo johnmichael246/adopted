@@ -4,13 +4,13 @@
 <div>
 <% doc.petfinder.pets.pet.forEach(function(pet) {%>
 <h2><%=pet.name.$t%></h2>
-    <p><%=pet.contact.city.$t%>
-    <%=pet.contact.zip.$t%>
+    <p><%=pet.contact.city.$t%> | <%=pet.contact.zip.$t%></p>
+    <p><%=pet.age.$t%>
+    <%=pet.size.$t%>
     <%=pet.age.$t%>
-    <%=pet.size.$t%>
-    <%=pet.size.$t%>
+    <%=pet.sex.$t%>
+    <%=pet.id.$t%>
     <%=pet.shelterPetId.$t%></p>
-    <%=pet.shelterPetId.$t%></p>
-    <p><img src="<%=pet.media.photos.photo[0]%>"></p>
+    <p><img src="<%=pet.media.photos.photo[0].$t%>"></p>
 <% }); %>
 </div>
