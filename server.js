@@ -12,7 +12,6 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 require('dotenv').config();
 
-
 var home = require('./routes/home');
 var welcome = require('./routes/welcome');
 var users = require('./routes/users');
