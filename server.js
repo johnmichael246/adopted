@@ -3,16 +3,19 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cors = require('cors');
+var curl = require('curl');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fetch = require('fetch-jsonp')
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 require('dotenv').config();
 
-var index = require('./routes/index');
+var home = require('./routes/home');
 var welcome = require('./routes/welcome');
 var users = require('./routes/users');
+var search = require('./routes/search');
 var api = require('./routes/api');
 require('./config/database');
 require('./config/passport');
@@ -40,9 +43,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
 app.use('/', welcome);
-app.use('/index', index);
+app.use('/home', home);
 app.use('/users', users);
 app.use('/api', api);
+app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

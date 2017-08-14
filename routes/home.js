@@ -1,8 +1,17 @@
 var router = require('express').Router();
 var passport = require('passport');
+require('./../controllers/userCtrl');
 
 router.get('/', loggedIn, function(req,res) {
-  res.render('index', {user:req.user, title:'Adopted'})
+  res.render('home', {user:req.user, title:"poop"})
+})
+
+router.get('/search', loggedIn, function(req,res) {
+  res.render('search')
+})
+
+router.post('/search', loggedIn, function(req,res) {
+  res.render('search', {pet})
 })
 
 router.get('/logout', function(req,res) {
@@ -12,7 +21,6 @@ router.get('/logout', function(req,res) {
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
-  console.log('i hit this path')
   res.redirect('/auth/google');
 }
 

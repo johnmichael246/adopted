@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var passport = require('passport');
-var userCtrl = require('./../controllers/userCtrl')
+var userCtrl = require('./../controllers/userCtrl');
 
 
 router.post('/', loggedIn, userCtrl.search);
