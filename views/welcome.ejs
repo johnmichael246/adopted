@@ -1,19 +1,18 @@
 <%- include('./partials/header') %>
-<h3> Perfecting Your Pet Adoption Experience</h3>  -->
+<h3> Perfecting Your Pet Adoption Experience</h3>
 <nav id="main-nav">
   <ul id="primaryToolbar" class="clearfix">
     <% if (user) { %>
+    <h1>poop</h1>
     <!-- <ul id="primaryToolbar" class="clearfix"> -->
       <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
-      <li>Hello <%=user.first_name%> | <a href="/logout">  LOG OUT</a> |</li>
+      <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+      <li><a href="#">PROFILE</a> | </li>
+      <li><a href="#SEARCH_LINK">SEARCH</a></li>
     <% } else { %>
     To Search Adoptable Pets, 
       <li><a href="/auth/google">Login with Google </a> Here.</li>
-    <% } %> 
-      <% if (user) { %>
-      <li> | <a href="#">PROFILE</a> | </li>
-      <li><a href="#SEARCH_LINK">SEARCH</a></li>
-    <% } %> 
+    <% } %>  
   </ul> 
 </nav>
 <div id="main-page-image">
@@ -23,14 +22,36 @@
   <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
   <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
   <% if (user) { %>
-    <p> I'm looking to Adopt..<br>
-      <input type="text" name="search" placeholder="dog or cat"><br>
-      That Is A...<br>
-      <input type="text" name="search" placeholder="Puppy, Adult, Senior.."><br>
-      That is..<br>
-      <input type="text" name="search" placeholder="small, medium, large"><br>
-      <button class="btn-change">Search Pets!</button>
-    </p>
+  <form action ="/search" method="POST">
+    <div class="input-group">
+      <label for="Select1">Im looking to Adopt a..</label>
+      <select class="form-control" id="Select1">
+        <option>Dog</option>
+        <option>Cat</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select2">That is a..</label>
+      <select class="form-control" id="Select2">
+        <option>Puppy</option>
+        <option>Adult</option>
+        <option>Senior</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select3">And is..</label>
+      <select class="form-control" id="Select3">
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+    </div>
+      <span class="input-group-btn">
+        <button type="submit" class="btn-change">Search Pets!</button>
+      </span>
+    </div>
+  </form>
+
   <% } else { %><br>
     <p> 
       <b> Our Mission:</b><br>
@@ -89,4 +110,14 @@
 		</div>
 	</div>
 </div><!--.container-->
+
+  
+    <p> I'm looking to Adopt..<br>
+      <input type="text" name="search" placeholder="dog or cat"><br>
+      That Is A...<br>
+      <input type="text" name="search" placeholder="Puppy, Adult, Senior.."><br>
+      That is..<br>
+      <input type="text" name="search" placeholder="small, medium, large"><br>
+
+    </p>
 <%- include('./partials/footer') %>

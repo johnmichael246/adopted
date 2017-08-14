@@ -1,6 +1,7 @@
 <h1>this is the search page</h1>
+<%=pet.name%>
  <div class="row col-xs-8 col-xs-offset-2">
-    <% if (pet.options.length) { %>
+    <% if (pet.options === null) { %>
     <div class="panel panel-default">
         <div class="panel-body">
         <h3>Pets Found:</h3>
