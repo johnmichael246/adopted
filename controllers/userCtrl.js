@@ -13,18 +13,23 @@ function updatePrefs(req,res) {
 }
 
 function search(req,res,next) {
-    let header = new Header({
-    'Access-Control-Allow-Origin':'*'
-    });
     var options = {
-        url: basePath + '&key=' + process.env.PETFINDER_KEY + 'pet.get?format=json&id=' + id,
-        headers: header,
+        url: basePath + 'pet.get?'+ '&key=' + process.env.PETFINDER_KEY + '&secret=' + process.env.PETFINDER_SECRET + '&format=json' + '&id=38860268',
+        header: {
+            'Access-Control-Allow-Origin':'*',
+            'Content-Type':'application-json'
+        },
         mode: 'cors',
         method: 'GET'
     };
     request(options, function(err,response,body) {
-        console.log('body')
+        console.log(body)
+        console.log('+++++++++++++++++++++')
         let pet = JSON.parse(body);
+        console.log('+++++++++++++++++++++')
+        console.log(pet)
+        console.log('+++++++++++++++++++++')
+        console.log(pet.pet.options)
         res.render('search', {pet});
     });
 }
