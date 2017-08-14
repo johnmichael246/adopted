@@ -1,5 +1,14 @@
 <%- include('./../partials/header') %>
+<<<<<<< HEAD
       <nav id="main-nav">
+=======
+<h1><%= title %></h1>
+  <% if (user) { %>
+    <p> <img alt="Brand" src="<%=user.photo%>"class="round"> Hello <%=user.first_name%>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/logout">Logout</a></p>
+    <nav class="navbar-inverse navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+>>>>>>> master
             <ul id="primaryToolbar" class="clearfix">
               <% if (user) { %>
               <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
