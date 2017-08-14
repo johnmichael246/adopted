@@ -16,65 +16,75 @@ To Search Adoptable Pets,
 </nav>
 <br>
 
-<div style="overflow: hidden" id="main-page-image">
-<img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
-</div>
-
-
-<div id="save-life" style="overflow: hidden">
-  <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
-  <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
-  <% if (user) { %>
-  <form action ="/pets" method="POST" class:"main-search">
-    <div class="input-group">
-      <label for="Select1">Im looking to Adopt a..</label>
-      <select class="form-control" id="Select1" name="animal">
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-      </select>
-    </div>
-    <div class="input-group">
-      <label for="Select2">That is a..</label>
-      <select class="form-control" id="Select2" name="age">
-        <option>Baby</option>
-        <option>Young</option>
-        <option>Adult</option>
-        <option>Senior</option>
-      </select>
-    </div>
-    <div class="input-group">
-      <label for="Select3">And is..</label>
-      <select class="form-control" id="Select3" name="size">
-        <option value="S">Small</option>
-        <option value="M">Medium</option>
-        <option value="L">Large</option>
-      </select>
-    </div>
-    <div class="control-group">
-      <label class="control-label">Near..</label>
-      <div class="controls">
-          <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
-          class="input-xlarge">
-          <p class="help-block"></p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class ="col-xs-6">
+      <div style="overflow: hidden" id="main-page-image">
+        <img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
       </div>
-  </div>
-      <span class="input-group-btn">
-        <button type="submit" class="btn-change">Search Pets!</button>
-      </span>
     </div>
-  </form>
-
-<% } else { %><br>
-<p>
-<b> Our Mission:</b><br>
-To use Internet technology and the resources it can generate to:<br>
-Increase public awareness of the availability of high-quality adoptable pets
-Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
-Elevate the status of pets to that of family member
-From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
-</p>
-<% } %>
+    <div class="col-xs-6">
+      <div id="save-life" style="overflow: hidden">
+        <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
+        <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
+        <% if (user) { %>
+        <form action ="/pets" method="POST" class:"main-search">
+          <div class="input-group">
+            <label for="Select1">Im looking to Adopt a..</label>
+            <select class="form-control" id="Select1" name="animal">
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="Select2">That is a..</label>
+            <select class="form-control" id="Select2" name="age">
+              <option>Baby</option>
+              <option>Young</option>
+              <option>Adult</option>
+              <option>Senior</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="Select3">And is..</label>
+            <select class="form-control" id="Select3" name="size">
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Near..</label>
+            <div class="controls">
+                <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
+                class="input-xlarge">
+                <p class="help-block"></p>
+            </div>
+        </div>
+            <span class="input-group-btn">
+              <button type="submit" class="btn-change">Search Pets!</button>
+            </span>
+          </div>
+        </form>
+      
+      
+      <% } else { %><br>
+      <p>
+      <b> Our Mission:</b><br>
+      To use Internet technology and the resources it can generate to:<br>
+      Increase public awareness of the availability of high-quality adoptable pets
+      Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
+      Elevate the status of pets to that of family member
+      From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
+      </p>
+      <% } %>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 <br>
 <br>
 <div id="petsuccess" style="overflow: hidden"> 
@@ -125,3 +135,5 @@ From the comfort of their personal computers, pet lovers can search for a pet th
 
 
 <%- include('./partials/footer') %>
+
+
