@@ -1,22 +1,15 @@
 <h1>this is the search page</h1>
-<%=JSON.stringify(pet)%>
-<h1>heres the bottom</h1>
-<%= details.$t %>
-<%= name.$t %>
 
- <div class="row col-xs-8 col-xs-offset-2">
-    <% if (pet.options === null) { %>
-    <div class="panel panel-default">
-        <div class="panel-body">
-        <h3>Pets Found:</h3>
-        <div class="list-group">
-            <% pet.items.forEach(function(pet) { %>
-            <a href="/?id=<%= pet.id %>"
-                class="list-group-item">
-                <%= pet.name %>
-            </a>
-            <% }); %>
-        </div>
-        <% } %>
-    </div>
-</div> 
+<h1>heres the bottom</h1>
+<div>
+<% doc.petfinder.pets.pet.forEach(function(pet) {%>
+<h2><%=pet.name.$t%></h2>
+    <p><%=pet.contact.city.$t%>
+    <%=pet.contact.zip.$t%>
+    <%=pet.age.$t%>
+    <%=pet.size.$t%>
+    <%=pet.size.$t%>
+    <%=pet.shelterPetId.$t%></p>
+    <p><img src="<%=pet.media.photos.photo[0]%>"></p>
+<% }); %>
+</div>
