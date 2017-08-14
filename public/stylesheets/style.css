@@ -101,15 +101,14 @@ background: gray;
   padding-top: 40px;
   padding-bottom: 40px;
   display: inline-block;
+  float: none;
 }
 #save-life {
   padding-top: 20px;
-  padding-right: 200px;
+  padding-right: 100px;
   height: 370px;
   display: inline-table;
-  float: right;
   
-
 }
 #subtext {
   text-align: right;
@@ -173,3 +172,5 @@ h3 {
 #SEARCH_LINK:hover {
   text-decoration: none;
 }
+
+
