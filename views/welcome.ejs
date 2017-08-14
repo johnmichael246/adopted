@@ -2,6 +2,8 @@
 
 <!-- <h1><%= title %></h1>
 <h3> Perfecting Your Pet Adoption Experience</h3>  -->
+<nav id="main-nav">
+<ul id="primaryToolbar" class="clearfix">
   <% if (user) { %>
   <!-- <nav class="navbar-inverse navbar navbar-transparent">
     <div class="container-fluid">
@@ -10,35 +12,72 @@
       </div>
     </div>
   </nav> -->
-  <nav id="main-nav">
-  <ul id="primaryToolbar" class="clearfix">
-  <li> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
+  <!-- <ul id="primaryToolbar" class="clearfix"> -->
+  <li id="user-pic"> <img alt="Brand" class="navbar-brand" src='<%=user.photo%>'> </li> 
   <li>Hello <%=user.first_name%> | <a href="/logout">  LOG OUT</a> |</li>
   <% } else { %>
-  <li><a href="/auth/google">Login with Google </a> | </li>
+    To Search Adoptable Pets, 
+  <li><a href="/auth/google">Login with Google </a> Here.</li>
   <% } %> 
-      <li><a href="#">ABOUT</a> |</li>
-      <li><a href="#"> SEARCH</a></li>
+      <% if (user) { %>
+      <li> | <a href="#">PROFILE</a> | </li>
+      <li><a href="#SEARCH_LINK">SEARCH</a></li>
+      <% } %> 
   </ul> 
 </nav>
+
 
 
 <div id="main-page-image">
     <img src="http://i.imgur.com/SyueVHd.jpg">
 </div>
 
-<div id="save-life">
-  <h3> FIND YOUR NEXT BEST FRIEND </h3>
-  <h4 id="subtext"><strong> SAVE A LIFE</strong> </h4>
 
-  <p> SOMETHING CAN GO HERE?!?!
-   
+<div id="save-life">
+  <h3> <a id="SEARCH_LINK"> FIND YOUR NEXT BEST FRIEND </a> </h3>
+  <h4 id="subtext"><strong>  SAVE A LIFE </strong> </h4>
+  <% if (user) { %>
+  <p> I'm looking to Adopt..
+      <br>
+      <input type="text" name="search" placeholder="dog or cat">
+      <br>
+      That Is A...
+      <br>
+      <input type="text" name="search" placeholder="Puppy, Adult, Senior..">
+      <br>
+      That is..
+      <br>
+      <input type="text" name="search" placeholder="small, medium, large">
+      <br>
+      <button class="btn-change">Search Pets!</button>
   </p>
+
+ 
+  <% } else { %>
+    <br>
+
+  
+
+    <p> 
+        <b> Our Mission:</b>
+        <br>
+        To use Internet technology and the resources it can generate to:
+        <br>
+        Increase public awareness of the availability of high-quality adoptable pets
+        Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
+        Elevate the status of pets to that of family member
+        From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
+    </p>
+  <% } %> 
 </div>
+
+<br>
+<br>
+
 
 <div id="petsuccess"> 
 
-<p><u> PET SUCCESS STORIES </u> </P>
+<u> PET SUCCESS STORIES </u> 
 
 </div> 
 
