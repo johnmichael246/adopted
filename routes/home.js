@@ -6,12 +6,12 @@ router.get('/', loggedIn, function(req,res) {
   res.render('home', {user:req.user, title:"poop"})
 })
 
-router.get('/search', loggedIn, function(req,res) {
-  res.render('search')
+router.get('/pets', loggedIn, function(req,res) {
+  res.render('pets')
 })
 
-router.post('/search', loggedIn, function(req,res) {
-  res.render('search', {pet})
+router.post('/pets', loggedIn, function(req,res) {
+  res.render('pets', {pet})
 })
 
 router.get('/logout', function(req,res) {

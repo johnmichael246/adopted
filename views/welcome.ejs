@@ -22,47 +22,47 @@ To Search Adoptable Pets,
 
 
 <div id="save-life" style="overflow: hidden">
-<h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
-<h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
-<% if (user) { %>
-<form action ="/search" method="POST" class:"main-search">
-<div class="input-group">
-<label for="Select1">Im looking to Adopt a..</label>
-<select class="form-control" id="Select1" name="animal">
-<option value="dog">Dog</option>
-<option value="cat">Cat</option>
-</select>
-</div>
-<div class="input-group">
-<label for="Select2">That is a..</label>
-<select class="form-control" id="Select2" name="age">
-<option>Baby</option>
-<option>Young</option>
-<option>Adult</option>
-<option>Senior</option>
-</select>
-</div>
-<div class="input-group">
-<label for="Select3">And is..</label>
-<select class="form-control" id="Select3" name="size">
-<option>Small</option>
-<option>Medium</option>
-<option>Large</option>
-</select>
-</div>
-<div class="control-group">
-<label class="control-label">Near..</label>
-<div class="controls">
-<input id="postal-code" name="postal-code" type="text" placeholder="zip or postal code"
-class="input-xlarge">
-<p class="help-block"></p>
-</div>
-</div>
-<span class="input-group-btn">
-<button type="submit" class="btn-change">Search Pets!</button>
-</span>
-</div>
-</form>
+  <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
+  <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
+  <% if (user) { %>
+  <form action ="/pets" method="POST" class:"main-search">
+    <div class="input-group">
+      <label for="Select1">Im looking to Adopt a..</label>
+      <select class="form-control" id="Select1" name="animal">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select2">That is a..</label>
+      <select class="form-control" id="Select2" name="age">
+        <option>Baby</option>
+        <option>Young</option>
+        <option>Adult</option>
+        <option>Senior</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="Select3">And is..</label>
+      <select class="form-control" id="Select3" name="size">
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Near..</label>
+      <div class="controls">
+          <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
+          class="input-xlarge">
+          <p class="help-block"></p>
+      </div>
+  </div>
+      <span class="input-group-btn">
+        <button type="submit" class="btn-change">Search Pets!</button>
+      </span>
+    </div>
+  </form>
 
 <% } else { %><br>
 <p>
@@ -77,10 +77,9 @@ From the comfort of their personal computers, pet lovers can search for a pet th
 </div>
 <br>
 <br>
-<br>
-<div id="petsuccess" style="overflow: hidden">
-PET SUCCESS STORIES
-</div>
+<div id="petsuccess" style="overflow: hidden"> 
+  PET SUCCESS PICTURES
+</div> 
 <div class="carousel-container">
 <div class="carousel-row">
 <div class="col-md-12">
