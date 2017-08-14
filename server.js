@@ -15,7 +15,7 @@ require('dotenv').config();
 var home = require('./routes/home');
 var welcome = require('./routes/welcome');
 var users = require('./routes/users');
-var search = require('./routes/pets');
+var pets = require('./routes/pets');
 var api = require('./routes/api');
 require('./config/database');
 require('./config/passport');
