@@ -12,7 +12,6 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 require('dotenv').config();
 
-var home = require('./routes/home');
 var welcome = require('./routes/welcome');
 var users = require('./routes/users');
 var pets = require('./routes/pets');
@@ -43,7 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
 app.use('/', welcome);
-app.use('/home', home);
 app.use('/users', users);
 app.use('/api', api);
 app.use('/pets', pets);
