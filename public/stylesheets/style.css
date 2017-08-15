@@ -189,14 +189,18 @@ h3 {
 #submit-btn {
   float: right;
 }
-.photo-resize{
+.photo-resize {
   max-width:300px;
   max-height:200px;
+}
+.centered {
+  text-align: center;
 }
 
 .col-md-4 text-center {
   height: 100px;
 }
+<<<<<<< HEAD
 
 #profile {
   width: 100%;
@@ -207,3 +211,5 @@ h3 {
 #pref {
   display: inline-block;
 }
+=======
+>>>>>>> master

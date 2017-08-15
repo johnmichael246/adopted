@@ -3,7 +3,13 @@
     <div class="row">
         <div class="col-xs-12">
                 <h2><%=doc.petfinder.pet.name.$t%></h2>
-                <img src="<%=doc.petfinder.pet.media.photos.photo[3].$t%>">
+                <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
+                    <p>Sorry, no photos available for this baby yet!</p>
+                    <% } else { %>
+                    <% doc.petfinder.pet.media.photos.photo.forEach(function(photo) { %>
+                <img src="<%=photo.$t%>" >
+                <% }); %>
+                <% } %>
                 <p><%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%></p>
                 <p><%=doc.petfinder.pet.age.$t%>
                 <%=doc.petfinder.pet.size.$t%>

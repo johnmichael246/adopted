@@ -7,7 +7,7 @@ const basePath = "http://api.petfinder.com/"
 function search(req,res,next) {
         console.log(req.body)
     var options = {
-        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}`,
+        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}&count=27`,
         method: 'GET'
     };
     console.log(options.url)
@@ -23,14 +23,25 @@ function show(req,res,next) {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
-    console.log(options.url)
+    // console.log(options.url)
     request(options.url, function(err,response,body) {
-        console.log('+++++++++++++++++++++')
         let doc = JSON.parse(body);
-        console.log('+++++++++++++++++++++')
         res.render('showpet', {doc});
     });
 }
+
+function getFavorite() {
+    return fetch(`${basePath}.pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}`, {
+        method: 'get'
+    }).then(function() {
+        console.log('i made a fetch request');
+    });
+}
+
+
+
+
+
 
 module.exports = {
     search,
