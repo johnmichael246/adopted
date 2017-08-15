@@ -1,10 +1,6 @@
 <%- include('./partials/header') %>
 
-<<<<<<< HEAD
-<h1>Search Results</h1>
-=======
 <h1>Search Results</h1> <a href="/users/:id">My Favorites</a>
->>>>>>> master
 
 <div class="container">
     <div class="row">
@@ -26,7 +22,7 @@
                     <%=pet.sex.$t%>
                     <%=pet.id.$t%>
                     <%=pet.shelterPetId.$t%></p>
-                    <button class="heart-button"><span id="<%=pet.id.$t%>" class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+                    <button action="/users/:id" class="heart-button"><span id="<%=pet.id.$t%>" class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
                 </div>
                 <% }); %>
             <% } %>
