@@ -36,8 +36,8 @@ function show(req,res,next) {
 
 //show all users favorites
 function showFavorites(req, res) {
-  User.findById(req.params.id).populate('favpets').exec((err, pet) => {
-    res.render('myfavorites');
+  User.findById(req.params.id).populate('favpets').exec((err, pets) => {
+    res.render('myfavorites', {pets});
   });
 }
 

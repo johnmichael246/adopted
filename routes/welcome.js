@@ -33,9 +33,6 @@ router.get('/', loggedIn, userCtrl.profile);
 
 
 // routes for pet show below below
-
-
-
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
   res.redirect('/auth/google');

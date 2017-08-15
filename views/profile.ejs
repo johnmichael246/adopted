@@ -1,5 +1,4 @@
 <%- include('./partials/header') %>
-
 <div class="container" id="profile">
     <div class="row" id="pref">
         <div class="col-xs-12">
@@ -65,21 +64,12 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12 lead">Pet Favorites<hr>
-                        </div>
-                    </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                            </div>
-                        </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                            <% if(user.favPets.length === 0) { %>
+                            <h3>No favorites, click here to find your furry friend!</h3>
+                            <% } %>
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-ok"></i>Update</button>
