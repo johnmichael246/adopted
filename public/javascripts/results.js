@@ -3,6 +3,8 @@ console.log('loaded results.js');
 $(document).ready(function() {
   console.log('jQ ready now');
 
+
+//toggle heart between red and black, adds pet id to array
   var favPets = [];
 $('button.heart-button').click(function(evt) {
   var $this = $(this);
@@ -22,6 +24,9 @@ $('button.heart-button').click(function(evt) {
     console.log(favPets);
   }
 })
+
+
+
 
 
 
