@@ -22,9 +22,19 @@ router.get('/logout', function(req,res) {
   res.redirect('/');
 })
 
+// routes for user control below
+
+
+
 router.put('/', loggedIn, userCtrl.updatePrefs);
 
-router.get('/users/:id', userCtrl.show);
+router.get('/users/:id', loggedIn, userCtrl.show);
+
+
+
+// routes for pet show below below
+
+
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
