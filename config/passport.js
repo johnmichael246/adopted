@@ -19,7 +19,7 @@ passport.use(new GoogleStrategy(
                     if(err) return cb(user);
                     return cb(null, user);
                  });
-                 console.log("Aaaaaaaaaaaaaaaaaaaa")
+
                  console.log(profile)
                  console.log(profile.name.givenName)
                  console.log("++++++++++++++++++++++")
