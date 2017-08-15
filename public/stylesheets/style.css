@@ -18,8 +18,9 @@ a:hover {
 }
 #primaryToolbar {
   text-align: right;
-  font-size: 15px;
-  padding-right: 100px;
+  font-size: 17px;
+  padding-right: 50px;
+  padding-top: 30px;
 }
 .container-fluid {
   float: left;
@@ -167,28 +168,32 @@ p {
 
 
 h3 {
-  text-align: -webkit-right;
+  text-align: -webkit-left;
+}
+
+#subtext {
+  text-align: center;
 }
 
 .main-search {
   float: right;
 }
-
-
 #SEARCH_LINK:hover {
   text-decoration: none;
 }
-
 #profile-div {
   background-color: gray;
   width: 100%;
   height: 35px;
 }
-
 #submit-btn {
   float: right;
 }
 .photo-resize{
   max-width:300px;
   max-height:200px;
+}
+
+.col-md-4 text-center {
+  height: 100px;
 }
