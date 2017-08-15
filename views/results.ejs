@@ -1,6 +1,21 @@
 <%- include('./partials/header') %>
 
 <h1>Search Results</h1>
+
+<div>
+<% doc.petfinder.pets.pet.forEach(function(pet) {%>
+<h2><%=pet.name.$t%></h2>
+    <p><%=pet.contact.city.$t%> | <%=pet.contact.zip.$t%></p>
+    <p><%=pet.age.$t%>
+    <%=pet.size.$t%>
+    <%=pet.sex.$t%>
+    <%=pet.id.$t%>
+    <%=pet.shelterPetId.$t%></p>
+    <p><img src="<%=pet.media.photos.photo[0].$t%>"></p>
+    <button id="<%=pet.id.$t%>" class="favorite">Favorite</button>
+<% }); %>
+
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -21,7 +36,7 @@
     </div>
 </div>
 
-<script src="/javascripts/pets.js"></script>
+<script src="/javascripts/results.js"></script>
 
 <%- include('./partials/footer') %>
 
