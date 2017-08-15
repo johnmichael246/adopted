@@ -1,6 +1,4 @@
-
 <%- include('./partials/header') %>
-
 
 <nav id="main-nav">
 <ul id="primaryToolbar" class="clearfix">
@@ -84,8 +82,6 @@ To Search Adoptable Pets,
     </div>
   </div>
 </div>
-
-
 <br>
 <br>
 <div id="petsuccess" style="overflow: hidden"> 
@@ -158,7 +154,7 @@ aria-labelledby="myModalLabel" aria-hidden="true">
         </div>
   <!-- Modal Body -->
   <div class="modal-body">
-    <form role="form" method="POST" action="">
+    <form role="form" method="POST" action="/?_method=put">
       <div class="form-group">
         <label for="age">I'd love a..</label>
           <select class="form-control" id="Select1" name="animal">
@@ -167,16 +163,16 @@ aria-labelledby="myModalLabel" aria-hidden="true">
           </select>
       </div>
       <div class="form-group">
-            <label for="Select2">That is a..</label>
-            <select class="form-control" id="Select2" name="age">
-              <option>Baby</option>
-              <option>Young</option>
-              <option>Adult</option>
-              <option>Senior</option>
-            </select>
-          </div>
+        <label for="Select2">That is a..</label>
+        <select class="form-control" id="Select2" name="age">
+          <option>Baby</option>
+          <option>Young</option>
+          <option>Adult</option>
+          <option>Senior</option>
+        </select>
+      </div>
       <div class="form-group">
-                <label for="age">Size</label>
+            <label for="age">Size</label>
             <select class="form-control" id="Select3" name="size">
               <option value="S">Small</option>
               <option value="M">Medium</option>
@@ -189,24 +185,18 @@ aria-labelledby="myModalLabel" aria-hidden="true">
                 <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
                 class="input-xlarge">
             </div>
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
     </form>
   </div>
   <!-- Modal Footer -->
   <div class="modal-footer">
-    <button type="submit" class="btn btn-primary">
-      Submit
-    </button>
   </div>
 </div>
 </div>
 </div>
       <% } %>
-    </h4>
-  
-
-
-
-
 
 <%- include('./partials/footer') %>
 
