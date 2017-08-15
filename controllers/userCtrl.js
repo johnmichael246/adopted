@@ -16,8 +16,9 @@ function updatePrefs(req,res) {
 
 function show(req, res) {
     User.findById(req.user.id, function(err, user) {
-        res.render('users/show', {user})
-    }) 
+        console.log(req.user.id);
+        res.render('users/profile', {user})
+    }); 
 }
 
 module.exports = {

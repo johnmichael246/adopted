@@ -24,6 +24,8 @@ router.get('/logout', function(req,res) {
 
 router.put('/', loggedIn, userCtrl.updatePrefs);
 
+router.get('/users/:id', userCtrl.show);
+
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
   res.redirect('/auth/google');

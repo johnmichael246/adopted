@@ -9,7 +9,7 @@ function loggedIn(req, res, next) {
 }
 
 
-router.get('/users/:id', userCtrl.show);
+
 
 
 module.exports = router;
