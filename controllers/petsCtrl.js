@@ -30,12 +30,13 @@ function show(req,res,next) {
     });
 }
 
-// function getFavorite() {
-//   User.findById(req.user.id), function(err, user) {
-//       Pet.findById
-//   }
-// }
 
+//show all users favorites
+function showFavorites(req, res) {
+  User.findById(req.params.id).populate('favpets').exec((err, bar) => {
+    res.render('myfavorites');
+  });
+}
 
 
 
@@ -43,5 +44,6 @@ function show(req,res,next) {
 
 module.exports = {
     search,
-    show
+    show,
+    showFavorites
 }
