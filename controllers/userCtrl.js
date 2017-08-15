@@ -4,25 +4,29 @@ var User = require('./../models/user');
 var Pet = require('./../models/favpet');
 
 function updatePrefs(req,res) {
-    console.log('hitting path')
+    var showNavbar = true;
     User.findById(req.user.id, function(err, user) {
-        console.log(req.user.id)
         user.preferences.age = req.body.age;
         user.preferences.size = req.body.size;
         user.preferences.species = req.body.animal;
         user.save();
-    res.render('welcome', {user:user})
+    res.render('welcome', {user:user, showNavbar})
     });
 }
 
-function show(req, res) {
+function profile(req, res) {
+    var showNavbar = false;
     User.findById(req.user.id, function(err, user) {
-        console.log(req.user.id);
-        res.render('users/profile', {user})
+        res.render('profile', {user, showNavbar})
     }); 
 }
 
+function welcome(req,res) {
+    var showNavbar = true;
+    res.render('welcome', {user:req.user, title: 'Adopted', showNavbar })};
+
 module.exports = {
     updatePrefs,
-    show
+    profile,
+    welcome
 }
