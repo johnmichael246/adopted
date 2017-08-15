@@ -2,9 +2,10 @@ var router = require('express').Router();
 var passport = require('passport');
 var userCtrl = require('./../controllers/userCtrl');
 
-router.get('/', function(req, res, next) {
-  res.render('welcome', {user:req.user, title: 'Adopted' });
-});
+router.get('/', userCtrl.welcome);
+
+router.get('/profile', userCtrl.profile);
+
 router.get('/auth/google', passport.authenticate(
   'google',
   {scope:['profile','email']}
@@ -25,10 +26,9 @@ router.get('/logout', function(req,res) {
 // routes for user control below
 
 
-
 router.put('/', loggedIn, userCtrl.updatePrefs);
 
-router.get('/users/:id', loggedIn, userCtrl.show);
+router.get('/', loggedIn, userCtrl.profile);
 
 
 

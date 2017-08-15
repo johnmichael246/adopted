@@ -4,6 +4,8 @@ var User = require('./../models/user');
 var Pet = require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
 
+
+
 function search(req,res,next) {
         console.log(req.body)
     var options = {
@@ -11,9 +13,10 @@ function search(req,res,next) {
         method: 'GET'
     };
     request(options.url, function(err,response,body) {
+            var showNavbar = true;
         let doc = JSON.parse(body);
         // console.log(Object.keys(doc.petfinder))
-        res.render('results', {doc});
+        res.render('results', {doc, user:req.user, showNavbar});
     });
 }
 
@@ -24,8 +27,9 @@ function show(req,res,next) {
     };
     // console.log(options.url)
     request(options.url, function(err,response,body) {
+        var showNavbar = false;
         let doc = JSON.parse(body);
-        res.render('showpet', {doc});
+        res.render('showpet', {doc, showNavbar, user:req.user});
     });
 }
 

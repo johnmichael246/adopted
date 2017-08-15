@@ -1,17 +1,5 @@
 <%- include('./partials/header') %>
-<nav id="main-nav">
-  <ul id="primaryToolbar" class="clearfix">
-    <% if (user) { %>
-      <li>Hello <%=user.first_name%> | </li>
-      <li><a href="/users/<%=user.id%>">PROFILE</a> | </li>
-      <li><a href="#SEARCH_LINK">SEARCH PETS</a> | </li>
-      <li><a href="/logout">LOG OUT</a></li>
-      <% } else { %>
-      To Search Adoptable Pets,
-      <li><a href="/auth/google">Login with Google </a> Here.</li>
-    <% } %>
-  </ul>
-</nav>
+
 <br>
 <div class="row">
   <div class="col-xs-12">
@@ -180,7 +168,6 @@ aria-labelledby="myModalLabel" aria-hidden="true">
           </form>
         </div>
   <!-- Modal Footer -->
-        
       </div>
     </div>
   </div>
