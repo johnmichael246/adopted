@@ -14,7 +14,13 @@ function updatePrefs(req,res) {
     });
 }
 
+function show(req, res) {
+    User.findById(req.user.id, function(err, user) {
+        res.render('users/show', {user})
+    }) 
+}
 
 module.exports = {
     updatePrefs,
+    show
 }
