@@ -184,3 +184,11 @@ h3 {
   width: 100%;
   height: 35px;
 }
+
+#submit-btn {
+  float: right;
+}
+.photo-resize{
+  max-width:300px;
+  max-height:200px;
+}
