@@ -5,9 +5,9 @@ const basePath = "http://api.petfinder.com/"
 
 function updatePrefs(req,res) {
     User.findByIdAndUpdate(req.params.id, function(err, user) {
-        User.update(req.params.id, req.body, function(err,user) {
-
-        })
+        user.preferences.age = req.body.age
+        user.preferences.size = req.body.size
+        user.preferences.species = req.body.animal
     res.render('/home', {user:user})
     });
 }
