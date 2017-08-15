@@ -17,8 +17,8 @@
 </nav>
 
 <br>
-<div class="container">
-    <div class="row">
+<div class="container" id="profile">
+    <div class="row" id="pref">
         <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -38,14 +38,52 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <span class="text-muted">Email:</span><%=user.email%> <br>
                                 <span class="text-muted">Phone Number:</span><%=user.phone_num%><br>
                                 <span class="text-muted"></span><br><br>
                             </div>
-                            <div class="col-md-12">
-                                <h1 class="only-bottom-margin">Pet Preferences:</h1>
-                            </div>
+                
+                            <form action ="#" method="POST" class:"pet-pref">
+                                            <div class="col-md-12">
+                                            <h1 class="only-bottom-margin">Pet Preferences:</h1>
+                                        </div>
+                                        <div class="input-group col-xs-6">
+                                      <label for="Select1">Im looking to Adopt a..</label>
+                                      <select class="form-control" id="Select1" name="animal">
+                                        <option value="dog">Dog</option>
+                                        <option value="cat">Cat</option>
+                                      </select>
+                                    </div>
+                                    <div class="input-group col-xs-6">
+                                      <label for="Select2">Age:</label>
+                                      <select class="form-control" id="Select2" name="age">
+                                        <option>Baby</option>
+                                        <option>Young</option>
+                                        <option>Adult</option>
+                                        <option>Senior</option>
+                                      </select>
+                                    </div>
+                                    <div class="input-group col-xs-6">
+                                      <label for="Select3">Size:</label>
+                                      <select class="form-control" id="Select3" name="size">
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                      </select>
+                                    </div>
+                                    <div class="control-group col-xs-12">
+                                      <label class="control-label">Zip Code:</label>
+                                      <div class="controls col-xs-12">
+                                        <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
+                                        class="input-xlarge">
+                                        <p class="help-block"></p>
+                                      </div>
+                                    </div>
+                                    <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                                      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Update</button>
+                                    </div>
+                                </form>
                         </div>
                     </div>
                 </div>
@@ -58,6 +96,41 @@
         </div>
     </div>
 </div>
+
+<!-- HERE IS THE FAVORITES  -->
+
+
+  <div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12 lead">Pet Favorites<hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-ok"></i>Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                                                                                                          
+
+
 
 
 
