@@ -5,8 +5,10 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <% if (!doc.petfinder.pets === undefined) { %>
-            <% doc.petfinder.pets.pet.forEach(function(pet) {%>
+            <% if (doc.petfinder.pets === undefined) { %>
+                <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
+            <% } else { %>
+                <% doc.petfinder.pets.pet.forEach(function(pet) {%>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
                     <h2><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
@@ -22,9 +24,7 @@
                     <%=pet.shelterPetId.$t%></p>
                     <button class="heart-button"><span id="<%=pet.id.$t%>" class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
                 </div>
-            <% }); %>
-            <% } else { %>
-            <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
+                <% }); %>
             <% } %>
         </div>
     </div>
