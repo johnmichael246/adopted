@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
 
-<h1>Search Results</h1> <a href="#">My Favorites</a>
+<h1>Search Results</h1> <a href="/users/:id">My Favorites</a>
 
 <div class="container">
     <div class="row">
@@ -12,12 +12,12 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
                     <h2><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
-                    <p>Sorry, no photos available for this baby yet!</p>
+                    <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
                     <% } else { %>
                     <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round"></a>       
                     <% }; %>
-                    <p class="centered"><%=pet.contact.city.$t%>|<%=pet.contact.state.$t%>| <%=pet.contact.zip.$t%></p>
-                    <p><%=pet.age.$t%>
+                    <p class="centered"><%=pet.contact.city.$t%>|<%=pet.contact.state.$t%>| <%=pet.contact.zip.$t%><br>
+                    <%=pet.age.$t%>
                     <%=pet.size.$t%>
                     <%=pet.sex.$t%>
                     <%=pet.id.$t%>
