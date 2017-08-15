@@ -2,8 +2,8 @@
 <nav id="main-nav">
   <ul id="primaryToolbar" class="clearfix">
     <% if (user) { %>
-      <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
-      <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+      <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'>
+      Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
       <li><a href="/users/<%=user.id%>">PROFILE</a> | </li>
       <li><a href="#SEARCH_LINK">SEARCH PETS</a></li>
       <% } else { %>
@@ -15,25 +15,26 @@
 <br>
 <div class="row">
   <div class="col-xs-12">
-    <div class ="col-xs-6">
+    <div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
       <div style="overflow: hidden" id="main-page-image">
         <img src="http://i.imgur.com/SyueVHd.jpg" class="img-responsive">
       </div>
     </div>
-    <div class="col-xs-6">
-      <div id="save-life" style="overflow: hidden">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <div class="col-xs-12">
         <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
-        <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
+        <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>          
         <% if (user) { %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-8">
           <form action ="/pets" method="POST" class:"main-search">
-            <div class="input-group">
+            <div class="input-group col-xs-12">
               <label for="Select1">Im looking to Adopt a..</label>
               <select class="form-control" id="Select1" name="animal">
                 <option value="dog">Dog</option>
                 <option value="cat">Cat</option>
               </select>
             </div>
-            <div class="input-group">
+            <div class="input-group col-xs-12">
               <label for="Select2">That is a..</label>
               <select class="form-control" id="Select2" name="age">
                 <option>Baby</option>
@@ -42,7 +43,7 @@
                 <option>Senior</option>
               </select>
             </div>
-            <div class="input-group">
+            <div class="input-group col-xs-12">
               <label for="Select3">And is..</label>
               <select class="form-control" id="Select3" name="size">
                 <option value="S">Small</option>
@@ -50,19 +51,20 @@
                 <option value="L">Large</option>
               </select>
             </div>
-            <div class="control-group">
+            <div class="control-group col-xs-12">
               <label class="control-label">Near..</label>
-              <div class="controls">
+              <div class="controls col-xs-12">
                 <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
                 class="input-xlarge">
                 <p class="help-block"></p>
               </div>
             </div>
-            <span class="input-group-btn">
+            <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
               <button type="submit" class="btn-change">Search Pets!</button>
-            </span>
-          </div>
+            </div>
         </form>
+        </div>
+        </div>
         <% } else { %><br>
           <p><b> Our Mission:</b><br>
             To use Internet technology and the resources it can generate to:<br>
