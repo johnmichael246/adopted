@@ -32,13 +32,11 @@ function show(req,res,next) {
     });
 }
 
-function getFavorite() {
-    return fetch(`${basePath}.pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}`, {
-        method: 'get'
-    }).then(function() {
-        console.log('i made a fetch request');
-    });
-}
+// function getFavorite() {
+//   User.findById(req.user.id), function(err, user) {
+//       Pet.findById
+//   }
+// }
 
 
 
