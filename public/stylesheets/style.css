@@ -190,13 +190,26 @@ h3 {
   float: right;
 }
 .photo-resize {
-  max-width:300px;
+  /* max-width:300px; */
   max-height:200px;
 }
 .centered {
   text-align: center;
+  display: table-cell;
 }
 
 .col-md-4 text-center {
   height: 100px;
 }
+======
+
+#profile {
+  width: 100%;
+  margin: 0;
+  display: inline-block;
+}
+
+#pref {
+  display: inline-block;
+}
+
