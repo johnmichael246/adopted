@@ -14,31 +14,21 @@ function search(req,res,next) {
     request(options.url, function(err,response,body) {
         console.log('+++++++++++++++++++++')
         let doc = JSON.parse(body);
-        console.log(Object.keys(doc.petfinder))
-        // let name = doc.petfinder.pets.pet.name;
-        console.log('+++++++++++++++++++++')
-        console.log(doc.petfinder.pets)
-        console.log('+++++++++++++++++++++')
-        // JSON.stringify(pet)
-        // console.log(pet)
+        // console.log(Object.keys(doc.petfinder))
         res.render('results', {doc});
     });
 }
-
 function show(req,res,next) {
      var options = {
-        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}`,
+        url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
     console.log(options.url)
     request(options.url, function(err,response,body) {
         console.log('+++++++++++++++++++++')
         let doc = JSON.parse(body);
-        console.log(Object.keys(doc.petfinder))
         console.log('+++++++++++++++++++++')
-        console.log(doc.petfinder.pets)
-        console.log('+++++++++++++++++++++')
-        res.render('results', {doc});
+        res.render('showpet', {doc});
     });
 }
 
