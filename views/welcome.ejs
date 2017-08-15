@@ -1,18 +1,17 @@
 <%- include('./partials/header') %>
 
 <nav id="main-nav">
-<ul id="primaryToolbar" class="clearfix">
-<% if (user) { %>
-<!-- <ul id="primaryToolbar" class="clearfix"> -->
-<li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
-<li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
-<li><a href="#">PROFILE</a> | </li>
-<li><a href="#SEARCH_LINK">SEARCH</a></li>
-<% } else { %>
-To Search Adoptable Pets,
-<li><a href="/auth/google">Login with Google </a> Here.</li>
-<% } %>
-</ul>
+  <ul id="primaryToolbar" class="clearfix">
+    <% if (user) { %>
+      <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
+      <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+      <li><a href="#">PROFILE</a> | </li>
+      <li><a href="#SEARCH_LINK">SEARCH</a></li>
+      <% } else { %>
+      To Search Adoptable Pets,
+      <li><a href="/auth/google">Login with Google </a> Here.</li>
+    <% } %>
+  </ul>
 </nav>
 <br>
 <div class="row">
@@ -27,177 +26,166 @@ To Search Adoptable Pets,
         <h3> <a id="SEARCH_LINK">FIND YOUR NEXT BEST FRIEND</a></h3>
         <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>
         <% if (user) { %>
-        <form action ="/pets" method="POST" class:"main-search">
-          <div class="input-group">
-            <label for="Select1">Im looking to Adopt a..</label>
-            <select class="form-control" id="Select1" name="animal">
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
-            </select>
-          </div>
-          <div class="input-group">
-            <label for="Select2">That is a..</label>
-            <select class="form-control" id="Select2" name="age">
-              <option>Baby</option>
-              <option>Young</option>
-              <option>Adult</option>
-              <option>Senior</option>
-            </select>
-          </div>
-          <div class="input-group">
-            <label for="Select3">And is..</label>
-            <select class="form-control" id="Select3" name="size">
-              <option value="S">Small</option>
-              <option value="M">Medium</option>
-              <option value="L">Large</option>
-            </select>
-          </div>
-          <div class="control-group">
-            <label class="control-label">Near..</label>
-            <div class="controls">
+          <form action ="/pets" method="POST" class:"main-search">
+            <div class="input-group">
+              <label for="Select1">Im looking to Adopt a..</label>
+              <select class="form-control" id="Select1" name="animal">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="Select2">That is a..</label>
+              <select class="form-control" id="Select2" name="age">
+                <option>Baby</option>
+                <option>Young</option>
+                <option>Adult</option>
+                <option>Senior</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="Select3">And is..</label>
+              <select class="form-control" id="Select3" name="size">
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Near..</label>
+              <div class="controls">
                 <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
                 class="input-xlarge">
                 <p class="help-block"></p>
+              </div>
             </div>
-        </div>
             <span class="input-group-btn">
               <button type="submit" class="btn-change">Search Pets!</button>
             </span>
           </div>
         </form>
-      
-      
-      <% } else { %><br>
-      <p>
-      <b> Our Mission:</b><br>
-      To use Internet technology and the resources it can generate to:<br>
-      Increase public awareness of the availability of high-quality adoptable pets
-      Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
-      Elevate the status of pets to that of family member
-      From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
-      </p>
-      <% } %>
-      </div>
+        <% } else { %><br>
+          <p><b> Our Mission:</b><br>
+            To use Internet technology and the resources it can generate to:<br>
+            Increase public awareness of the availability of high-quality adoptable pets
+            Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
+            Elevate the status of pets to that of family member
+            From the comfort of their personal computers, pet lovers can search for a pet that best matches their needs. They can then reference a shelter’s web page and discover what services it offers. Petfinder also includes discussion forums, a pet-care resource directory and a library of free pet-care articles to help keep pets in their homes.
+          </p>
+        <% } %>
       </div>
     </div>
   </div>
 </div>
+</div>
 <br>
-<br>
-<div id="petsuccess" style="overflow: hidden"> 
-  PET SUCCESS PICTURES
-</div> 
+<div id="petsuccess" style="overflow: hidden"> PET SUCCESS PICTURES </div> 
 <div class="carousel-container">
-<div class="carousel-row">
-<div class="col-md-12">
-<div id="Carousel" class="carousel slide">
-<ol class="carousel-indicators">
-<li data-target="#Carousel" data-slide-to="0" class="active"></li>
-<li data-target="#Carousel" data-slide-to="1"></li>
-<li data-target="#Carousel" data-slide-to="2"></li>
-</ol>
+  <div class="carousel-row">
+    <div class="col-md-12">
+      <div id="Carousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#Carousel" data-slide-to="1"></li>
+          <li data-target="#Carousel" data-slide-to="2"></li>
+        </ol>
 <!-- Carousel items -->
-<div class="carousel-inner">
-<div class="item active">
-  <div class="row">
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%"></a></div>
-</div><!--.row-->
-</div><!--.item-->
-<div class="item">
-  <div class="row">
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
-</div><!--.row-->
-</div><!--.item-->
-<div class="item">
-<div class="row">
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
-<div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
-</div><!--.row-->
-</div><!--.item-->
-</div><!--.carousel-inner-->
-<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-</div><!--.Carousel-->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/6yQgCN5.jpg" alt="Image" style="max-width:100%"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/5IlDcr2.jpg" alt="Image" style="max-width:100%"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/LteEr2j.jpg" alt="Image" style="max-width:100%"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/wdi9HlA.jpg" alt="Image" style="max-width:100%"></a></div>
+            </div><!--.row-->
+          </div><!--.item-->
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/uzrs2mC.jpg" alt="Image" style="max-width:100%;"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/zqtpc9n.jpg" alt="Image" style="max-width:100%;"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/w0kIg67.jpg" alt="Image" style="max-width:100%;"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/PJutV60.jpg" alt="Image" style="max-width:100%;"></a></div>
+            </div><!--.row-->
+          </div><!--.item-->
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/S3kWRFl.jpg" alt="Image" style="max-width:100%;"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/228bDZb.jpg" alt="Image" style="max-width:100%;"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/HG1sTU9.jpg" alt="Image" style="max-width:100%;"></a></div>
+              <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://i.imgur.com/mlpbfzp.jpg" alt="Image" style="max-width:100%;"></a></div>
+            </div><!--.row-->
+          </div><!--.item-->
+        </div><!--.carousel-inner-->
+        <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+      </div><!--.Carousel-->
     </div>
   </div>
 </div><!--.container-->
 
 <!-- Button trigger modal -->
 <% if (user && JSON.stringify(user.preferences) === "{}") { %>
-<button class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModalNorm" id="modalTrigger">
-  Launch Preferences Form
-</button>
+  <button class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModalNorm" id="modalTrigger"></button>
 <% } %>
 <!-- Modal -->
 <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog"
 aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
+  <div class="modal-dialog">
+    <div class="modal-content">
     <!-- Modal Header -->
       <%if (user) { %>
-          <div class="modal-header">
-      <button type="button" class="close"
-      data-dismiss="modal">
-      <span aria-hidden="true">&times;</span>
-      <span class="sr-only">Close</span>
-    </button>
-    <h4 class="modal-title" id="myModalLabel">
-      Welcome <%= user.first_name %>! Tell us, who would make the perfect pet for you?
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            Welcome <%= user.first_name %>! Tell us, who would make the perfect pet for you?
+          </h4>
         </div>
   <!-- Modal Body -->
-  <div class="modal-body">
-    <form role="form" method="POST" action="/?_method=put">
-      <div class="form-group">
-        <label for="age">I'd love a..</label>
-          <select class="form-control" id="Select1" name="animal">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-          </select>
-      </div>
-      <div class="form-group">
-        <label for="Select2">That is a..</label>
-        <select class="form-control" id="Select2" name="age">
-          <option>Baby</option>
-          <option>Young</option>
-          <option>Adult</option>
-          <option>Senior</option>
-        </select>
-      </div>
-      <div class="form-group">
-            <label for="age">Size</label>
-            <select class="form-control" id="Select3" name="size">
-              <option value="S">Small</option>
-              <option value="M">Medium</option>
-              <option value="L">Large</option>
+        <div class="modal-body">
+          <form role="form" method="POST" action="/?_method=put">
+            <div class="form-group">
+              <label for="age">I'd love a..</label>
+              <select class="form-control" id="Select1" name="animal">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="Select2">That is a..</label>
+              <select class="form-control" id="Select2" name="age">
+                <option>Baby</option>
+                <option>Young</option>
+                <option>Adult</option>
+                <option>Senior</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">Size</label>
+              <select class="form-control" id="Select3" name="size">
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
             </select>
           </div>
-      <div class="form-group">
+          <div class="form-group">
             <label class="control-label">Near What Area</label>
             <div class="controls">
-                <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
-                class="input-xlarge">
+              <input id="postal-code" name="zip" type="text" placeholder="zip or postal code" class="input-xlarge">
             </div>
-    <button type="submit" class="btn btn-primary">
-      Submit
-    </button>
-    </form>
-  </div>
+            <button type="submit" class="btn btn-primary"> Submit</button>
+          </form>
+        </div>
   <!-- Modal Footer -->
-  <div class="modal-footer">
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
   </div>
+    <% } %>
 </div>
-</div>
-</div>
-      <% } %>
-
 <%- include('./partials/footer') %>
 
 

@@ -15,7 +15,6 @@ function updatePrefs(req,res) {
 }
 
 
-
 module.exports = {
     updatePrefs,
 }
