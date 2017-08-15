@@ -5,10 +5,10 @@
     <ul id="primaryToolbar" class="clearfix">
         <% if (user) { %>
         <!-- <ul id="primaryToolbar" class="clearfix"> -->
-            <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
-            <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
-            <li><a href="#">PROFILE</a> | </li>
-            <li><a href="#SEARCH_LINK">SEARCH PETS</a> </li>
+            <li>Hello <%=user.first_name%> | </li>
+            <li><a href="/">HOME</a> | </li>
+            <li><a href="#SEARCH_LINK">SEARCH PETS</a> | </li>
+            <li><a href="/logout">LOG OUT</a></li>
         <% } else { %>
             To Search Adoptable Pets,
             <li><a href="/auth/google">Login with Google </a> Here.</li>
@@ -29,7 +29,7 @@
                     <div class="row">
 			            <div class="col-md-4 text-center">
                             <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
-                            display:block; margin:auto; padding-top:20px;" src='<%=user.photo%>'>
+                            display:block; margin:auto;" src='<%=user.photo%>' height="100" width="100">
                         </div>
                     <div class="col-md-8">
                         <div class="row">

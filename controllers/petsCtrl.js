@@ -30,6 +30,19 @@ function show(req,res,next) {
     });
 }
 
+function getFavorite() {
+    return fetch(`${basePath}.pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}`, {
+        method: 'get'
+    }).then(function() {
+        console.log('i made a fetch request');
+    });
+}
+
+
+
+
+
+
 module.exports = {
     search,
     show
