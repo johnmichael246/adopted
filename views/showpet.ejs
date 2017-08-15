@@ -2,15 +2,15 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-                <h2><%=doc.name.$t%></h2>
-                <img src="<%=doc.media.photos.photo[3].$t%>">
-                <p><%=doc.contact.city.$t%> | <%=doc.contact.zip.$t%></p>
-                <p><%=doc.age.$t%>
-                <%=doc.size.$t%>
-                <%=doc.sex.$t%>
-                <%=doc.id.$t%>
-                <%=doc.shelterPetId.$t%></p>
-
+                <h2><%=doc.petfinder.pet.name.$t%></h2>
+                <img src="<%=doc.petfinder.pet.media.photos.photo[3].$t%>">
+                <p><%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%></p>
+                <p><%=doc.petfinder.pet.age.$t%>
+                <%=doc.petfinder.pet.size.$t%>
+                <%=doc.petfinder.pet.sex.$t%>
+                <%=doc.petfinder.pet.id.$t%>
+                <%=doc.petfinder.pet.shelterPetId.$t%></p>
+                <p><%=doc.petfinder.pet.description.$t%></p>
         </div>
     </div>
 </div>
