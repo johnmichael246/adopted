@@ -16,6 +16,24 @@
 <% }); %>
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <% doc.petfinder.pets.pet.forEach(function(pet) {%>
+                <div class="col-xs-4">
+                    <h2><%=pet.name.$t%></h2>
+                    <img src="<%=pet.media.photos.photo[3].$t%>">
+                    <p><%=pet.contact.city.$t%> | <%=pet.contact.zip.$t%></p>
+                    <p><%=pet.age.$t%>
+                    <%=pet.size.$t%>
+                    <%=pet.sex.$t%>
+                    <%=pet.id.$t%>
+                    <a href="pets/<%=pet.id.$t%>">pick me!</a>
+                    <%=pet.shelterPetId.$t%></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
 </div>
 
 <script src="/javascripts/results.js"></script>

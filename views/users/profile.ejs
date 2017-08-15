@@ -1,0 +1,65 @@
+<%- include('./../partials/header') %>
+
+
+<nav id="profile-nav">
+    <ul id="primaryToolbar" class="clearfix">
+        <% if (user) { %>
+        <!-- <ul id="primaryToolbar" class="clearfix"> -->
+            <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
+            <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
+            <li><a href="#">PROFILE</a> | </li>
+            <li><a href="#SEARCH_LINK">SEARCH</a> </li>
+        <% } else { %>
+            To Search Adoptable Pets,
+            <li><a href="/auth/google">Login with Google </a> Here.</li>
+        <% } %>
+    </ul>
+</nav>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 lead">User profile<hr>
+                        </div>
+                    </div>
+                    <div class="row">
+			            <div class="col-md-4 text-center">
+                            <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
+                            display:block; margin:auto; padding-top:20px;" src='<%=user.photo%>'>
+                        </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="only-bottom-margin"><%=user.first_name%> <%=user.last_name%></h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="text-muted">Email:</span><%=user.email%> <br>
+                                <span class="text-muted">Phone Number:</span><%=user.phone_num%><br>
+                                <span class="text-muted"></span><br><br>
+                            </div>
+                            <div class="col-md-12">
+                                <h1 class="only-bottom-margin">Pet Preferences:</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include('./../partials/footer') %>
