@@ -40,12 +40,6 @@ function showFavorites(req, res) {
 }
 
 
-// function toggleFav(req, res) {
-//     if(req.user.favPets.some(pet=> pet.equals(req.params.id)
-
-// }
-
-
 function toggleFav(req,res) {
     if(req.user.favPets.some(function(pet) {
         pet.equals(req.params.id)})) {
