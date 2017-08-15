@@ -15,8 +15,8 @@ router.post('/results', loggedIn, function(req,res) {
 })
 
 
-router.get('/myfavorites', loggedIn, function(req, res) {
-  res.render('myfavorites')
+router.get('api/favorites/:id', loggedIn, function(req, res) {
+  res.render('favorites')
 })
 
 
