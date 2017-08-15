@@ -15,6 +15,17 @@ router.post('/results', loggedIn, function(req,res) {
 })
 
 
+router.get('/myfavorites', loggedIn, function(req, res) {
+  res.render('myfavorites')
+})
+
+
+
+
+
+
+
+
 
 
 function loggedIn(req, res, next) {
