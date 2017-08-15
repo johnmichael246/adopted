@@ -12,10 +12,13 @@
     <%=pet.id.$t%>
     <%=pet.shelterPetId.$t%></p>
     <p><img src="<%=pet.media.photos.photo[0].$t%>"></p>
-    <% }); %>
+    <button id="<%=pet.id.$t%>" class="favorite">Favorite</button>
+<% }); %>
+
+
 </div>
 
-<script src="/javascripts/pets.js"></script>
+<script src="/javascripts/results.js"></script>
 
 <%- include('./partials/footer') %>
 
