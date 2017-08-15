@@ -7,4 +7,9 @@ function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
   res.redirect('/auth/google');
 }
+
+
+router.get('/users/:id', userCtrl.show);
+
+
 module.exports = router;
