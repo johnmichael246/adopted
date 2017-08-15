@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var passport = require('passport');
+var userCtrl = require('./../controllers/userCtrl');
 
 router.get('/', function(req, res, next) {
   res.render('welcome', {user:req.user, title: 'Adopted' });
@@ -20,6 +21,8 @@ router.get('/logout', function(req,res) {
   req.logout();
   res.redirect('/');
 })
+
+router.put('/', loggedIn, userCtrl.updatePrefs);
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
