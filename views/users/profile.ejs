@@ -4,7 +4,6 @@
 <nav id="profile-nav">
     <ul id="primaryToolbar" class="clearfix">
         <% if (user) { %>
-        <!-- <ul id="primaryToolbar" class="clearfix"> -->
             <li>Hello <%=user.first_name%> | </li>
             <li><a href="/">HOME</a> | </li>
             <li><a href="/#SEARCH_LINK">SEARCH PETS</a> | </li>
@@ -15,104 +14,81 @@
         <% } %>
     </ul>
 </nav>
-
 <br>
 <div class="container" id="profile">
     <div class="row" id="pref">
-        <div class="col-md-9">
+        <div class="col-xs-12">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-12 lead">User profile<hr>
-                        </div>
-                    </div>
-                    <div class="row">
-			            <div class="col-md-4 text-center">
-                            <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
+                    <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6 lead">User profile<hr></div>
+                </div>
+                <div class="row">
+			        <div class="col-xs-12 col-sm-6 col-med-6 col-lg-6 col-xl-6 text-center">
+                        <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; 
                             display:block; margin:auto;" src='<%=user.photo%>' height="100" width="100">
-                        </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="only-bottom-margin"><%=user.first_name%> <%=user.last_name%></h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6">
+                        <h1 class="only-bottom-margin"><%=user.first_name%> <%=user.last_name%></h1>
+                            <span class="text-muted">Email:</span><%=user.email%> <br>
+                            <span class="text-muted">Phone Number:</span><%=user.phone_num%><br>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <span class="text-muted">Email:</span><%=user.email%> <br>
-                                <span class="text-muted">Phone Number:</span><%=user.phone_num%><br>
-                                <span class="text-muted"></span><br><br>
-                            </div>
-                
-                            <form action ="#" method="POST" class:"pet-pref">
-                                            <div class="col-md-12">
-                                            <h1 class="only-bottom-margin">Pet Preferences:</h1>
-                                        </div>
-                                        <div class="input-group col-xs-6">
-                                      <label for="Select1">Im looking to Adopt a..</label>
-                                      <select class="form-control" id="Select1" name="animal">
+                            <div class="col-xs-12">
+                                <form action ="#" method="POST" class:"pet-pref">
+                                    <h1>Pet Preferences:</h1>
+                                <div class="input-group col-xs-8">
+                                    <label for="Select1">Im looking to Adopt a..</label>
+                                    <select class="form-control" id="Select1" name="animal">
                                         <option value="dog">Dog</option>
                                         <option value="cat">Cat</option>
-                                      </select>
-                                    </div>
-                                    <div class="input-group col-xs-6">
-                                      <label for="Select2">Age:</label>
-                                      <select class="form-control" id="Select2" name="age">
-                                        <option>Baby</option>
-                                        <option>Young</option>
-                                        <option>Adult</option>
-                                        <option>Senior</option>
-                                      </select>
-                                    </div>
-                                    <div class="input-group col-xs-6">
-                                      <label for="Select3">Size:</label>
-                                      <select class="form-control" id="Select3" name="size">
+                                    </select>
+                                </div>
+                                <div class="input-group col-xs-8">
+                                    <label for="Select2">Age:</label>
+                                  <select class="form-control" id="Select2" name="age">
+                                    <option>Baby</option>
+                                    <option>Young</option>
+                                    <option>Adult</option>
+                                    <option>Senior</option>
+                                  </select>
+                                </div>
+                                <div class="input-group col-xs-8">
+                                    <label for="Select3">Size:</label>
+                                    <select class="form-control" id="Select3" name="size">
                                         <option value="S">Small</option>
                                         <option value="M">Medium</option>
                                         <option value="L">Large</option>
-                                      </select>
-                                    </div>
-                                    <div class="control-group col-xs-12">
-                                      <label class="control-label">Zip Code:</label>
-                                      <div class="controls col-xs-12">
+                                    </select>
+                                </div>
+                                <div class="control-group col-xs-8">
+                                    <label>Zip Code:</label>
                                         <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
                                         class="input-xlarge">
-                                        <p class="help-block"></p>
-                                      </div>
-                                    </div>
-                                    <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                                    <p class="help-block"></p>
+                                </div>
+                                <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
                                       <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Update</button>
-                                    </div>
-                                </form>
-                        </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+            </div>
+<!-- HERE IS THE FAVORITES  -->            
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 lead">Pet Favorites<hr>
+                        </div>
+                    </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- HERE IS THE FAVORITES  -->
-
-
-  <div class="col-md-12">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-12 lead">Pet Favorites<hr>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-12">
+                    <div class="col-md-8">
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            </div>
+                        </div>
                     <div class="row">
                         <div class="col-md-12">
                         </div>
@@ -127,6 +103,7 @@
         </div>
     </div>
 </div>
+    
 
                                                                                                           
 
