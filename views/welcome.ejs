@@ -5,7 +5,7 @@
       <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'>
       Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
       <li><a href="/users/<%=user.id%>">PROFILE</a> | </li>
-      <li><a href="#SEARCH_LINK">SEARCH</a></li>
+      <li><a href="#SEARCH_LINK">SEARCH PETS</a></li>
       <% } else { %>
       To Search Adoptable Pets,
       <li><a href="/auth/google">Login with Google </a> Here.</li>
@@ -141,7 +141,7 @@ aria-labelledby="myModalLabel" aria-hidden="true">
             <span class="sr-only">Close</span>
           </button>
           <h4 class="modal-title" id="myModalLabel">
-            Welcome <%= user.first_name %>! Tell us, who would make the perfect pet for you?
+            Welcome <%= user.first_name %>, <br> Please set your preferences to start your search!
           </h4>
         </div>
   <!-- Modal Body -->
@@ -176,12 +176,11 @@ aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="controls">
               <input id="postal-code" name="zip" type="text" placeholder="zip or postal code" class="input-xlarge">
             </div>
-            <button type="submit" class="btn btn-primary"> Submit</button>
+            <button type="submit" class="btn btn-primary" id='submit-btn'> Submit</button><br>
           </form>
         </div>
   <!-- Modal Footer -->
-        <div class="modal-footer">
-        </div>
+        
       </div>
     </div>
   </div>

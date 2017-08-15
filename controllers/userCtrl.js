@@ -1,6 +1,7 @@
 var router = require('express').Router();
 var request = require('request');
 var User = require('./../models/user');
+var Pet = require('./../models/favpet');
 
 function updatePrefs(req,res) {
     console.log('hitting path')
