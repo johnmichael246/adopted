@@ -4,7 +4,7 @@
     <% if (user) { %>
       <li id="user-pic"> <img alt="Brand" class="navbar-brand img-responsive" src='<%=user.photo%>'> </li>
       <li>Hello <%=user.first_name%> | <a href="/logout">LOG OUT</a> |</li>
-      <li><a href="/<%user.id%>">PROFILE</a> | </li>
+      <li><a href="/users/<%=user.id%>">PROFILE</a> | </li>
       <li><a href="#SEARCH_LINK">SEARCH</a></li>
       <% } else { %>
       To Search Adoptable Pets,
