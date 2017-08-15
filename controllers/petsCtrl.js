@@ -21,7 +21,7 @@ function search(req,res,next) {
         console.log('+++++++++++++++++++++')
         // JSON.stringify(pet)
         // console.log(pet)
-        res.render('pets', {doc});
+        res.render('results', {doc});
     });
 }
 
