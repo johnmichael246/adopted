@@ -1,20 +1,5 @@
-<%- include('./../partials/header') %>
+<%- include('./partials/header') %>
 
-
-<nav id="profile-nav">
-    <ul id="primaryToolbar" class="clearfix">
-        <% if (user) { %>
-            <li>Hello <%=user.first_name%> | </li>
-            <li><a href="/">HOME</a> | </li>
-            <li><a href="/#SEARCH_LINK">SEARCH PETS</a> | </li>
-            <li><a href="/logout">LOG OUT</a></li>
-        <% } else { %>
-            To Search Adoptable Pets,
-            <li><a href="/auth/google">Login with Google </a> Here.</li>
-        <% } %>
-    </ul>
-</nav>
-<br>
 <div class="container" id="profile">
     <div class="row" id="pref">
         <div class="col-xs-12">
@@ -102,14 +87,5 @@
             </div>
         </div>
     </div>
-</div>
-    
-
-                                                                                                          
-
-
-
-
-
-
-<%- include('./../partials/footer') %>
+</div>                                                                                                        
+<%- include('./partials/footer') %>

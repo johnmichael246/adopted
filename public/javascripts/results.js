@@ -3,6 +3,7 @@ console.log('loaded results.js');
 $(document).ready(function() {
   console.log('jQ ready now');
 
+
 $('button.heart-button').click(function(evt) {
   var $this = $(this);
   if($this.hasClass('heart-button')){
@@ -14,6 +15,9 @@ $('button.heart-button').click(function(evt) {
     $this.toggleClass('heart-button');
   }
 })
+
+
+
 
 
 
