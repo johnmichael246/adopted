@@ -12,3 +12,25 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
   </head>
   <body>
+      <% if (user && showNavbar) { %>
+        <nav id="main-nav">
+          <ul id="primaryToolbar" class="clearfix">
+            <li>Hello <%=user.first_name%> | </li>
+            <li><a href="/profile">PROFILE</a> | </li>
+            <li><a href="#SEARCH_LINK">SEARCH PETS</a> | </li>
+            <li><a href="/logout">LOG OUT</a></li>
+          </ul>
+        </nav>
+      <% } else if (user) { %>
+        <nav id="profile-nav">
+          <ul id="primaryToolbar" class="clearfix">
+            <li>Hello <%=user.first_name%> | </li>
+            <li><a href="/">HOME</a> | </li>
+            <li><a href="/#SEARCH_LINK">SEARCH PETS</a> | </li>
+            <li><a href="/logout">LOG OUT</a></li>
+          </ul>
+        </nav>
+      <% } else { %>
+        To Search Adoptable Pets,
+        <li><a href="/auth/google">Login with Google </a> Here.</li>
+      <% } %>

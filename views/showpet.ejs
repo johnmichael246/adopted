@@ -1,17 +1,16 @@
 <%- include('./partials/header') %>
 
-
 <h1>Pet Details:</h1>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
                 <h2><%=doc.petfinder.pet.name.$t%></h2>
                 <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
-                <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
-                    <% } else { %>
+                    <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
+                <% } else { %>
                     <% doc.petfinder.pet.media.photos.photo.forEach(function(photo) { %>
-                <img src="<%=photo.$t%>" height="100" width="100" >
-                <% }); %>
+                    <img src="<%=photo.$t%>" height="100" width="100" >
+                    <% }); %>
                 <% } %>
                 <p><%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%></p>
                 <p><%=doc.petfinder.pet.age.$t%>
