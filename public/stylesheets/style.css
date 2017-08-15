@@ -189,9 +189,12 @@ h3 {
 #submit-btn {
   float: right;
 }
-.photo-resize{
+.photo-resize {
   max-width:300px;
   max-height:200px;
+}
+.centered {
+  text-align: center;
 }
 
 .col-md-4 text-center {
