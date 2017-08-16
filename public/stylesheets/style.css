@@ -201,7 +201,6 @@ h3 {
 .col-md-4 text-center {
   height: 100px;
 }
-======
 
 #profile {
   width: 100%;
@@ -212,4 +211,14 @@ h3 {
 #pref {
   display: inline-block;
 }
+.glyphicon.glyphicon-heart {
+    font-size: 30px;
+}
+.fixed {
+  position: fixed;
+}
+.boob {
+
+}
+
 

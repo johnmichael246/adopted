@@ -25,11 +25,9 @@ router.get('/logout', function(req,res) {
 
 // routes for user control below
 
-
 router.put('/', loggedIn, userCtrl.updatePrefs);
 
 router.get('/', loggedIn, userCtrl.profile);
-
 
 
 // routes for pet show below below
