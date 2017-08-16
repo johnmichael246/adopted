@@ -14,6 +14,7 @@ function search(req,res,next) {
         var showNavbar = true;
         let doc = JSON.parse(body);
         // console.log(Object.keys(doc.petfinder))
+        console.log(req.user);
         res.render('results', {doc, showNavbar, user:req.user});
     });
 }

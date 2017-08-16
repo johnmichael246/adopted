@@ -26,6 +26,17 @@ $('span.boob').click(function(evt) {
     $(this).css("color", "#000000");
     $this.toggleClass('boob');
   }
+  console.log("+++++++++++++++++++++++")
+  fetch(`api/favorites/${id}`, {
+    body: {
+      userId: userId
+    },
+    headers: {
+      content: 'application/json'
+    }
+  });
+
+
 })
 
 
