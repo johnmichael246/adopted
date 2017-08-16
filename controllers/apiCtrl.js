@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var Pet = require('./../models/favpet');
+var Pet = require('./../models/user');
 
 function getAllPets(req,res) {
     Pet.find({},(err,movies) => {
@@ -32,11 +33,19 @@ function deletePet(req,res) {
     });
 }
 function toggleFav(req,res) {
-    if(req.user.favPets.some(function(pet) {
-        pet.equals(req.params.id)})) {
-            console.log('its working');
-    } 
+    console.log('++++++++++++++++')
+    
+    // console.log(req)
+    console.log(req.params.id)
+    console.log(req.user)
+    console.log(req.user.favPets)
+    // if(req.user.favPets.some(function(pet) {
+    //     console.log('hit the second function')
+    //     pet.equals(id)})) {
+    //         console.log('its working');
+    // } 
 }
+
 
 module.exports = {
     getAllPets,
