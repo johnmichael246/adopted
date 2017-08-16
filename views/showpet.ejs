@@ -1,25 +1,38 @@
 <%- include('./partials/header') %>
 
 <h1>Pet Details:</h1>
-<div class="container">
+<a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
+<a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Results</a>
+<div class="container" align="center">
     <div class="row">
         <div class="col-xs-12">
-                <h2><%=doc.petfinder.pet.name.$t%></h2>
+                <h3 id="show-pet-name" ><%=doc.petfinder.pet.name.$t%></h3> 
                 <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
-                    <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
+                    <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round" id="show-pet-img">
                 <% } else { %>
-                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" >
+                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize-round">
+
                 <% } %>
-                <p><%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%></p>
-                <p><%=doc.petfinder.pet.age.$t%>
+                <br>
+                <p id="pet-info">
+                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>"></span>
+                <br>
+
+                <%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%>
+                <%=doc.petfinder.pet.age.$t%>
                 <%=doc.petfinder.pet.size.$t%>
                 <%=doc.petfinder.pet.sex.$t%>
                 <%=doc.petfinder.pet.id.$t%>
-                <%=doc.petfinder.pet.shelterPetId.$t%></p>
-                <p><%=doc.petfinder.pet.description.$t%></p>
+                <%=doc.petfinder.pet.shelterPetId.$t%>
+                <%=doc.petfinder.pet.description.$t%></p>
         </div>
     </div>
 </div>
+
+
+
+
+
 
 
 <%- include('./partials/footer') %>

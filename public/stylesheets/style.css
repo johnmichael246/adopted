@@ -96,9 +96,15 @@ background: gray;
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
   height: 400px;
+  background-repeat: no-repeat;
 }
 #profile-nav {
   background-image: url(http://i.imgur.com/DZyl6xx.png);
+  height: 400px;
+  background-repeat: no-repeat;
+}
+#results-nav {
+  background-image: url(http://i.imgur.com/pE9tswG.png);
   height: 400px;
   background-repeat: no-repeat;
 }
@@ -218,14 +224,34 @@ h3 {
 .glyphicon.glyphicon-heart {
     font-size: 30px;
 }
-.fixed {
-  position: fixed;
+div.row {
+  padding-left: inherit;
 }
+
+#pet-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
 .box {
   height: 100vh;
 }
 body,html {
   height:100%;
+
 }
 
+#sticky-link {
+  position: fixed;
+}
 
+#show-pet {
+  align-content: center;
+}
+#pet-info {
+  text-align: center;
+}
+#show-pet-name {
+  text-align: center;
+}
