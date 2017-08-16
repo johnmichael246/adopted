@@ -22,7 +22,9 @@
                     <%=pet.sex.$t%>
                     <%=pet.id.$t%>
                     <%=pet.shelterPetId.$t%></p>
-                    <button action="/users/:id" class="heart-button"><span id="<%=pet.id.$t%>" class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+                    <button class="heart-button" data-userid="<%= user._id %>" id="<%=pet.id.$t%>">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true" ></span>
+                    </button>
                 </div>
                 <% }); %>
             <% } %>

@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var Pet = require('./../models/favpet');
+var Pet = require('./../config/database');
 
 function getAllPets(req,res) {
     Pet.find({},(err,movies) => {
@@ -34,7 +35,6 @@ function deletePet(req,res) {
 function toggleFav(req,res) {
     if(req.user.favPets.some(function(pet) {
         pet.equals(req.params.id)})) {
-            console.log('its working');
     } 
 }
 
