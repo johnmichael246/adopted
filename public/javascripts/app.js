@@ -7,8 +7,8 @@ let header = new Headers({
 if (top.location.pathname === '/') {
     $(document).ready(function() {
             setTimeout(function(){
-                $('#modalTrigger').trigger('click'), 3000
-            });
+                $('#modalTrigger').trigger('click')
+            }, 5000);
     });
 };
 
