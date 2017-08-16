@@ -8,9 +8,7 @@
                 <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
                     <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
                 <% } else { %>
-                    <% doc.petfinder.pet.media.photos.photo.forEach(function(photo) { %>
-                    <img src="<%=photo.$t%>" height="100" width="100" >
-                    <% }); %>
+                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" >
                 <% } %>
                 <p><%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%></p>
                 <p><%=doc.petfinder.pet.age.$t%>

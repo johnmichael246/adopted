@@ -1,6 +1,8 @@
 var router = require('express').Router();
 var Pet = require('./../models/favpet');
-var Pet = require('./../models/user');
+var User = require('./../models/user');
+const basePath = "http://api.petfinder.com/"
+var request=require('request');
 
 function getAllPets(req,res) {
     Pet.find({},(err,movies) => {
@@ -32,18 +34,56 @@ function deletePet(req,res) {
         res.status(200).json(pet)
     });
 }
-function toggleFav(req,res) {
-    // console.log(req)
-    console.log(req.params.id)
-    typeof(req.params.id)
-    console.log('++++++++++++++++')
-    console.log(req.user)
-    console.log(req.user.favPets)
-    if (req.user.favPets.some( (dog) => { dog.id.equals()}) ) {
-        console.log('we have liftoff finally')
-        // code for if statement goes here
-    }
+
+
+
+
+
+
+
+
+
+function toggleFav(req, res) {
+    if (req.user.favPets.some(dogId => dogId.equals(req.params.id))) {
+        console.log('the dog is here, so remove it!')
+        req.user.favPets.pop(dogId)
+        res.json(req.user)
+    } else {
+        Pet.findById(req.params.id, function(err, dog) {
+            if (dog) {
+                req.user.favPets.push(dog._id);
+                req.user.save(function(err) {
+                    res.json(req.user)
+                });
+            } else {
+                var options = {
+                    url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
+                    method: 'GET'
+                };
+            request(options.url, function(err, response, body) {
+                let doc = JSON.parse(body)
+                let dog = doc.petfinder.pet
+                console.log(dog)
+                Pet.create({
+                    name: dog.name.$t,
+                    contact: {
+                        phone: dog.contact.phone.$t,
+                        email: dog.contact.email.$t,
+                        state: dog.contact.state.$t,
+                        city: dog.contact.city.$t,
+                        zipcode: dog.zip.$t
+                    },
+                    petfinderId: dog.id.$t,
+                    photos: dog.media.photos.photo,
+                    description: dog.description.$t,
+                    animal:dog.animal.$t
+                });
+            })};
+    })};
 }
+        // check if dog is in collection
+            // create new dog if not
+        // add dog's id to user.favPets, then save user
 
 
 module.exports = {
