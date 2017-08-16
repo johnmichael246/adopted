@@ -51,5 +51,5 @@ function showFavorites(req, res) {
 module.exports = {
     search,
     show,
-    showFavorites
+    showFavorites,
 }
