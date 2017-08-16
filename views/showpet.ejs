@@ -10,7 +10,8 @@
                 <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
                     <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round" id="show-pet-img">
                 <% } else { %>
-                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" >
+                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize-round">
+
                 <% } %>
                 <br>
                 <p id="pet-info">

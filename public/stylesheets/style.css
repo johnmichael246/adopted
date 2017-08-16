@@ -186,6 +186,10 @@ h3 {
   /* max-width:300px; */
   max-height:200px;
 }
+.photo-resize2 {
+   max-width:80px; 
+  max-height:80px;
+}
 .centered {
   text-align: center;
   display: table-cell;
@@ -207,6 +211,14 @@ h3 {
 div.row {
   padding-left: inherit;
 }
+
+#pet-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
 .box {
   height: 100vh;
 }
