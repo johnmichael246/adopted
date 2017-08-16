@@ -217,8 +217,11 @@ h3 {
 .fixed {
   position: fixed;
 }
-.boob {
-
+.box {
+  height: 100vh;
+}
+body,html {
+  height:100%;
 }
 
 
