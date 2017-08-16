@@ -23,26 +23,26 @@
                                     <h3>Pet Preferences:</h3>
                                 <div class="input-group col-xs-8">
                                     <label for="Select1">Im looking to Adopt a..</label>
-                                    <select class="form-control" id="Select1" name="animal">
-                                        <option value="dog">Dog</option>
-                                        <option value="cat">Cat</option>
+                                    <select class="form-control" id="Select1" value="<%= user.preferences.species %>" name="animal">
+                                        <option class="species" value="dog">Dog</option>
+                                        <option class="species" value="cat">Cat</option>
                                     </select>
                                 </div>
                                 <div class="input-group col-xs-8">
                                     <label for="Select2">Age:</label>
-                                  <select class="form-control" id="Select2" name="age">
-                                    <option>Baby</option>
-                                    <option>Young</option>
-                                    <option>Adult</option>
-                                    <option>Senior</option>
+                                  <select class="form-control" id="Select2" value="<%= user.preferences.age %>" name="age">
+                                    <option class="age" value="Baby" id="age1">Baby</option>
+                                    <option class="age" value="Young" id="age2">Young</option>
+                                    <option class="age" value="Adult" id="age3">Adult</option>
+                                    <option class="age" value="Senior" id="age4">Senior</option>
                                   </select>
                                 </div>
                                 <div class="input-group col-xs-8">
                                     <label for="Select3">Size:</label>
-                                    <select class="form-control" id="Select3" name="size">
-                                        <option value="S">Small</option>
-                                        <option value="M">Medium</option>
-                                        <option value="L">Large</option>
+                                    <select class="form-control" id="Select3" value="<%= user.preferences.size %>" name="size">
+                                        <option class="size" value="S">Small</option>
+                                        <option class="size" value="M">Medium</option>
+                                        <option class="size" value="L">Large</option>
                                     </select>
                                 </div>
                                 <div class="control-group col-xs-8">
@@ -90,5 +90,8 @@
             </div>
         </div>
     </div>
-</div>                                                                                                        
+</div>       
+
+<script src="/javascripts/profile.js"></script>
+
 <%- include('./partials/footer') %>
