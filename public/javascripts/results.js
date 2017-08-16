@@ -22,7 +22,7 @@ $('span.boob').click(function(evt) {
     });
 
   } else {
-    console.log('i need to find this pet')
+    console.log('im unfavoriting you')
     $(this).css("color", "#000000");
     $this.toggleClass('boob');
   }
