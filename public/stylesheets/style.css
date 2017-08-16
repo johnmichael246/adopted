@@ -223,11 +223,11 @@ h3 {
 div.row {
   padding-left: inherit;
 }
-#pet-name {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+.box {
+  height: 100vh;
+}
+body,html {
+  height:100%;
 }
 
 #sticky-link {
