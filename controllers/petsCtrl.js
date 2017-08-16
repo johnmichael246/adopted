@@ -40,12 +40,7 @@ function showFavorites(req, res) {
 }
 
 
-function toggleFav(req,res) {
-    if(req.user.favPets.some(function(pet) {
-        pet.equals(req.params.id)})) {
-            console.log('its working');
-    } 
-}
+
     // fetch pet id and add to users favorite 
 
     // retrieve pet id from api and add to users favorite. 
