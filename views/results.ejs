@@ -10,7 +10,7 @@
             <% } else { %>
                 <% doc.petfinder.pets.pet.forEach(function(pet) {%>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
-                    <h2><%=pet.name.$t%></h2>
+                    <h2 id="pet-name"><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
                     <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
                     <% } else { %>
@@ -22,13 +22,7 @@
                     <%=pet.sex.$t%>
                     <%=pet.id.$t%>
                     <%=pet.shelterPetId.$t%></p>
-<<<<<<< HEAD
-                    <button class="heart-button" data-userid="<%= user._id %>" id="<%=pet.id.$t%>">
-                        <span class="glyphicon glyphicon-heart" aria-hidden="true" ></span>
-                    </button>
-=======
                     <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
->>>>>>> master
                 </div>
                 <% }); %>
             <% } %>

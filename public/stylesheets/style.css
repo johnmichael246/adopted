@@ -214,11 +214,12 @@ h3 {
 .glyphicon.glyphicon-heart {
     font-size: 30px;
 }
-.fixed {
-  position: fixed;
+div.row {
+  padding-left: inherit;
 }
-.boob {
-
+#pet-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
-
-
