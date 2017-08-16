@@ -23,13 +23,14 @@
                                 <div class="input-group col-xs-8">
                                     <label for="Select1">Im looking to Adopt a..</label>
                                     <select class="form-control" id="Select1" name="animal">
-                                        <option value="dog">Dog</option>
-                                        <option value="cat">Cat</option>
+                                        <option selected value="<%= user.preferences.species %>" id="<%= user.preferences.species %>"><%= user.preferences.species %></option>
+                                        <option id="animal" value=""></option>
                                     </select>
                                 </div>
                                 <div class="input-group col-xs-8">
                                     <label for="Select2">Age:</label>
                                   <select class="form-control" id="Select2" name="age">
+                                    <option selected><%= user.preferences.age %></option>
                                     <option>Baby</option>
                                     <option>Young</option>
                                     <option>Adult</option>
@@ -39,6 +40,7 @@
                                 <div class="input-group col-xs-8">
                                     <label for="Select3">Size:</label>
                                     <select class="form-control" id="Select3" name="size">
+                                        <option selected><%= user.preferences.size %></option>
                                         <option value="S">Small</option>
                                         <option value="M">Medium</option>
                                         <option value="L">Large</option>
@@ -77,5 +79,8 @@
             </div>
         </div>
     </div>
-</div>                                                                                                        
+</div>       
+
+<script src="/javascripts/profile.js"></script>
+
 <%- include('./partials/footer') %>
