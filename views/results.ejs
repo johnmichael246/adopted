@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
-<h1>Search Results</h1> <a href="/profile">My Favorites</a>
-
+<h1 class ="fixed padding-bottom">Search Results</h1>
+<a href="/profile">My Favorites</a>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -22,9 +22,13 @@
                     <%=pet.sex.$t%>
                     <%=pet.id.$t%>
                     <%=pet.shelterPetId.$t%></p>
+<<<<<<< HEAD
                     <button class="heart-button" data-userid="<%= user._id %>" id="<%=pet.id.$t%>">
                         <span class="glyphicon glyphicon-heart" aria-hidden="true" ></span>
                     </button>
+=======
+                    <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
+>>>>>>> master
                 </div>
                 <% }); %>
             <% } %>
