@@ -34,18 +34,13 @@ function show(req,res,next) {
 
 //show all users favorites
 function showFavorites(req, res) {
-  User.findById(req.params.id).populate('favpets').exec((err, pet) => {
-    res.render('myfavorites');
+  User.findById(req.params.id).populate('favpets').exec((err, pets) => {
+    res.render('myfavorites', {pets});
   });
 }
 
 
-function toggleFav(req,res) {
-    if(req.user.favPets.some(function(pet) {
-        pet.equals(req.params.id)})) {
-            console.log('its working');
-    } 
-}
+
     // fetch pet id and add to users favorite 
 
     // retrieve pet id from api and add to users favorite. 
