@@ -4,8 +4,6 @@ var User = require('./../models/user');
 var Pet = require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
 
-
-
 function search(req,res,next) {
         console.log(req.body)
     var options = {
@@ -13,10 +11,10 @@ function search(req,res,next) {
         method: 'GET'
     };
     request(options.url, function(err,response,body) {
-            var showNavbar = true;
+        var showNavbar = true;
         let doc = JSON.parse(body);
         // console.log(Object.keys(doc.petfinder))
-        res.render('results', {doc, user:req.user, showNavbar});
+        res.render('results', {doc, showNavbar, user:req.user});
     });
 }
 
@@ -42,6 +40,15 @@ function showFavorites(req, res) {
 }
 
 
+function toggleFav(req,res) {
+    if(req.user.favPets.some(function(pet) {
+        pet.equals(req.params.id)})) {
+            console.log('its working');
+    } 
+}
+    // fetch pet id and add to users favorite 
+
+    // retrieve pet id from api and add to users favorite. 
 
 
 
