@@ -5,7 +5,6 @@ $('span.boob').click(function(evt) {
   var $this = $(this);
   var id = $this.attr('id')
   var userId = $this.data().userid;
-
   if($this.hasClass('boob')){
     $(this).find('span.glyphicon-heart').css("color", "#FF0000");
     $this.toggleClass('boob');

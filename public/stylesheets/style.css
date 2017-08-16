@@ -211,5 +211,8 @@ h3 {
 #pref {
   display: inline-block;
 }
+.glyphicon.glyphicon-heart {
+    font-size: 30px;
+}
 
 
