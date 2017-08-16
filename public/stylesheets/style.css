@@ -223,3 +223,17 @@ div.row {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
+#sticky-link {
+  position: fixed;
+}
+
+#show-pet {
+  align-content: center;
+}
+#pet-info {
+  text-align: center;
+}
+#show-pet-name {
+  text-align: center;
+}
