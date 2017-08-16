@@ -35,6 +35,7 @@ function deletePet(req,res) {
 function toggleFav(req,res) {
     // console.log(req)
     console.log(req.params.id)
+    typeof(req.params.id)
     console.log('++++++++++++++++')
     console.log(req.user)
     console.log(req.user.favPets)
