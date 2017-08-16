@@ -14,7 +14,7 @@ var userSchema = new Schema ({
         species:String,
         age: String
     },
-    favPets:[{type:ObjectId, ref:"favPets"}]
+    favPets:[{type:ObjectId, ref:"Pet"}]
 }, {
     timestamps:true
 })

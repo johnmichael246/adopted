@@ -9,6 +9,7 @@ function updatePrefs(req,res) {
         user.preferences.age = req.body.age;
         user.preferences.size = req.body.size;
         user.preferences.species = req.body.animal;
+        user.preferences.zipcode = req.body.zip;
         user.save();
     res.render('welcome', {user:req.user, showNavbar})
     });
@@ -16,7 +17,7 @@ function updatePrefs(req,res) {
 
 function profile(req, res) {
     var showNavbar = false;
-    User.findById(req.user.id, function(err, user) {
+    User.populate(req.user, 'favPets', function(err, user) {
         res.render('profile', {user, showNavbar})
     }); 
 }

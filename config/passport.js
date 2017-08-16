@@ -19,13 +19,6 @@ passport.use(new GoogleStrategy(
                     if(err) return cb(user);
                     return cb(null, user);
                  });
-
-                 console.log(profile)
-                 console.log(profile.name.givenName)
-                 console.log("++++++++++++++++++++++")
-                 console.log(user)
-                 console.log("++++++++++++++++++++++")
-
             } else {
                 let newUser = new User({
                     first_name: profile.name.givenName,
