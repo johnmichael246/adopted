@@ -96,9 +96,15 @@ background: gray;
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
   height: 400px;
+  background-repeat: no-repeat;
 }
 #profile-nav {
   background-image: url(http://i.imgur.com/DZyl6xx.png);
+  height: 400px;
+  background-repeat: no-repeat;
+}
+#results-nav {
+  background-image: url(http://i.imgur.com/pE9tswG.png);
   height: 400px;
   background-repeat: no-repeat;
 }
