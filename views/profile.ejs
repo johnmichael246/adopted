@@ -18,8 +18,9 @@
                             <span class="text-muted">Phone Number:</span><%=user.phone_num%><br>
                             </div>
                             <div class="col-xs-12">
-                                <form action ="#" method="POST" class:"pet-pref">
-                                    <h1>Pet Preferences:</h1>
+                                <form action ="#" method="POST" class:"pet-pref" style="-webkit-user-select:none; 
+                                display:block; margin:auto">
+                                    <h3>Pet Preferences:</h3>
                                 <div class="input-group col-xs-8">
                                     <label for="Select1">Im looking to Adopt a..</label>
                                     <select class="form-control" id="Select1" value="<%= user.preferences.species %>" name="animal">

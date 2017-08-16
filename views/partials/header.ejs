@@ -17,7 +17,7 @@
           <ul id="primaryToolbar" class="clearfix">
             <li>Hello <%=user.first_name%> | </li>
             <li><a href="/profile">PROFILE</a> | </li>
-            <li><a href="#SEARCH_LINK">SEARCH PETS</a> | </li>
+            <li><a href="/#SEARCH_LINK">SEARCH PETS</a> | </li>
             <li><a href="/logout">LOG OUT</a></li>
           </ul>
         </nav>
@@ -31,10 +31,9 @@
           </ul>
         </nav>
       <% } else { %>
-        To Search Adoptable Pets,
-        <nav id="profile-nav">
+        <nav id="results-nav">
           <ul id="primaryToolbar" class="clearfix">
-            <li><a href="/auth/google">Login with Google </a> Here.</li>
+            <li>To Search Adoptable Pets, <a href="/auth/google">Login with Google </a> Here.</li>
           </ul>
         </nav>
       <% } %>
