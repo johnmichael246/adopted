@@ -31,11 +31,18 @@ function deletePet(req,res) {
         res.status(200).json(pet)
     });
 }
+function toggleFav(req,res) {
+    if(req.user.favPets.some(function(pet) {
+        pet.equals(req.params.id)})) {
+            console.log('its working');
+    } 
+}
 
 module.exports = {
     getAllPets,
     getOnePet,
     createPet,
     updatePet,
-    deletePet
+    deletePet,
+    toggleFav
 };
