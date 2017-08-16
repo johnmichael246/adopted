@@ -18,7 +18,7 @@
                             <span class="text-muted">Phone Number:</span><%=user.phone_num%><br>
                             </div>
                             <div class="col-xs-12">
-                                <form action ="#" method="POST" class:"pet-pref" style="-webkit-user-select:none; 
+                                <form action ="/profile" method="POST" class:"pet-pref" style="-webkit-user-select:none; 
                                 display:block; margin:auto">
                                     <h3>Pet Preferences:</h3>
                                 <div class="input-group col-xs-8">
@@ -31,10 +31,10 @@
                                 <div class="input-group col-xs-8">
                                     <label for="Select2">Age:</label>
                                   <select class="form-control" id="Select2" value="<%= user.preferences.age %>" name="age">
-                                    <option class="age" value="Baby" id="age1">Baby</option>
-                                    <option class="age" value="Young" id="age2">Young</option>
-                                    <option class="age" value="Adult" id="age3">Adult</option>
-                                    <option class="age" value="Senior" id="age4">Senior</option>
+                                    <option class="age" value="Baby">Baby</option>
+                                    <option class="age" value="Young">Young</option>
+                                    <option class="age" value="Adult">Adult</option>
+                                    <option class="age" value="Senior">Senior</option>
                                   </select>
                                 </div>
                                 <div class="input-group col-xs-8">
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="control-group col-xs-8">
                                     <label>Zip Code:</label>
-                                        <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
+                                        <input id="postal-code" name="zip" type="text" placeholder="<%= user.preferences.zipcode %>"
                                         class="input-xlarge">
                                     <p class="help-block"></p>
                                 </div>

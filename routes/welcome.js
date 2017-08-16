@@ -26,6 +26,7 @@ router.get('/logout', function(req,res) {
 // routes for user control below
 
 router.put('/', loggedIn, userCtrl.updatePrefs);
+router.post('/profile', loggedIn, userCtrl.updatePrefs2);
 
 router.get('/', loggedIn, userCtrl.profile);
 
