@@ -10,7 +10,7 @@ function updatePrefs(req,res) {
         user.preferences.size = req.body.size;
         user.preferences.species = req.body.animal;
         user.save();
-    res.render('welcome', {user:user, showNavbar})
+    res.render('welcome', {user:req.user, showNavbar})
     });
 }
 
