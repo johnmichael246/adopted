@@ -14,6 +14,18 @@ function updatePrefs(req,res) {
     res.render('welcome', {user:req.user, showNavbar})
     });
 }
+function updatePrefs2(req,res) {
+    var showNavbar = true;
+    User.populate(req.user, 'favPets', function(err, user) {
+        user.preferences.age = req.body.age;
+        user.preferences.size = req.body.size;
+        user.preferences.species = req.body.animal;
+        user.preferences.zipcode = req.body.zip;
+        user.save( function(err) {
+            res.render('profile', {user, showNavbar});
+        });
+    });
+}
 
 function profile(req, res) {
     var showNavbar = false;
@@ -28,6 +40,7 @@ function welcome(req,res) {
 
 module.exports = {
     updatePrefs,
+    updatePrefs2,
     profile,
     welcome
 }
