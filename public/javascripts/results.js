@@ -22,25 +22,17 @@ $('span.boob').click(function(evt) {
     });
 
   } else {
-    console.log('im unfavoriting you')
+    console.log('sending api fetch request on toggled button')
     $(this).css("color", "#000000");
     $this.toggleClass('boob');
+    fetch(`api/favorites/${id}`, {
+      body: {
+        userId: userId
+      },
+      headers: {
+        content: 'application/json'
+      }
+    });
   }
-  console.log("+++++++++++++++++++++++")
-  fetch(`api/favorites/${id}`, {
-    body: {
-      userId: userId
-    },
-    headers: {
-      content: 'application/json'
-    }
-  });
-
-
-})
-
-
-
-
-
-})
+});
+});

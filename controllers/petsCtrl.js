@@ -33,13 +33,6 @@ function show(req,res,next) {
 }
 
 
-//show all users favorites
-function showFavorites(req, res) {
-  User.findById(req.params.id).populate('favpets').exec((err, pets) => {
-    res.render('myfavorites', {pets});
-  });
-}
-
 
 
     // fetch pet id and add to users favorite 
@@ -50,6 +43,5 @@ function showFavorites(req, res) {
 
 module.exports = {
     search,
-    show,
-    showFavorites,
+    show
 }

@@ -45,7 +45,7 @@ function toggleFav(req, res) {
 
     User.populate(req.user, 'favPets', function(err, user) {
         if (user.favPets.some(dog => dog.petfinderId === req.params.id) ) {
-            req.user.favPets.splice(req.params.id,1)
+            user.favPets.splice(dog._id,1)
             console.log('the dog has been removed')
             res.end();
         } else {
