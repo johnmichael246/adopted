@@ -55,5 +55,5 @@ function toggleFav(req,res) {
 module.exports = {
     search,
     show,
-    showFavorites
+    showFavorites,
 }
