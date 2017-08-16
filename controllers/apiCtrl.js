@@ -33,17 +33,16 @@ function deletePet(req,res) {
     });
 }
 function toggleFav(req,res) {
-    console.log('++++++++++++++++')
-    
     // console.log(req)
     console.log(req.params.id)
+    typeof(req.params.id)
+    console.log('++++++++++++++++')
     console.log(req.user)
     console.log(req.user.favPets)
-    // if(req.user.favPets.some(function(pet) {
-    //     console.log('hit the second function')
-    //     pet.equals(id)})) {
-    //         console.log('its working');
-    // } 
+    if (req.user.favPets.some( (dog) => { dog.id.equals()}) ) {
+        console.log('we have liftoff finally')
+        // code for if statement goes here
+    }
 }
 
 
