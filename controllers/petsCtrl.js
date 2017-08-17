@@ -40,18 +40,6 @@ function show(req,res,next) {
 }
 
 
-
-
-
-// // fetch pet id and add to users favorite 
-// function showFavPet(req,res) {
-//     Pet.findById(req.params.id, function(err, pet) {
-//         var showNavbar = true;
-//         res.render('favorites', {showNavbar, pet});
-//     });
-// }
-
-
 module.exports = {
     search,
     show

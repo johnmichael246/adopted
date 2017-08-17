@@ -10,7 +10,7 @@ router.get('/results', loggedIn, function(req,res) {
 
 router.get('/:id', loggedIn, petsCtrl.show)
 
-router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet)
+router.get('/favorites/:id', loggedIn, petsCtrl.showpet)
 
 
 router.post('/results', loggedIn, function(req,res) {
