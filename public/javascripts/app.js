@@ -1,8 +1,3 @@
-const rootURL= "http://api.petfinder.com/";
-const petRootURL = "https://api.rescuegroups.org";
-let header = new Headers({
-    "Access-Control-Allow-Origin":"*"
-});
 
 if (top.location.pathname === '/') {
     $(document).ready(function() {
@@ -11,4 +6,11 @@ if (top.location.pathname === '/') {
             }, 5000);
     });
 };
-
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
