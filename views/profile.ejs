@@ -75,7 +75,7 @@
                                     <% user.favPets.forEach(function(dog) { %>
                                         <div class="col-xs-2">
                                             <h4><%= dog.name %></h4>
-                                            <a href="/pets/favorites/<%=dog.petfinderId%>"><img src="<%= dog.photos[0] %>" class="photo-resize2"></a>
+                                            <a href="/pets/favorites/<%=dog.petfinderId%>"><img src="<%= dog.photos[0] %>" class="photo-resize2 round"></a>
                                         </div> 
                                     <% }); %>
                                     </div>
