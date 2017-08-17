@@ -40,15 +40,21 @@ function show(req,res,next) {
 }
 
 
-
-
-    // fetch pet id and add to users favorite 
-
-    // retrieve pet id from api and add to users favorite. 
-
-
+function showFavPet(req,res) {
+    var options = {
+       url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
+       method: 'GET'
+   };
+   // console.log(options.url)
+   request(options.url, function(err,response,body) {
+       var showNavbar = false;
+       let doc = JSON.parse(body);
+       res.render('showpet', {doc, showNavbar, user:req.user});
+   });
+}
 
 module.exports = {
     search,
-    show
+    show,
+    showFavPet
 }

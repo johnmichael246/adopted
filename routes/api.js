@@ -14,4 +14,5 @@ function loggedIn(req, res, next) {
   res.redirect('/auth/google');
 }
 
+
 module.exports= router;
