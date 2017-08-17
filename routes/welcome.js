@@ -2,9 +2,9 @@ var router = require('express').Router();
 var passport = require('passport');
 var userCtrl = require('./../controllers/userCtrl');
 
-router.get('/', userCtrl.welcome);
+router.get('/', loggedIn, userCtrl.welcome);
 
-router.get('/profile', userCtrl.profile);
+router.get('/profile', loggedIn, userCtrl.profile);
 
 router.get('/auth/google', passport.authenticate(
   'google',
