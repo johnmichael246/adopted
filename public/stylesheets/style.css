@@ -14,6 +14,9 @@ a:hover {
 #find {
   float: right;
 }
+#find2 {
+  float: left;
+}
 #primaryToolbar {
   text-align: right;
   font-size: 17px;
@@ -131,16 +134,19 @@ background: gray;
 .round {
   border-radius: 50%;
 }
+.round2 {
+  border-radius: 50%;
+}
 input[type=text] {
   width: 130px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
-  padding: 12px 20px;
   margin: 0px 0;
   box-sizing: border-box;
 }
 input[type=text]:focus {
-  width: 75%;
+  border:0;
+  width: 100%;
 }
 .btn-change{
   height: 35px;
@@ -183,12 +189,12 @@ h3 {
   float: right;
 }
 .photo-resize {
-  /* max-width:300px; */
-  max-height:200px;
+  height:250px;
+  width:250px;
 }
 .photo-resize2 {
-   max-width:80px; 
-  max-height:80px;
+  width:80px; 
+  height:80px;
 }
 .centered {
   text-align: center;
@@ -245,6 +251,12 @@ body,html {
 .red {
   color: red;
 }
-
+#results-search {
+  display: -webkit-inline-flex;
+}
+.text-field-padding {
+  padding:4%;
+  
+}
 
 
