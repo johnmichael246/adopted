@@ -38,11 +38,6 @@ function deletePet(req,res) {
 
 
 function toggleFav(req, res) {
-    console.log('hitting')
-
-    console.log(req.params.id)
-    console.log(req.user.favPets)
-
     User.populate(req.user, 'favPets', function(err, user) {
         if (user.favPets.some(dog => dog.petfinderId === req.params.id) ) {
             var dogDocId = user.favPets.find(dog => dog.petfinderId === req.params.id)._id;

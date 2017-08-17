@@ -61,7 +61,9 @@
                     <%=pet.sex.$t%>
                     <%=pet.id.$t%>
                     <%=pet.shelterPetId.$t%></p>
-                    <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
+                    <%= petArray %> 
+                    <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(pet.id.$t) > -1) {%> red <%}%>" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
+
                 </div>
                 <% }); %>
             <% } %>
@@ -74,4 +76,5 @@
 <script src="/javascripts/results.js"></script>
 
 <%- include('./partials/footer') %>
+
 
