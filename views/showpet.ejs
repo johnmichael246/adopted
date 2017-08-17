@@ -12,10 +12,12 @@
                     <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize round">
                 <% } %>
                 <br>
-                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>"></span>
+                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
+                    <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
+                </span>
                 <br>
                 Located In:<%=doc.petfinder.pet.contact.city.$t%> &nbsp; | &nbsp; <%=doc.petfinder.pet.contact.zip.$t%><br>
-                Shelter Phone Number: <%=doc.petfinder.pet.contact.phone.$t%><br>
+                Shelter Phone Number: <a href ="tel:+<%=doc.petfinder.pet.contact.phone.$t%>"><%=doc.petfinder.pet.contact.phone.$t%></a><br>
                 Age: <%=doc.petfinder.pet.age.$t%> |
                 Size:<%=doc.petfinder.pet.size.$t%> |
                 Sex: <%=doc.petfinder.pet.sex.$t%><br>
@@ -25,7 +27,7 @@
                 <% } else { %>
                     <%=doc.petfinder.pet.description.$t%></p>
                 <% } %>
-                <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
+                
         </div>
     </div>
 </div>
