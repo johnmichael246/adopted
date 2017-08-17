@@ -22,8 +22,17 @@ $('span.boob').click(function(evt) {
     });
 
   } else {
+
     $(this).css("color", "#000000");
     $this.toggleClass('boob');
+    fetch(`api/favorites/${id}`, {
+      body: {
+        userId: userId
+      },
+      headers: {
+        content: 'application/json'
+      }
+    });
   }
   fetch(`api/favorites/${id}`, {
     body: {
@@ -70,3 +79,4 @@ $('span.showFavPet').click(function(evt){
 })
 
 })
+

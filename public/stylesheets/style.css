@@ -218,7 +218,6 @@ div.row {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-
 .box {
   height: 100vh;
 }
@@ -243,3 +242,8 @@ body,html {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
+.red {
+  color: red;
+}
+

@@ -24,30 +24,30 @@
                                 <div class="input-group col-xs-8">
                                     <label for="Select1">Im looking to Adopt a..</label>
                                     <select class="form-control" id="Select1" value="<%= user.preferences.species %>" name="animal">
-                                        <option class="species" value="dog">Dog</option>
-                                        <option class="species" value="cat">Cat</option>
+                                        <option class="species" value="dog" <%= user.preferences.species === 'dog' ?  'selected' : ''  %>>Dog</option>
+                                        <option class="species" value="cat" <%= user.preferences.species === 'cat' ?  'selected' : ''  %>>Cat</option>
                                     </select>
                                 </div>
                                 <div class="input-group col-xs-8">
                                     <label for="Select2">Age:</label>
-                                  <select class="form-control" id="Select2" value="<%= user.preferences.age %>" name="age">
-                                    <option class="age" value="Baby">Baby</option>
-                                    <option class="age" value="Young">Young</option>
-                                    <option class="age" value="Adult">Adult</option>
-                                    <option class="age" value="Senior">Senior</option>
+                                    <select class="form-control" id="Select2" id="age" value="<%= user.preferences.age %>" name="age">
+                                    <option class="age" value="Baby" <%= user.preferences.age === 'Baby' ?  'selected' : ''  %>>Baby</option>
+                                    <option class="age" value="Young" <%= user.preferences.age === 'Young' ?  'selected' : ''  %>>Young</option>
+                                    <option class="age" value="Adult" <%= user.preferences.age === 'Adult' ?  'selected' : ''  %>>Adult</option>
+                                    <option class="age" value="Senior" <%= user.preferences.age === 'Senior' ?  'selected' : ''  %>>Senior</option>
                                   </select>
                                 </div>
                                 <div class="input-group col-xs-8">
                                     <label for="Select3">Size:</label>
                                     <select class="form-control" id="Select3" value="<%= user.preferences.size %>" name="size">
-                                        <option class="size" value="S">Small</option>
-                                        <option class="size" value="M">Medium</option>
-                                        <option class="size" value="L">Large</option>
+                                        <option class="size" value="S" <%= user.preferences.size === 'S' ?  'selected' : ''  %> >Small</option>
+                                        <option class="size" value="M" <%= user.preferences.size === 'M' ?  'selected' : ''  %>>Medium</option>
+                                        <option class="size" value="L" <%= user.preferences.size === 'L' ?  'selected' : ''  %>>Large </option>
                                     </select>
                                 </div>
                                 <div class="control-group col-xs-8">
                                     <label>Zip Code:</label>
-                                        <input id="postal-code" name="zip" type="text" placeholder="<%= user.preferences.zipcode %>"
+                                        <input id="postal-code" name="zip" type="text" placeholder="Enter Zip"
                                         class="input-xlarge">
                                     <p class="help-block"></p>
                                 </div>
@@ -88,6 +88,6 @@
     </div>
 </div>       
 
-<script src="/javascripts/profile.js"></script>
+<!--<script src="/javascripts/profile.js"></script>-->
 
 <%- include('./partials/footer') %>

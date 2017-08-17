@@ -17,26 +17,26 @@
           <form action ="/pets" method="POST" class:"main-search">
             <div class="input-group col-xs-12">
               <label for="Select1">Im looking to Adopt a..</label>
-              <select class="form-control" id="Select1" name="animal">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
+              <select class="form-control" id="Select1" name="animal" value="<%= user.preferences.species %>">
+                <option value="dog" <%= user.preferences.species === 'dog' ?  'selected' : ''  %>>Dog</option>
+                <option value="cat" <%= user.preferences.species === 'cat' ?  'selected' : ''  %>>Cat</option>
               </select>
             </div>
             <div class="input-group col-xs-12">
               <label for="Select2">That is a..</label>
-              <select class="form-control" id="Select2" name="age">
-                <option>Baby</option>
-                <option>Young</option>
-                <option>Adult</option>
-                <option>Senior</option>
+              <select class="form-control" id="Select2" name="age" value="<%= user.preferences.age %>">
+                <option value="Baby" <%= user.preferences.age === 'Baby' ?  'selected' : ''  %>>Baby</option>
+                <option value="Young" <%= user.preferences.age === 'Young' ?  'selected' : ''  %>>Young</option>
+                <option value="Adult" <%= user.preferences.age === 'Adult' ?  'selected' : ''  %>>Adult</option>
+                <option value="Senior" <%= user.preferences.age === 'Senior' ?  'selected' : ''  %>>Senior</option>
               </select>
             </div>
             <div class="input-group col-xs-12">
               <label for="Select3">And is..</label>
-              <select class="form-control" id="Select3" name="size">
-                <option value="S">Small</option>
-                <option value="M">Medium</option>
-                <option value="L">Large</option>
+              <select class="form-control" id="Select3" name="size" value="<%= user.preferences.size %>">
+                <option value="S" <%= user.preferences.size === 'S' ?  'selected' : ''  %>>Small</option>
+                <option value="M" <%= user.preferences.size === 'M' ?  'selected' : ''  %>>Medium</option>
+                <option value="L" <%= user.preferences.size === 'L' ?  'selected' : ''  %>>Large</option>
               </select>
             </div>
             <div class="control-group col-xs-12">

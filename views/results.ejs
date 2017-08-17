@@ -48,7 +48,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
                     <h2 id="pet-name"><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
-                    <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round">
+                    <a href="/pets/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round"></a>
                     <% } else { %>
                     <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round"></a>       
                     <% }; %>
@@ -56,9 +56,8 @@
                     <%=pet.age.$t%>
                     <%=pet.size.$t%>
                     <%=pet.sex.$t%>
-                    <%=pet.id.$t%>
-                    <%=pet.shelterPetId.$t%></p>
-                    <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
+                    <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(pet.id.$t) > -1) {%> red <%}%>" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
+
                 </div>
                 <% }); %>
             <% } %>
@@ -71,4 +70,5 @@
 <script src="/javascripts/results.js"></script>
 
 <%- include('./partials/footer') %>
+
 
