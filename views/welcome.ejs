@@ -42,13 +42,13 @@
             <div class="control-group col-xs-12">
               <label class="control-label">Near..</label>
               <div class="controls col-xs-12">
-                <input id="postal-code" name="zip" type="text" placeholder="zip or postal code"
-                class="input-xlarge">
+                <input id="postal-code-welcome" name="zip" type="text" placeholder="zip or postal code"
+                class="input-xlarge" maxlength="5" required pattern=^\d{5}$>
                 <p class="help-block"></p>
               </div>
             </div>
             <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
-              <button type="submit" class="btn-change">Search!</button>
+              <button type="submit" id="sub" class="btn-change">Search!</button>
             </div>
         </form>
         </div>
@@ -163,7 +163,7 @@ aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="form-group">
             <label class="control-label">Near What Area</label>
             <div class="controls">
-              <input id="postal-code" name="zip" type="text" placeholder="zip or postal code" class="input-xlarge">
+              <input id="postal-code-modal" name="zip" type="text" placeholder="zip or postal code" class="input-xlarge" maxlength="5" required pattern=^\d{5}$>
             </div>
             <button type="submit" class="btn btn-primary" id='submit-btn'> Submit</button><br>
           </form>
@@ -174,6 +174,25 @@ aria-labelledby="myModalLabel" aria-hidden="true">
   </div>
     <% } %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%- include('./partials/footer') %>
 
 
