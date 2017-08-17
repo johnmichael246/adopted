@@ -15,7 +15,6 @@
     "ejs": "~2.5.6",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
-    "fetch-jsonp": "^1.1.1",
     "method-override": "^2.3.9",
     "mongoose": "^4.11.6",
     "morgan": "~1.8.1",

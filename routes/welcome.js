@@ -2,7 +2,7 @@ var router = require('express').Router();
 var passport = require('passport');
 var userCtrl = require('./../controllers/userCtrl');
 
-router.get('/', loggedIn, userCtrl.welcome);
+router.get('/', userCtrl.welcome);
 
 router.get('/profile', loggedIn, userCtrl.profile);
 
