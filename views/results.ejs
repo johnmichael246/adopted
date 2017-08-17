@@ -52,10 +52,12 @@
                     <% } else { %>
                     <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round"></a>       
                     <% }; %>
-                    <p class="centered"><%=pet.contact.city.$t%>|<%=pet.contact.state.$t%>| <%=pet.contact.zip.$t%><br>
-                    <%=pet.age.$t%>
-                    <%=pet.size.$t%>
-                    <%=pet.sex.$t%>
+                    <p class="centered"><%=pet.contact.city.$t%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=pet.contact.state.$t%>&nbsp;&nbsp;|&nbsp;&nbsp; <%=pet.contact.zip.$t%></br>
+                    <% if (pet.sex.$t === "M") { %>
+                    Male
+                    <% } else { %>
+                    Female
+                    <% } %></br>
                     <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(pet.id.$t) > -1) {%> red <%}%>" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
                 </div>
                 <% }); %>
