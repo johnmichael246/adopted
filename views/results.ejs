@@ -1,16 +1,13 @@
 <%- include('./partials/header') %>
 
-
 <h1 class ="fixed padding-bottom">Search Results</h1>
 <a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
-<a id="sticky-link" href="/"><i class="glyphicon glyphicon-backward"></i> | Back To Search</a>
+<a id="sticky-link" href="/"><i class="glyphicon glyphicon-backward"></i> | Back To Search</a><br>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
             <div class="col-xs-4 box">
-                <h1 class ="padding-bottom">Search Results</h1>
-                <a href="/profile">My Favorites</a>
-                <form action ="/pets" method="POST" class:"main-search">
+                <form action ="/pets" method="POST" class:"main-search" id="sticky-link">
                     <div class="input-group col-xs-10">
                         <label for="Select1">Im looking to Adopt a..</label>
                         <select class="form-control" id="Select1" name="animal">

@@ -35,8 +35,6 @@ function deletePet(req,res) {
     });
 }
 
-
-
 function toggleFav(req, res) {
     User.populate(req.user, 'favPets', function(err, user) {
         if (user.favPets.some(dog => dog.petfinderId === req.params.id) ) {
