@@ -46,11 +46,21 @@ function showFavPet(req,res) {
        method: 'GET'
    };
    // console.log(options.url)
-   request(options.url, function(err,response,body) {
-       var showNavbar = false;
-       let doc = JSON.parse(body);
-       res.render('showpet', {doc, showNavbar, user:req.user});
-   });
+   //added
+    User.populate(req.user, 'favPets',function(err, user) {
+        //end
+        request(options.url, function(err,response,body) {
+            var showNavbar = false;
+            let doc = JSON.parse(body);
+            //added
+            var petArray = [];
+            user.favPets.forEach( (animal) => {
+                petArray.push(animal.petfinderId)
+                //end
+            })
+            res.render('showpet', {doc, showNavbar, user:req.user});
+     });
+    })
 }
 
 module.exports = {
