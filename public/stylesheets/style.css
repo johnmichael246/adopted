@@ -52,10 +52,6 @@ a:hover {
   text-align: center;
 }
 
-li {
-    float: none;
-    display: inline-block;
-}
 /* carousel!!! ________ */
 .carousel {
     margin-bottom: 0;
@@ -258,6 +254,14 @@ body,html {
   display: -webkit-inline-flex;
 }
 .text-field-padding {
-  padding:4%;
-  
+  padding:4%;  
+}
+.li {
+  font-weight: bolder;
+  float: none;
+  display: inline-block;
+
+}
+.col-xs-2 {
+  display: inline-table;
 }
