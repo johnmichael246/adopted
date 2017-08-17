@@ -213,6 +213,7 @@ h3 {
 }
 .glyphicon.glyphicon-heart {
     font-size: 30px;
+    cursor: pointer;
 }
 div.row {
   padding-left: inherit;
@@ -225,9 +226,7 @@ div.row {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.box {
-  height: 100vh;
-}
+
 body,html {
   height:100%;
 }
@@ -259,5 +258,11 @@ body,html {
   padding:4%;
   
 }
+
+
+li {
+  font-weight: bolder;
+}
+
 
 
