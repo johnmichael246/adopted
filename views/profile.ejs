@@ -48,9 +48,10 @@
                                 <div class="control-group col-xs-8">
                                     <label>Zip Code:</label>
                                         <input id="postal-code" name="zip" type="text" placeholder="Enter Zip"
-                                        class="input-xlarge">
+                                        class="input-xlarge" maxlength="5" required pattern=^\d{5}$>
                                     <p class="help-block"></p>
                                 </div>
+
                                 <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
                                       <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Update</button>
                                 </div>
