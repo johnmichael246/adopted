@@ -6,13 +6,30 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="col-xs-12">      
-            <form action ="/pets" method="POST">
-                <div class="input-group col-xs-3"id="find2">
-                    <label for="Select1">Im looking to Adopt a..</label>
-                    <select class="form-control" id="Select1" name="animal">
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
+            <div class="col-xs-4 box">
+                <form action ="/pets" method="POST" class:"main-search" id="results-search">
+                    <div class="input-group col-xs-10">
+                        <label for="Select1">Im looking to Adopt a..</label>
+                        <select class="form-control" id="Select1" name="animal">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                        </select>
+                    </div>
+                    <div class="input-group col-xs-10">
+                        <label for="Select2">That is a..</label>
+                        <select class="form-control" id="Select2" name="age">
+                            <option>Baby</option>
+                            <option>Young</option>
+                            <option>Adult</option>
+                            <option>Senior</option>
+                        </select>
+                    </div>
+                    <div class="input-group col-xs-10">
+                    <label for="Select3">And is..</label>
+                    <select class="form-control" id="Select3" name="size">
+                        <option value="S">Small</option>
+                        <option value="M">Medium</option>
+                        <option value="L">Large</option>
                     </select>
                 </div>
                 <div class="input-group col-xs-3" id="find2">

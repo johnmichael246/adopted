@@ -216,6 +216,7 @@ h3 {
 }
 div.row {
   padding-left: inherit;
+  display: inline;
 }
 
 #pet-name {
@@ -253,11 +254,6 @@ body,html {
 }
 #results-search {
   display: -webkit-inline-flex;
-<<<<<<< HEAD
-  max-width: 75%;
-  padding-bottom: 40px;
-}
-=======
 }
 .text-field-padding {
   padding:4%;
@@ -265,4 +261,3 @@ body,html {
 }
 
 
->>>>>>> master
