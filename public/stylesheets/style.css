@@ -218,7 +218,6 @@ div.row {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-
 .box {
   height: 100vh;
 }
@@ -237,9 +236,6 @@ body,html {
 #show-pet-name {
   text-align: center;
 }
-#pet-name {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+.red {
+  color: red;
 }
