@@ -1,5 +1,4 @@
 <%- include('./partials/header') %>
-<%= JSON.stringify(petArray) %>
 
 <h1>Pet Details:</h1>
 <a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Profile</a>
@@ -13,15 +12,9 @@
                     <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize round">
                 <% } %>
                 <br>
-<<<<<<< HEAD
-                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph 
-                    <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
-=======
-
                 <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
->>>>>>> master
-                    <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
                 </span>
+                <span><a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>" class=resize-glyph><i class="glyphicon glyphicon-envelope resize-glyph"></i></a></span>
                 <br>
                 Located In:&nbsp;<%=doc.petfinder.pet.contact.city.$t%> &nbsp;|&nbsp; <%=doc.petfinder.pet.contact.state.$t%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=doc.petfinder.pet.contact.zip.$t%><br>
                 Shelter Phone Number: <a href ="tel:+<%=doc.petfinder.pet.contact.phone.$t%>"><%=doc.petfinder.pet.contact.phone.$t%></a><br>
