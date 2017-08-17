@@ -13,7 +13,7 @@
   </head>
   <body>
       <% if (user && showNavbar) { %>
-        <nav id="main-nav">
+        <nav id="main-nav" role="navigation" >
           <ul id="primaryToolbar" class="clearfix">
             <li>Hello <%=user.first_name%> | </li>
             <li><a href="/profile">PROFILE</a> | </li>
@@ -22,7 +22,7 @@
           </ul>
         </nav>
       <% } else if (user) { %>
-        <nav id="profile-nav">
+        <nav id="profile-nav" role="navigation">
           <ul id="primaryToolbar" class="clearfix">
             <li>Hello <%=user.first_name%> | </li>
             <li><a href="/">HOME</a> | </li>
@@ -31,7 +31,7 @@
           </ul>
         </nav>
       <% } else { %>
-        <nav id="results-nav">
+        <nav id="results-nav" role="navigation">
           <ul id="primaryToolbar" class="clearfix">
             <li>To Search Adoptable Pets, <a href="/auth/google">Login with Google </a> Here.</li>
           </ul>
