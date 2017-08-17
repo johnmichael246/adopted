@@ -1,5 +1,4 @@
 <%- include('./partials/header') %>
-
 <h1>Pet Details:</h1>
 <a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
 <a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Results</a>
@@ -16,13 +15,12 @@
                 <p id="pet-info">
                 <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>"></span>
                 <br>
-                <%=doc.petfinder.pet.contact.city.$t%> | <%=doc.petfinder.pet.contact.zip.$t%>
+                <%=doc.petfinder.pet.contact.city.$t%> &nbsp; | &nbsp; <%=doc.petfinder.pet.contact.zip.$t%>
                 <%=doc.petfinder.pet.age.$t%>
                 <%=doc.petfinder.pet.size.$t%>
                 <%=doc.petfinder.pet.sex.$t%>
-                <%=doc.petfinder.pet.id.$t%>
-                <%=doc.petfinder.pet.shelterPetId.$t%>
                 <%=doc.petfinder.pet.description.$t%></p>
+                <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
         </div>
     </div>
 </div>
