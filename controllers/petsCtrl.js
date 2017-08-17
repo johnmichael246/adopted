@@ -4,6 +4,7 @@ var User = require('./../models/user');
 var Pet = require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
 
+
 function search(req,res,next) {
     var options = {
         url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}&count=27`,
@@ -26,17 +27,23 @@ function search(req,res,next) {
     })
 }
 
-            // console.log(Object.keys(doc.petfinder))
+
 function show(req,res,next) {
      var options = {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
+    User.populate(req.user, 'favPets', function(err, user) {
     request(options.url, function(err,response,body) {
         var showNavbar = false;
         let doc = JSON.parse(body);
-        res.render('showpet', {doc, showNavbar, user:req.user});
+        var petArray = [];
+        user.favPets.forEach( (animal) => {
+            petArray.push(animal.petfinderId)
+        })
+        res.render('showpet', {doc, showNavbar, user:req.user, petArray});
     });
+    })
 }
 
 
@@ -45,23 +52,19 @@ function showFavPet(req,res) {
        url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
        method: 'GET'
    };
-   // console.log(options.url)
-   //added
     User.populate(req.user, 'favPets',function(err, user) {
-        //end
         request(options.url, function(err,response,body) {
             var showNavbar = false;
             let doc = JSON.parse(body);
-            //added
             var petArray = [];
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
-                //end
             })
-            res.render('showpet', {doc, showNavbar, user:req.user});
+            res.render('showpet', {doc, showNavbar, user:req.user, petArray});
      });
     })
 }
+
 
 module.exports = {
     search,

@@ -1,16 +1,19 @@
 var router = require('express').Router();
 var passport = require('passport');
 var petsCtrl = require('./../controllers/petsCtrl');
+var apiCtrl = require('./../controllers/apiCtrl');
 
 router.post('/', loggedIn, petsCtrl.search);
 
 router.get('/results', loggedIn, function(req,res) {
   res.render('results')
-})
+});
 
-router.get('/:id', loggedIn, petsCtrl.show)
+router.get('/:id', loggedIn, petsCtrl.show);
 
-router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet)
+router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet);
+
+router.get('/api/favorites/:id', loggedIn, apiCtrl.toggleFav);
 
 
 router.post('/results', loggedIn, function(req,res) {

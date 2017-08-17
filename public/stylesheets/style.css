@@ -251,13 +251,11 @@ body,html {
 .red {
   color: red;
 }
+.black {
+  color: black;
+}
 #results-search {
   display: -webkit-inline-flex;
-<<<<<<< HEAD
-  max-width: 75%;
-  padding-bottom: 40px;
-}
-=======
 }
 .text-field-padding {
   padding:4%;
@@ -265,4 +263,3 @@ body,html {
 }
 
 
->>>>>>> master

@@ -4,7 +4,40 @@ $('span.boob').click(function(evt) {
   var $this = $(this);
   var id = $this.attr('id')
   var userId = $this.data().userid;
-  if($this.hasClass('boob')){
+  if ($this.hasClass('red')) {
+    console.log('hes red')
+    $this.removeClass('red').addClass('black')
+    console.log('switched back to red')
+        fetch (`api/favorites/${id}`,
+    {
+      method:'GET',
+      credentials: 'include',
+      body: {
+        userId: userId,
+        petId: id
+      },
+      headers: {
+        content:'application/json'
+      }
+    });
+  } else if ($this.hasClass('black')) {
+    console.log('hes black')
+    $this.removeClass('black').addClass('red')
+    console.log('switched back to red')
+        fetch (`api/favorites/${id}`,
+    {
+      method:'GET',
+      credentials: 'include',
+      body: {
+        userId: userId,
+        petId: id
+      },
+      headers: {
+        content:'application/json'
+      }
+    });   
+  } else if($this.hasClass('boob')){
+    console.log('this pet has not been favorited yet')
     $(this).css("color", "#FF0000");
     $this.toggleClass('boob');
     
@@ -22,8 +55,9 @@ $('span.boob').click(function(evt) {
     });
 
   } else {
-
+    console.log('this pet has already been favorited')
     $(this).css("color", "#000000");
+    
     $this.toggleClass('boob');
     fetch(`api/favorites/${id}`, {
       body: {
@@ -43,38 +77,8 @@ $('span.boob').click(function(evt) {
       content: 'application/json'
     }
   });
-})
 
-$('span.showFavPet').click(function(evt){
-  var $this = $(this);
-  var id = $this.attr('id')
-  var userId = $this.data().userid;
-  if($this.hasClass('showFavePet')){
-    fetch (`pets/favorites/${id}`,
-    {
-      method:'GET',
-      credentials: 'include',
-      body: {
-        userId: userId,
-        petId: id
-      },
-      headers: {
-        content:'application/json'
-      }
-    });
 
-  } else {
-    $(this).css("color", "#000000");
-    $this.toggleClass('boob');
-  }
-  fetch(`api/favorites/${id}`, {
-    body: {
-      userId: userId
-    },
-    headers: {
-      content: 'application/json'
-    }
-  });
 })
 
 
