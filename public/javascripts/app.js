@@ -6,11 +6,3 @@ if (top.location.pathname === '/') {
             }, 5000);
     });
 };
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
