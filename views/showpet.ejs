@@ -1,35 +1,37 @@
 <%- include('./partials/header') %>
-
 <h1>Pet Details:</h1>
 <a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
 <a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Results</a>
 <div class="container" align="center">
     <div class="row">
         <div class="col-xs-12">
-                <h3 id="show-pet-name" ><%=doc.petfinder.pet.name.$t%></h3> 
+                <h2 id="show-pet-name" ><strong><%=doc.petfinder.pet.name.$t%></strong></h2> 
                 <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
                     <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round" id="show-pet-img">
                 <% } else { %>
-                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize-round">
-
+                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize round">
                 <% } %>
                 <br>
-                <p id="pet-info">
-                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>"></span>
+                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
+                    <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
+                </span>
                 <br>
-
-                Located In: <%=doc.petfinder.pet.contact.city.$t%>, <%=doc.petfinder.pet.contact.zip.$t%><br>
-                Shelter Phone Number: <%=doc.petfinder.pet.contact.phone.$t%><br>
-                Age: <%=doc.petfinder.pet.age.$t%> |
+                Located In:&nbsp;<%=doc.petfinder.pet.contact.city.$t%> &nbsp;|&nbsp; <%=doc.petfinder.pet.contact.state.$t%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=doc.petfinder.pet.contact.zip.$t%><br>
+                Shelter Phone Number: <a href ="tel:+<%=doc.petfinder.pet.contact.phone.$t%>"><%=doc.petfinder.pet.contact.phone.$t%></a><br>
+                Age:<%=doc.petfinder.pet.age.$t%> |
                 Size:<%=doc.petfinder.pet.size.$t%> |
-                Sex: <%=doc.petfinder.pet.sex.$t%><br>
-                <%=doc.petfinder.pet.id.$t%>
+                Sex:<% if (doc.petfinder.pet.sex.$t === "M") { %>
+                        Male
+                    <% } else { %>
+                        Female
+                    <% } %><br>
                 <%=doc.petfinder.pet.shelterPetId.$t%>
                 <% if (doc.petfinder.pet.description.$t === undefined) { %>
                     <p> I’m <%=doc.petfinder.pet.name.$t%> I love people; especially ones that give me massages, peanut butter, and let me snooze in the sun. I have a favorite spot, right behind my ears, that I like to get rubbed. When that happens, I make a funny sound, because it feels so good! I get along with the dogs and people I have met here, including respectful children of all ages. I would rather not spend my time jogging or wrestling with energetic dogs since I’m a really mellow guy. I need a house full of soft beds, people who like snuggles, and yummy treats! </p>
                 <% } else { %>
                     <%=doc.petfinder.pet.description.$t%></p>
                 <% } %>
+                
         </div>
     </div>
 </div>
