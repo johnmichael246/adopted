@@ -3,9 +3,10 @@ var Pet = require('./../models/favpet');
 var User = require('./../models/user');
 const basePath = "http://api.petfinder.com/"
 var request=require('request');
+require('./../config/database');
 
 function getAllPets(req,res) {
-    Pet.find({},(err,movies) => {
+    Pet.find({},(err,pets) => {
         res.status(200).json(pets)
     });
 }
