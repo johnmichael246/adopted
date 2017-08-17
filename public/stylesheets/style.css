@@ -264,5 +264,6 @@ li {
   font-weight: bolder;
 }
 
-
-
+.col-xs-2 {
+  display: inline-table;
+}
