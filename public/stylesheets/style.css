@@ -245,9 +245,6 @@ body,html {
 .red {
   color: red;
 }
-
-
-
 #results-search {
   display: -webkit-inline-flex;
   max-width: 75%;
