@@ -38,16 +38,13 @@ function deletePet(req,res) {
 
 
 function toggleFav(req, res) {
-    console.log('hitting')
-
-    console.log(req.params.id)
-    console.log(req.user.favPets)
-
     User.populate(req.user, 'favPets', function(err, user) {
         if (user.favPets.some(dog => dog.petfinderId === req.params.id) ) {
-            req.user.favPets.splice(req.params.id,1)
-            console.log('the dog has been removed')
-            res.end();
+            var dogDocId = user.favPets.find(dog => dog.petfinderId === req.params.id)._id;
+            User.findById(req.user.id, function(err, u) {
+                u.favPets.remove(dogDocId);
+                u.save();
+            });
         } else {
             console.log('hitting add dog part of request')
             Pet.findById(req.params.id, function(err, dog) {
