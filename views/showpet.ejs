@@ -14,7 +14,8 @@
                     <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize round">
                 <% } %>
                 <br>
-                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
+                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph 
+                    <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
                     <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
                 </span>
                 <br>
