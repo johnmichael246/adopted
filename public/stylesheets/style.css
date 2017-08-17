@@ -248,3 +248,8 @@ body,html {
 
 
 
+#results-search {
+  display: -webkit-inline-flex;
+  max-width: 75%;
+  padding-bottom: 40px;
+}
