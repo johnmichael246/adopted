@@ -10,14 +10,13 @@ router.get('/results', loggedIn, function(req,res) {
 
 router.get('/:id', loggedIn, petsCtrl.show)
 
+router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet)
+
+
 router.post('/results', loggedIn, function(req,res) {
   res.render('results', {results})
 })
 
-// router.get('pets/favorites/:id', loggedIn, function(req, res) {
-//   console.log('SHE WORKS')
-//   res.render('/')
-// })
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
