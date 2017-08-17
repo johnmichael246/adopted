@@ -22,10 +22,7 @@ $('span.boob').click(function(evt) {
     });
 
   } else {
-<<<<<<< HEAD
-=======
-    console.log('sending api fetch request on toggled button')
->>>>>>> master
+
     $(this).css("color", "#000000");
     $this.toggleClass('boob');
     fetch(`api/favorites/${id}`, {
@@ -37,7 +34,7 @@ $('span.boob').click(function(evt) {
       }
     });
   }
-<<<<<<< HEAD
+
   fetch(`api/favorites/${id}`, {
     body: {
       userId: userId
@@ -82,8 +79,3 @@ $('span.showFavPet').click(function(evt){
 
 })
 
-})
-=======
-});
-});
->>>>>>> master
