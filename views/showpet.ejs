@@ -9,10 +9,9 @@
                 <% if (doc.petfinder.pet.media.photos === undefined || doc.petfinder.pet.media === undefined) { %>
                     <img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize-round" id="show-pet-img">
                 <% } else { %>
-                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize-round">
+                    <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize round">
                 <% } %>
                 <br>
-                <p id="pet-info">
                 <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>"></span>
                 <br>
                 <%=doc.petfinder.pet.contact.city.$t%> &nbsp; | &nbsp; <%=doc.petfinder.pet.contact.zip.$t%>
