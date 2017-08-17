@@ -32,24 +32,28 @@ function show(req,res,next) {
     });
 }
 
-
-//show all users favorites
-function showFavorites(req, res) {
-  User.findById(req.params.id).populate('favpets').exec((err, pets) => {
-    res.render('myfavorites', {pets});
-  });
-}
-
-
-
-    // fetch pet id and add to users favorite 
-
-    // retrieve pet id from api and add to users favorite. 
-
+// fetch pet id and add to users favorite 
+function showFavPet(req,res,next) {
+    console.log("i hate myself")
+    // var options = {
+    //    url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
+    //    method: 'GET'
+    // fetch('/favorites/pets/:id')
+   };
+//    // console.log(options.url)
+//    request(options.url, function(err,response,body) {
+//        var showNavbar = false;
+//     //    let doc = JSON.parse(body);
+//        res.render('showFavPet', {doc, showNavbar, user:req.user});
+//    });
+// }
+// // retrieve pet id from api and add to users favorite. 
 
 
 module.exports = {
     search,
     show,
-    showFavorites,
+    showFavPet
 }
+
+

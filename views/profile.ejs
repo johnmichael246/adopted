@@ -68,13 +68,13 @@
                             <% if(user.favPets.length === 0) { %>
                                 <h3>No favorites, click here to find your furry friend!</h3>
                             <% } else { %>
-                                <h2>here are your favorites</h2>
+                                <h4>click pet to view details</h4>
                                 <div class="row">
                                     <div class="col-xs-12">
                                     <% user.favPets.forEach(function(dog) { %>
                                         <div class="col-xs-2">
                                             <h4><%= dog.name %></h4>
-                                            <a href="/pets/<%=dog.id%>"><img src="<%= dog.photos[0] %>" class="photo-resize2"></a>
+                                            <a href="/pets/favorites/<%=dog.id%>"><img src="<%= dog.photos[0] %>" class="photo-resize2"></a>
                                         </div> 
                                     <% }); %>
                                     </div>
@@ -83,11 +83,7 @@
                             </div>
                         </div>
                     </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-ok"></i>Update</button>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>       

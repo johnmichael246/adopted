@@ -35,8 +35,6 @@ function deletePet(req,res) {
     });
 }
 
-
-
 function toggleFav(req, res) {
     console.log('hitting')
 

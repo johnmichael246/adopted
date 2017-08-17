@@ -8,6 +8,7 @@ router.put('/:id', apiCtrl.updatePet);
 router.post('/', apiCtrl.createPet);
 router.delete('/:id', apiCtrl.deletePet);
 router.get('/favorites/:id', apiCtrl.toggleFav);
+// router.get('/favorites/:id', apiCtrl.showFavPet);
 
 
 module.exports= router;
