@@ -213,9 +213,11 @@ h3 {
 }
 .glyphicon.glyphicon-heart {
     font-size: 30px;
+    cursor: pointer;
 }
 div.row {
   padding-left: inherit;
+  display: inline;
 }
 
 #pet-name {
@@ -224,9 +226,7 @@ div.row {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.box {
-  height: 100vh;
-}
+
 body,html {
   height:100%;
 }
@@ -253,11 +253,6 @@ body,html {
 }
 #results-search {
   display: -webkit-inline-flex;
-<<<<<<< HEAD
-  max-width: 75%;
-  padding-bottom: 40px;
-}
-=======
 }
 .text-field-padding {
   padding:4%;
@@ -265,4 +260,9 @@ body,html {
 }
 
 
->>>>>>> master
+li {
+  font-weight: bolder;
+}
+
+
+

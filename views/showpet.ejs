@@ -2,8 +2,7 @@
 <%= JSON.stringify(petArray) %>
 
 <h1>Pet Details:</h1>
-<a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
-<a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Results</a>
+<a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Profile</a>
 <div class="container" align="center">
     <div class="row">
         <div class="col-xs-12">
@@ -14,8 +13,13 @@
                     <img src="<%=doc.petfinder.pet.media.photos.photo[2].$t%>" height="300" width="300" class="photo-resize round">
                 <% } %>
                 <br>
+<<<<<<< HEAD
                 <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph 
                     <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
+=======
+
+                <span id="<%= doc.petfinder.pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
+>>>>>>> master
                     <a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a>
                 </span>
                 <br>
