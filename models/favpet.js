@@ -12,6 +12,7 @@ const favPetSchema = new Schema ({
     contact: {
         phone:String,
         email:String,
+        address:String,
         state: String,
         city: String,
         zipcode:String,
