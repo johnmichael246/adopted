@@ -32,11 +32,17 @@ function show(req,res,next) {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
+    User.populate(req.user, 'favPets', function(err, user) {
     request(options.url, function(err,response,body) {
         var showNavbar = false;
         let doc = JSON.parse(body);
-        res.render('showpet', {doc, showNavbar, user:req.user});
+        var petArray = [];
+        user.favPets.forEach( (animal) => {
+            petArray.push(animal.petfinderId)
+        })
+        res.render('showpet', {doc, showNavbar, user:req.user, petArray});
     });
+    })
 }
 
 
@@ -45,20 +51,15 @@ function showFavPet(req,res) {
        url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
        method: 'GET'
    };
-   // console.log(options.url)
-   //added
     User.populate(req.user, 'favPets',function(err, user) {
-        //end
         request(options.url, function(err,response,body) {
             var showNavbar = false;
             let doc = JSON.parse(body);
-            //added
             var petArray = [];
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
-                //end
             })
-            res.render('showpet', {doc, showNavbar, user:req.user});
+            res.render('showpet', {doc, showNavbar, user:req.user, petArray});
      });
     })
 }
