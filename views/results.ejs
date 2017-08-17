@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="col-xs-4 box">
-                <form action ="/pets" method="POST" class:"main-search" id="sticky-link">
+                <form action ="/pets" method="POST" class:"main-search" style="display: -webkit-inline-box" float:"right">
                     <div class="input-group col-xs-10">
                         <label for="Select1">Im looking to Adopt a..</label>
                         <select class="form-control" id="Select1" name="animal">
@@ -41,6 +41,11 @@
                         <button type="submit" class="btn-change col-xs-5">Search!</button>
                 </form>
             </div>
+            <br>
+            <div class="row" height="60">
+            <br>
+            <br>
+
             <% if (doc.petfinder.pets === undefined) { %>
                 <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
             <% } else { %>
