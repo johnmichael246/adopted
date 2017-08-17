@@ -6,7 +6,6 @@ var cors = require('cors');
 var curl = require('curl');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var fetch = require('fetch-jsonp')
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');

@@ -5,7 +5,6 @@ var Pet = require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
 
 function search(req,res,next) {
-        console.log(req.body)
     var options = {
         url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}&count=27`,
         method: 'GET'
@@ -14,11 +13,12 @@ function search(req,res,next) {
         request(options.url, function(err,response,body) {
             var showNavbar = true;
             let doc = JSON.parse(body);
+            let dog = doc.petfinder.pets.pet
+            console.log(dog)
             var petArray = [];
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
             })
-            console.log(petArray)
 
             res.render('results', {doc, showNavbar, user, petArray});
         });
@@ -46,11 +46,21 @@ function showFavPet(req,res) {
        method: 'GET'
    };
    // console.log(options.url)
-   request(options.url, function(err,response,body) {
-       var showNavbar = false;
-       let doc = JSON.parse(body);
-       res.render('showpet', {doc, showNavbar, user:req.user});
-   });
+   //added
+    User.populate(req.user, 'favPets',function(err, user) {
+        //end
+        request(options.url, function(err,response,body) {
+            var showNavbar = false;
+            let doc = JSON.parse(body);
+            //added
+            var petArray = [];
+            user.favPets.forEach( (animal) => {
+                petArray.push(animal.petfinderId)
+                //end
+            })
+            res.render('showpet', {doc, showNavbar, user:req.user});
+     });
+    })
 }
 
 module.exports = {
