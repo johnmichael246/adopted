@@ -13,7 +13,6 @@ function search(req,res,next) {
         zip: req.body.zip,
         offset: req.body.offset || 0
     }
-    console.log(query)
 
     var options = {
         url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=25&offset=${query.offset}`,
@@ -29,8 +28,6 @@ function search(req,res,next) {
             })
 
             query.offset = doc.petfinder.lastOffset.$t
-            console.log(query.offset)
-            console.log('\n\n asdfasdf \n\n\n')
             res.render('results', {doc, showNavbar, user, petArray, query});
         });
     })
@@ -102,7 +99,6 @@ function createComment(req, res) {
     }
     Pet.findById(_id, function(err, pet) {
         if(err) console.log(err)
-        // console.log(pet)
         pet.comments.push(comment)
         pet.save(function(err, savePet) {
             if(err) console.log(err)
