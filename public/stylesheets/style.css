@@ -308,5 +308,9 @@ text-align: inherit;
 .col-xs-3 {
   width: 50%;
 }
+.centered2 {
+  text-align: center;
+  border: none;
+}
 
 

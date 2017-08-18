@@ -67,46 +67,28 @@
             <% } %>
         </div>
     </div>
+    <div class="col-xs-6"style="text-align:right">
+        <form action ="/pets" method="POST" id="results-search">
+            <input class="hidden" value="<%=query.animal%>" name="animal">
+            <input class="hidden" value="<%=query.age%>" name="age">
+            <input class="hidden" value="<%=query.size%>" name="size">
+            <input name="zip"class="hidden" value= "<%=query.zip%>" name="zip">
+            <input class="hidden" name="offset" value="<%= query.offset - 50 < 0 ? 0 : query.offset - 50  %>">
+            <button type="submit" class="btn-change"><i class="glyphicon glyphicon-chevron-left"> </i></button>
+        </form>
+    </div>
+    <div class="col-xs-6"style="text-align:left">
+        <form action ="/pets" method="POST" id="results-search">
+            <input class="hidden" value="<%=query.animal%>" name="animal">
+            <input class="hidden" value="<%=query.age%>" name="age">
+            <input class="hidden" value="<%=query.size%>" name="size">
+            <input name="zip"class="hidden" value= "<%=query.zip%>" name="zip">
+            <input class="hidden" name="offset" value="<%= query.offset %>">
+            <button type="submit" class="btn-change"><i class="glyphicon glyphicon-chevron-right"></i></button>
+        </form>
+    </div>
 </div>
 
-
-            <form action ="/pets" method="POST" id="results-search">
-                    <select class="hidden" id="Select1" name="animal">
-                        <option value="<%=query.animal%>"></option>
-                    </select>
-                    <select class="hidden" id="Select2" name="age">
-                        <option value="<%=query.age%>"></option>
-                    </select>
-                <select class="hidden" id="Select3" name="size">
-                    <option value="<%=query.size%>">Small</option>
-                </select>
-                <select name="zip"class="hidden">
-                    <option value= "<%=query.zip%>"></option>
-                <select>
-                <select class="hidden" name="offset">
-                    <option value="<%=query.offset%>"></option>
-                </select>
-                <button type="submit" class="btn-change"id="find2">Next Page</button>
-            </form>
-
-            <form action ="/pets" method="POST" id="results-search">
-                <select class="hidden" id="Select1" name="animal">
-                    <option value="<%=query.animal%>"></option>
-                </select>
-                <select class="hidden" id="Select2" name="age">
-                    <option value="<%=query.age%>"></option>
-                </select>
-                <select class="hidden" id="Select3" name="size">
-                    <option value="<%=query.size%>">Small</option>
-                </select>
-                <select name="zip"class="hidden">
-                    <option value= "<%=query.zip%>"></option>
-                </select>
-                <select class="hidden" name="offset">
-                    <option value="<%= query.offset - 50 < 0 ? 0 : query.offset - 50  %>"></option>
-                </select>
-                <button type="submit" class="btn-change"id="find2">Previous Page</button>
-            </form>
 
 <script src="/javascripts/results.js"></script>
 
