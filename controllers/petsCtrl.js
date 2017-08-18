@@ -27,10 +27,9 @@ function search(req,res,next) {
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
             })
-
             query.offset = doc.petfinder.lastOffset.$t
-            console.log(query.offset)
-            console.log('\n\n asdfasdf \n\n\n')
+            console.log('im in the search function as query.offset ', query.offset)
+            console.log('\n\n also in search function \n\n\n')
             res.render('results', {doc, showNavbar, user, petArray, query});
         });
     })
@@ -53,7 +52,6 @@ function show(req,res,next) {
                 let doc = JSON.parse(body);
                 var petArray = [];
                 var _id = '';
-                
                 user.favPets.forEach( (animal) => {
                     petArray.push(animal.petfinderId)
                     if (animal.petfinderId === req.params.id) {
@@ -71,23 +69,26 @@ function showFavPet(req,res) {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
-    User.populate(req.user, 'favPets',function(err, user) {
-        request(options.url, function(err,response,body) {
-            var showNavbar = false;
-            let doc = JSON.parse(body);
-            var petArray = [];
-            var _id = '';
-            var commentsArray = [];
-
-            user.favPets.forEach( (animal) => {
-                petArray.push(animal.petfinderId)
-                if (animal.petfinderId === req.params.id) {
-                    _id = animal._id
-                    commentsArray = animal.comments
-                }
-            })
-            res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
-         });
+        User.populate(req.user, 'favPets',function(err, user) {
+            request(options.url, function(err,response,body) {
+                var showNavbar = false;
+                let doc = JSON.parse(body);
+                var petArray = [];
+                var _id = '';
+                var commentsArray = [];
+                user.favPets.forEach( (animal) => {
+                    petArray.push(animal.petfinderId)
+                    if (animal.petfinderId === req.params.id) {
+                    console.log('showFavPet function animal._id ', animal._id)
+                    console.log('showFavPet function petfinderID ', animal.petfinderId)
+                    console.log('showFavPet function console logged animal: ', animal)
+                        _id = animal._id
+                        commentsArray = animal.comments
+                    }
+                })  
+                console.log('comments array in the showFavPet function ', commentsArray)
+                res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
+            });
     })
 }
 
@@ -109,9 +110,22 @@ function createComment(req, res) {
     })
 }
 
+function deleteComment(req, res) {
+    console.log('deleteComment has been reached')
+    // var _id = req.params.petId
+    // var comment = 
+    // Pet.findById(_id, function(err, pet) {
+    //     Comment.findById()
+    //     if(err) console.log(err)
+    //     pet.comment.remove()
+    // })
+    // res.render('')
+}
+
 module.exports = {
     search,
     show,
     showFavPet,
-    createComment
+    createComment,
+    deleteComment
 }
