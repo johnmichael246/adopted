@@ -27,6 +27,7 @@ Easily search and find all adorable and adoptable pets in your area. For more ab
 * MongoDB
 * Mongoose
 * mLab Cloud Database
+* Postman to expose our API 
 * PetFinder API - database with over 300,000 adoptable pets and 11,000 animal welfare organizations
 * Git for version control
 * GitHub for team remote repositories control
