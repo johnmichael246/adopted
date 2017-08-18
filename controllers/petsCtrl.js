@@ -93,8 +93,6 @@ function showFavPet(req,res) {
 }
 
 
-<<<<<<< HEAD
-=======
 function createComment(req, res) {
     // step 1 establish connection - when you press submit -> you see 'hello' in the response in the network tab
     // step 2: make sure you can console.log the favorite id (make sure it's your internal db _id) and the current user (req.user)
@@ -133,7 +131,6 @@ function createComment(req, res) {
 
 
 
->>>>>>> master
 module.exports = {
     search,
     show,
