@@ -30,23 +30,30 @@ function show(req,res,next) {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
-    User.populate(req.user, 'favPets', function(err, user) {
-    request(options.url, function(err,response,body) {
-        var showNavbar = false;
-        let doc = JSON.parse(body);
-        var petArray = [];
-        var _id = '';
+    Pet.where({petfinderId: req.params.id}).find(function (err, allPets) {
+        if (err) console.log(err)
         var commentsArray = [];
         
-        user.favPets.forEach( (animal) => {
-            petArray.push(animal.petfinderId)
-            if (animal.petfinderId === req.params.id) {
-                _id = animal._id
-                commentsArray = animal.comments
-            }
+        allPets.forEach(pet => {
+            commentsArray = commentsArray.concat(pet.comments)
         })
-        res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
-    });
+
+        User.populate(req.user, 'favPets', function(err, user) {
+            request(options.url, function(err,response,body) {
+                var showNavbar = false;
+                let doc = JSON.parse(body);
+                var petArray = [];
+                var _id = '';
+                
+                user.favPets.forEach( (animal) => {
+                    petArray.push(animal.petfinderId)
+                    if (animal.petfinderId === req.params.id) {
+                        _id = animal._id
+                    }
+                })
+                res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
+            });
+        })
     })
 }
 
