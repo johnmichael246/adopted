@@ -53,8 +53,8 @@
                 </form>
             <% } %>
             <br>
-                <label>Notes:</label>
                 <% commentsArray.forEach(function(comment) { %> 
+                <label <% commentsArray.length === 0 ? "hidden" : "" %>>Notes:</label>
                     <p><%= comment.content %></p>
                     <p>By: <%= comment.name %>
                     <form action=" /pets/<%= _id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
