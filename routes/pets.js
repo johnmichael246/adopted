@@ -15,8 +15,9 @@ router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet)
 
 router.post('/results', loggedIn, function(req,res) {
   res.render('results', {results})
-})
+}) 
 
+router.post('/:petId/comments', loggedIn, petsCtrl.createComment)
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
