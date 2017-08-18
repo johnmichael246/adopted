@@ -265,5 +265,8 @@ body,html {
 .col-xs-2 {
   display: inline-table;
 }
+.resize-glyph {
+  font-size:30px;
+}
 
 

@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+$('#nextPage').on('click', function (event) {
+  console.log('event =', $(event.target).data())
+  var data = $(event.target).data()
+  console.log(data.animal, data.size, data.age, data.zip)
+  // console.log(data-animal, data-size, data-offset, data-age);
+
+  fetch ("/pets",
+    {
+      method:"POST",
+      credentials: 'include',
+
+      headers: {
+        content:'application/json'
+      }
+    });
+});
+
 $('span.boob').click(function(evt) {
   var $this = $(this);
   var id = $this.attr('id')
@@ -89,6 +106,7 @@ function formatPhoneNumber(s) {
   var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
   return (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];
 }
+
 
 
 })
