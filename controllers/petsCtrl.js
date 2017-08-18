@@ -7,12 +7,13 @@ const basePath = "http://api.petfinder.com/"
 
 function search(req,res,next) {
     var query = {
-        size: req.body.size || data.size,
-        age: req.body.age || data.age,
-        animal: req.body.animal || data.animal,
-        zip: req.body.zip || data.zip,
+        size: req.body.size,
+        age: req.body.age,
+        animal: req.body.animal,
+        zip: req.body.zip,
         offset: req.body.offset || 0
     }
+    console.log(query)
 
     var options = {
         url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=25&offset=${query.offset}`,
@@ -23,17 +24,13 @@ function search(req,res,next) {
             var showNavbar = true;
             let doc = JSON.parse(body);
             let dog = doc.petfinder.pets.pet
-            // console.log('\n\n\n-------')
-            // console.log('doc =', doc)
-            // console.log(doc.petfinder.lastOffset.$t)
-            // console.log(dog)
             var petArray = [];
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
             })
 
             query.offset = doc.petfinder.lastOffset.$t
-            // update the query object with lastOffset here
+            console.log(query.offset)
             res.render('results', {doc, showNavbar, user, petArray, query});
         });
 

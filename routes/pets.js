@@ -15,9 +15,6 @@ router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet);
 
 router.get('/api/favorites/:id', loggedIn, apiCtrl.toggleFav);
 
-router.get('/favorites/:id', loggedIn, apiCtrl.toggleFav);
-
-
 router.post('/results', loggedIn, function(req,res) {
   res.render('results', {results})
 })

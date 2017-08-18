@@ -66,17 +66,48 @@
     </div>
 </div>
 
-<div 
-    id="nextPage"
-    data-animal="<%= query.animal %>" 
-    data-size="<%= query.size%>" 
-    data-age="<%= query.age %>"
-    data-zip="<%= query.zip %>"
-    data-offset="<%= query.offset %>"> 
-    NEXT PAGE 
-</div>
+
+            <form action ="/pets" method="POST" id="results-search">
+                    <select class="hidden" id="Select1" name="animal">
+                        <option value="<%=query.animal%>"></option>
+                    </select>
+                    <select class="hidden" id="Select2" name="age">
+                        <option value="<%=query.age%>"></option>
+                    </select>
+                <select class="hidden" id="Select3" name="size">
+                    <option value="<%=query.size%>">Small</option>
+                </select>
+                <select name="zip"class="hidden">
+                    <option value= "<%=query.zip%>"></option>
+                <select>
+                <select class="hidden" name="offset">
+                    <option value="<%=query.offset%>"></option>
+                </select>
+                <button type="submit" class="btn-change"id="find2">Next Page</button>
+            </form>
+
+            <form action ="/pets" method="POST" id="results-search">
+                <select class="hidden" id="Select1" name="animal">
+                    <option value="<%=query.animal%>"></option>
+                </select>
+                <select class="hidden" id="Select2" name="age">
+                    <option value="<%=query.age%>"></option>
+                </select>
+                <select class="hidden" id="Select3" name="size">
+                    <option value="<%=query.size%>">Small</option>
+                </select>
+                <select name="zip"class="hidden">
+                    <option value= "<%=query.zip%>"></option>
+                </select>
+                <select class="hidden" name="offset">
+                    <option value="<%= query.offset - 50 < 0 ? 0 : query.offset - 50  %>"></option>
+                </select>
+                <button type="submit" class="btn-change"id="find2">Previous Page</button>
+            </form>
 
 <script src="/javascripts/results.js"></script>
+
+
 
 <%- include('./partials/footer') %>
 
