@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('span.boob').click(function(evt) {
+  $('span.b').click(function(evt) {
     var $this = $(this);
     var id = $this.attr('id')
     var userId = $this.data().userid;
@@ -36,10 +36,10 @@ $(document).ready(function() {
           content:'application/json'
         }
       });   
-    } else if($this.hasClass('boob')){
+    } else if($this.hasClass('b')){
       console.log('this pet has not been favorited yet')
       $(this).css("color", "#FF0000");
-      $this.toggleClass('boob'); 
+      $this.toggleClass('b'); 
       fetch (`api/favorites/${id}`,
       {
         method:'GET',
@@ -56,7 +56,7 @@ $(document).ready(function() {
       console.log('this pet has already been favorited')
       $(this).css("color", "#000000");
       
-      $this.toggleClass('boob');
+      $this.toggleClass('b');
       fetch(`api/favorites/${id}`, {
         body: {
           userId: userId
