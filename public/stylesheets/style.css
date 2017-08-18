@@ -89,19 +89,22 @@ a:hover {
   text-shadow: 1px 2px 3px #000000;
 }
 #main-nav {
-  background-image: url(http://i.imgur.com/q1uJgUw.png);
-  height: 400px;
+  background-image: url(http://i.imgur.com/znOTDpP.jpg);
+  min-height:75%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #profile-nav {
-  background-image: url(http://i.imgur.com/DZyl6xx.png);
-  height: 400px;
+  background-image: url(http://i.imgur.com/zvOK4ji.jpg?4);
+  min-height: 75%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #results-nav {
-  background-image: url(http://i.imgur.com/pE9tswG.png);
-  height: 400px;
+  background-image: url(http://i.imgur.com/xKreHsf.jpg?2);
+  min-height:75%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #main-page-image {
   background-repeat: no-repeat;
@@ -281,9 +284,8 @@ text-align: inherit;
   opacity:0.6;
 }
 #note-input {
-  display: inline;;
+  display: inline;
 }
-
 #welcome-title {
 opacity: .6;
 width: 300px;
@@ -293,9 +295,7 @@ font-size: 50px;
 background-color: white;
 padding: 5px;
 font-weight: bolder;
-
 }
-
 #welcome-subtitle {
   opacity: .6;
   width: 450px;
@@ -305,12 +305,10 @@ font-weight: bolder;
   background-color: white;
   padding: 5px;
   font-weight: bolder;
-  
-  }
-
-  #welcome-box {
+}
+#welcome-box {
     width: 800px;
     margin-left: 100px;
     margin-top: 150px;
     display: inline-grid;
-  }
+}

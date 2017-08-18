@@ -15,7 +15,7 @@ function search(req,res,next) {
     }
 
     var options = {
-        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=25&offset=${query.offset}`,
+        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=27&offset=${query.offset}`,
         method: 'GET'
     };
     User.populate(req.user, 'favPets',function(err, user) {
@@ -27,8 +27,6 @@ function search(req,res,next) {
                 petArray.push(animal.petfinderId)
             })
             query.offset = doc.petfinder.lastOffset.$t
-            console.log('im in the search function as query.offset ', query.offset)
-            console.log('\n\n also in search function \n\n\n')
             res.render('results', {doc, showNavbar, user, petArray, query});
         });
     })
@@ -78,14 +76,10 @@ function showFavPet(req,res) {
                 user.favPets.forEach( (animal) => {
                     petArray.push(animal.petfinderId)
                     if (animal.petfinderId === req.params.id) {
-                    console.log('showFavPet function animal._id ', animal._id)
-                    console.log('showFavPet function petfinderID ', animal.petfinderId)
-                    console.log('showFavPet function console logged animal: ', animal)
                         _id = animal._id
                         commentsArray = animal.comments
                     }
                 })  
-                console.log('comments array in the showFavPet function ', commentsArray)
                 res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
             });
     })
@@ -115,8 +109,6 @@ function deleteComment(req, res) {
        pet.comments.remove(req.params.commentId);
        pet.save()
         res.redirect('/pets/favorites/' + pet.petfinderId )
-        console.log("this is the pet", pet)
-        console.log('pet comments: ', pet.comments)
        })
 }
 
