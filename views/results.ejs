@@ -1,58 +1,53 @@
 <%- include('./partials/header') %>
 
-
 <h1 class ="fixed padding-bottom"><i class="fa fa-paw" aria-hidden="true"></i> | Search Results</h1>
 <a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
 <a id="sticky-link" href="/"><i class="glyphicon glyphicon-backward"></i> | Back To Search</a><br>
 <div class="container" style="box-sizing: content-box;display: inherit;">
     <div class="row">
-        <div class="col-xs-12">
-            <form action ="/pets" method="POST" class:"main-search" id="results-search">
-                <div class="input-group col-xs-3">
-                    <label for="Select1">Im looking to Adopt a..</label>
-                    <select class="form-control" id="Select1" name="animal">
-                        <option value="dog">Dog</option>
-                        <option value="cat">Cat</option>
-                    </select>
-                </div>
-                <div class="input-group col-xs-3">
-                    <label for="Select2">That is a..</label>
-                    <select class="form-control" id="Select2" name="age">
-                        <option>Baby</option>
-                        <option>Young</option>
-                        <option>Adult</option>
-                        <option>Senior</option>
-                    </select>
-                </div>
-                <div class="input-group col-xs-3"id="find2">
+        <form action ="/pets" method="POST" class="form-inline centered3">
+            <div class="input-group col-xs-2">
+                <label for="Select1">Im looking to Adopt a..</label>
+                <select class="form-control" id="Select1" name="animal">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+            </div>
+            <div class="input-group col-xs-2">
+                <label for="Select2">That is a..</label>
+                <select class="form-control" id="Select2" name="age">
+                    <option>Baby</option>
+                    <option>Young</option>
+                    <option>Adult</option>
+                    <option>Senior</option>
+                </select>
+            </div>
+            <div class="input-group col-xs-2">
                 <label for="Select3">And is..</label>
                 <select class="form-control" id="Select3" name="size">
                     <option value="S">Small</option>
                     <option value="M">Medium</option>
                     <option value="L">Large</option>
                 </select>
-                </div>
-                <div class="col-xs-3">
-                    <div class="input-group"id="find2">
-                        <label class="control-label">Near..</label>
-                        <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
-                    </div>
-                    <div class="col-xs-3">
-                        <button type="submit" class="btn-change"id="find2">Search!</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="input-group col-xs-2">
+                <label class="control-label">Near..</label>
+                <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
+            </div>
+            <div class="input-group col-xs-2">
+                <label></label>
+                <button type="submit" class="btn-change "id="find2">Search!</button>
+            </div>
+        </form>
     </div>
-            <% if (doc.petfinder.pets === undefined) { %>
-                <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
-            <% } else { %>
-                <% doc.petfinder.pets.pet.forEach(function(pet) {%>
+        <% if (doc.petfinder.pets === undefined) { %>
+            <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
+        <% } else { %>
+            <% doc.petfinder.pets.pet.forEach(function(pet) {%>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
                     <h2 id="pet-name"><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
-                    <a href="/pets/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize round image">
-                    </a>
+                    <a href="/pets/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize round image"></a>
                     <% } else { %>
                     <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round"></a>       
                     <% }; %>
@@ -64,50 +59,30 @@
                     <% } %></br>
                     <span id="<%= pet.id.$t %>" class="boob glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(pet.id.$t) > -1) {%> red <%}%>" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
                 </div>
-                <% }); %>
-            <% } %>
-        </div>
+            <% }); %>
+        <% } %>
+    <div class="col-xs-6"style="text-align:right">
+        <form action ="/pets" method="POST" id="results-search">
+            <input class="hidden" value="<%=query.animal%>" name="animal">
+            <input class="hidden" value="<%=query.age%>" name="age">
+            <input class="hidden" value="<%=query.size%>" name="size">
+            <input name="zip"class="hidden" value= "<%=query.zip%>" name="zip">
+            <input class="hidden" name="offset" value="<%= query.offset - 50 < 0 ? 0 : query.offset - 50  %>">
+            <button type="submit" class="btn-change"><i class="glyphicon glyphicon-chevron-left"> </i></button>
+        </form>
+    </div>
+    <div class="col-xs-6"style="text-align:left">
+        <form action ="/pets" method="POST" id="results-search">
+            <input class="hidden" value="<%=query.animal%>" name="animal">
+            <input class="hidden" value="<%=query.age%>" name="age">
+            <input class="hidden" value="<%=query.size%>" name="size">
+            <input name="zip"class="hidden" value= "<%=query.zip%>" name="zip">
+            <input class="hidden" name="offset" value="<%= query.offset %>">
+            <button type="submit" class="btn-change"><i class="glyphicon glyphicon-chevron-right"></i></button>
+        </form>
     </div>
 </div>
 
-
-            <form action ="/pets" method="POST" id="results-search">
-                    <select class="hidden" id="Select1" name="animal">
-                        <option value="<%=query.animal%>"></option>
-                    </select>
-                    <select class="hidden" id="Select2" name="age">
-                        <option value="<%=query.age%>"></option>
-                    </select>
-                <select class="hidden" id="Select3" name="size">
-                    <option value="<%=query.size%>">Small</option>
-                </select>
-                <select name="zip"class="hidden">
-                    <option value= "<%=query.zip%>"></option>
-                <select>
-                <select class="hidden" name="offset">
-                    <option value="<%=query.offset%>"></option>
-                </select>
-                <button type="submit" class="btn-change"id="find2">Next Page</button>
-            </form>
-
-            <form action ="/pets" method="POST" id="results-search">
-                <select class="hidden" id="Select1" name="animal">
-                    <option value="<%=query.animal%>"></option>
-                </select>
-                <select class="hidden" id="Select2" name="age">
-                    <option value="<%=query.age%>"></option>
-                </select>
-                <select class="hidden" id="Select3" name="size">
-                    <option value="<%=query.size%>">Small</option>
-                </select>
-                <select name="zip"class="hidden">
-                    <option value= "<%=query.zip%>"></option>
-                </select>
-                <select class="hidden" name="offset">
-                    <option value="<%= query.offset - 50 < 0 ? 0 : query.offset - 50  %>"></option>
-                </select>
-                <button type="submit" class="btn-change"id="find2">Previous Page</button>
-            </form>
 
 <script src="/javascripts/results.js"></script>
 
