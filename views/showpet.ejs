@@ -33,10 +33,6 @@
                 <% } else { %>
                     Female
                 <% } %><br>
-                Breed(s): 
-                <% doc.petfinder.pet.breeds.breed.forEach( (dog) => {%>
-                                |<%=dog.$t%>
-                <%})%>
             <% if (doc.petfinder.pet.shelterPetId.$t) { %>
                 My Shelter id is <%=doc.petfinder.pet.shelterPetId.$t%>!
             <% } %>
