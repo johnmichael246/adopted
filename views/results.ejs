@@ -1,6 +1,11 @@
 <%- include('./partials/header') %>
 
+<<<<<<< HEAD
 <h1 class ="fixed padding-bottom">Search Results</h1>
+=======
+
+<h1 class ="fixed padding-bottom"><i class="fa fa-paw" aria-hidden="true"></i> | Search Results</h1>
+>>>>>>> master
 <a id="sticky-link" href="/profile"><i class="glyphicon glyphicon-eye-open"></i> | View My Favorites</a><br>
 <a id="sticky-link" href="/"><i class="glyphicon glyphicon-backward"></i> | Back To Search</a><br>
 <div class="container">
@@ -49,9 +54,6 @@
                     <h2 id="pet-name"><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
                     <a href="/pets/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize round image">
-                    <div class="middle">
-                        <div class="pick-me">John Doe</div>
-                    </div>
                     </a>
                     <% } else { %>
                     <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round"></a>       
