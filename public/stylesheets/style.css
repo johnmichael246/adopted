@@ -242,6 +242,7 @@ body,html {
 }
 #show-pet-name {
   text-align: center;
+  -webkit-line-clamp: 1;
 }
 #pet-name {
   overflow: hidden;
