@@ -269,3 +269,12 @@ body,html {
 }
 
 
+.control-group col-xs-8 {
+margin-top: 10px;
+text-align: inherit;
+}
+
+.col-xs-8 {
+  margin-top: 9px;
+  
+}
