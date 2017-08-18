@@ -15,7 +15,7 @@ a:hover {
   float: right;
 }
 #find2 {
-  float: left;
+  display: block;
 }
 #primaryToolbar {
   text-align: right;
