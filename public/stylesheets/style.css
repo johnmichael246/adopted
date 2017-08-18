@@ -95,6 +95,7 @@ background: gray;
   text-align: center;
   font-size: 50px;
   font-weight: bolder;
+  text-shadow: 1px 2px 3px #000000;
 }
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
@@ -301,6 +302,10 @@ text-align: inherit;
 
 .carousel-story {
   text-align: center;
+}
+
+.col-xs-3 {
+  width: 50%;
 }
 
 
