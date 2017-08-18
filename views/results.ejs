@@ -47,9 +47,9 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
                     <h2 id="pet-name"><%=pet.name.$t%></h2>
                     <% if (pet.media.photos === undefined || pet.media === undefined) { %>
-                    <a href="/pets/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize round image"></a>
+                    <a href="/pets/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize round image fade"></a>
                     <% } else { %>
-                    <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round"></a>       
+                    <a href="/pets/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round color fade"></a>       
                     <% }; %>
                     <p class="centered"><%=pet.contact.city.$t%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=pet.contact.state.$t%>&nbsp;&nbsp;|&nbsp;&nbsp; <%=pet.contact.zip.$t%></br>
                     <% if (pet.sex.$t === "M") { %>
