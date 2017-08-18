@@ -284,7 +284,7 @@ text-align: inherit;
   opacity:0.6;
 }
 #note-input {
-  display: inline;;
+  display: inline;
 }
 #welcome-title {
 opacity: .6;
@@ -305,10 +305,10 @@ font-weight: bolder;
   background-color: white;
   padding: 5px;
   font-weight: bolder;
-  }
-  #welcome-box {
+}
+#welcome-box {
     width: 800px;
     margin-left: 100px;
     margin-top: 150px;
     display: inline-grid;
-  }
+}
