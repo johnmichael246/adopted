@@ -14,7 +14,7 @@
             <br>
             <span id="<%= doc.petfinder.pet.id.$t %>" class="b glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
             </span> &nbsp;&nbsp;&nbsp;
-            <span><a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a></span>
+            <span><a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>?subject=Im interested in <%=doc.petfinder.pet.name.$t%>!"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a></span>
         </div>
         <div class="col-xs-12 col-med-6 col-lg-6 col-xl-6">
             <br><br><br>

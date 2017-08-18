@@ -90,18 +90,26 @@ a:hover {
 }
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
-  height: 400px;
+  min-height:75%;
   background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-attachment: fixed;
+  /*width:auto;*/
 }
 #profile-nav {
   background-image: url(http://i.imgur.com/DZyl6xx.png);
   height: 400px;
   background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-attachment: fixed;
+  /*width:auto;*/
 }
 #results-nav {
   background-image: url(http://i.imgur.com/pE9tswG.png);
-  height: 400px;
   background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-attachment: fixed;
+  /*width:auto;*/
 }
 #main-page-image {
   background-repeat: no-repeat;
@@ -279,4 +287,9 @@ text-align: inherit;
 }
 .fade:hover{
   opacity:0.6;
+}
+@media only screen and (max-width: 800px) {
+  body {
+    background-image: url(images/background-photo-mobile-devices.jpg);
+  }
 }
