@@ -31,7 +31,6 @@ function show(req,res,next) {
     Pet.where({petfinderId: req.params.id}).find(function (err, allPets) {
         if (err) console.log(err)
         var commentsArray = [];
-        
         allPets.forEach(pet => {
             commentsArray = commentsArray.concat(pet.comments)
         })
@@ -89,7 +88,6 @@ function createComment(req, res) {
     }
     Pet.findById(_id, function(err, pet) {
         if(err) console.log(err)
-        // console.log(pet)
         pet.comments.push(comment)
         pet.save(function(err, savePet) {
             if(err) console.log(err)
