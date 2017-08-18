@@ -1,6 +1,6 @@
 <%- include('./partials/header') %>
 
-<h1><i class="fa fa-paw" aria-hidden="true"></i> | Pet Details:</h1>
+<h1><i class="fa fa-paw" aria-hidden="true"></i> | Pet Details</h1>
 <a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Profile</a>
 <div class="container" align="center">
     <div class="row">
@@ -43,13 +43,13 @@
             <% if(_id) { %>
                 <form action="/pets/<%= _id %>/comments" method="post">
                     <div class="form-group">
-                        <input type="text" name="comment" class="form-control" placeholder="add comment for <%= doc.petfinder.pet.name.$t %>">
+                        <input type="text" name="comment" class="form-control" placeholder="add note for <%= doc.petfinder.pet.name.$t %>">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             <% } %>
             <div>
-                <label>Comments:</label>
+                <label>Notes:</label>
                 <% commentsArray.forEach(function(comment) { %> 
                     <p><%= comment.content %></p>
                     <p>By: <%= comment.name %></p>
