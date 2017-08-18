@@ -15,13 +15,18 @@ a:hover {
   float: right;
 }
 #find2 {
-  float: left;
+  display: block;
 }
 #primaryToolbar {
   text-align: right;
   font-size: 17px;
   padding-right: 50px;
   padding-top: 30px;
+  list-style-type: none;
+  display: -webkit-inline-box;
+  float: right;
+  font-weight: bolder;
+
 }
 .container-fluid {
   float: left;
@@ -89,6 +94,7 @@ background: gray;
   width: 100%;
   text-align: center;
   font-size: 50px;
+  font-weight: bolder;
 }
 #main-nav {
   background-image: url(http://i.imgur.com/q1uJgUw.png);
@@ -237,6 +243,7 @@ body,html {
 }
 #show-pet-name {
   text-align: center;
+  -webkit-line-clamp: 1;
 }
 #pet-name {
   overflow: hidden;
@@ -257,12 +264,43 @@ body,html {
   padding:4%;
   
 }
-.li {
-  font-weight: bolder;
-  float: none;
-  display: inline-block;
 
-}
 .col-xs-2 {
   display: inline-table;
 }
+
+
+.control-group col-xs-8 {
+margin-top: 10px;
+text-align: inherit;
+}
+
+.col-xs-8 {
+  margin-top: 9px;
+  padding-left: inherit;
+  
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  opacity: .7;
+}
+
+.col-md-3:hover .overlay {
+  height: 75%;
+}
+
+.carousel-story {
+  text-align: center;
+}
+
+
