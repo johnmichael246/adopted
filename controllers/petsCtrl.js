@@ -89,7 +89,8 @@ function createComment(req, res) {
     var _id = req.params.petId
     var name = req.user.first_name
     var comment = {
-        content: req.body.comment
+        content: req.body.comment,
+        name: name
     }
 
     Pet.findById(_id, function(err, pet) {

@@ -4,6 +4,7 @@ var db = require('./../config/database');
 
 const commentSchema = new Schema ({
     content: String,
+    name: String
 }, {
     timestamps: true
 });
