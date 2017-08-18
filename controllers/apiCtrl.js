@@ -70,7 +70,7 @@ function toggleFav(req, res) {
                                 zipcode: dog.contact.zip.$t
                             },
                             petfinderId: dog.id.$t,
-                            photos: dog.media.photos.photo[2].$t,
+                            photos: dog.media.photos.photo[2].$t || "http://i.imgur.com/vI1T0h6.jpg?1",
                             description: dog.description.$t,
                             animal: dog.animal.$t
                         }, function( err, dog) {
