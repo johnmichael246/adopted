@@ -22,6 +22,10 @@ router.post('/results', loggedIn, function(req,res) {
 }) 
 router.post('/:petId/comments', loggedIn, petsCtrl.createComment)
 
+router.delete('/:petId/comments/:commentId', loggedIn, petsCtrl.deleteComment)
+
+
+
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
   res.redirect('/auth/google');
