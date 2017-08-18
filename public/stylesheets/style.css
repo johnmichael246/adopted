@@ -238,9 +238,6 @@ body,html {
 .text-field-padding {
   padding:4%;  
 }
-.col-xs-2 {
-  display: inline-table;
-}
 .resize-glyph {
   font-size:30px;
 }
@@ -270,10 +267,10 @@ text-align: inherit;
 .carousel-story, #pet-info {
   text-align: center;
 }
-.col-xs-3 {
-  width: 50%;
-}
 .centered2 {
   text-align: center;
   border: none;
+}
+.centered3{
+  text-align:center;
 }
