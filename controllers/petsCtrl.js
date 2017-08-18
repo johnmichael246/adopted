@@ -30,6 +30,7 @@ function search(req,res,next) {
 
             query.offset = doc.petfinder.lastOffset.$t
             console.log(query.offset)
+            console.log('\n\n asdfasdf \n\n\n')
             res.render('results', {doc, showNavbar, user, petArray, query});
         });
 
