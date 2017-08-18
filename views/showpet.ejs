@@ -32,16 +32,24 @@
                     Male
                 <% } else { %>
                     Female
-                <% } %>
+                <% } %><br>
+                Breed(s): 
+                <% doc.petfinder.pet.breeds.breed.forEach( (dog) => {%>
+                                |<%=dog.$t%>
+                <%})%>
+            <% if (doc.petfinder.pet.shelterPetId.$t) { %>
+                My Shelter id is <%=doc.petfinder.pet.shelterPetId.$t%>!
+            <% } %>
                 <hr>
                 <br>
-            You can also find me by my shelter Id! <%=doc.petfinder.pet.shelterPetId.$t%>
             <% if (doc.petfinder.pet.description.$t === undefined) { %>
                 <p> I’m <%=doc.petfinder.pet.name.$t%> I love people; especially ones that give me massages, peanut butter, and let me snooze in the sun. I have a favorite spot, right behind my ears, that I like to get rubbed. When that happens, I make a funny sound, because it feels so good! I get along with the dogs and people I have met here, including respectful children of all ages. I would rather not spend my time jogging or wrestling with energetic dogs since I’m a really mellow guy. I need a house full of soft beds, people who like snuggles, and yummy treats! </p>
             <% } else { %>
                 <%=doc.petfinder.pet.description.$t%></p>
             <% } %>     
         </div>      
+        <div class="row">
+            <div class="input-group input-group-lg">   
             <% if(_id) { %>
                 <form action="/pets/<%= _id %>/comments" method="post">
                     <div class="form-group">
@@ -50,15 +58,15 @@
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             <% } %>
-            <div>
+            <br>
                 <label>Notes:</label>
                 <% commentsArray.forEach(function(comment) { %> 
                     <p><%= comment.content %></p>
-                    <p>By: <%= comment.name %></p>
+                    <p>By: <%= comment.name %>
                     <form action=" /pets/<%= _id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-default">Delete</button>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i></button></p>
                     </form>
-                <% }) %>
+                    <% }) %>
             </div>
         </div>
     </div>

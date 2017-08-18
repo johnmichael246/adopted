@@ -48,7 +48,7 @@
                                 <div class="control-group col-xs-8">
                                     <label>Zip Code:</label><br>
                                     <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
-                                    <p class="help-block"></p>
+                                    <!-- <p class="help-block"></p> -->
                                     <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Save</button>       
                                 </div>
                             </div>
@@ -73,7 +73,11 @@
                                     <% user.favPets.forEach(function(dog) { %>
                                         <div class="col-xs-2">
                                             <h4 id="pet-name"><%= dog.name %></h4>
-                                            <a href="/pets/favorites/<%=dog.petfinderId%>"><img src="<%= dog.photos[0] %>" class="photo-resize2 fade round"></a>
+                                            <% if (dog.photos === undefined) { %>
+                                                <a href="/pets/favorites/<%=dog.petfinderId%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize2 round image fade"></a>
+                                                <% } else { %>
+                                                <a href="/pets/favorites/<%=dog.petfinderId%>"><img src="<%=dog.photos[0]%>" class="photo-resize2 round color fade"></a>       
+                                                <% }; %>
                                         </div> 
                                     <% }); %>
                                     </div>

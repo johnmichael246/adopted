@@ -89,27 +89,22 @@ a:hover {
   text-shadow: 1px 2px 3px #000000;
 }
 #main-nav {
-  background-image: url(http://i.imgur.com/q1uJgUw.png);
+  background-image: url(http://i.imgur.com/znOTDpP.jpg);
   min-height:75%;
   background-repeat: no-repeat;
-  /*background-size: cover;*/
   background-attachment: fixed;
-  /*width:auto;*/
 }
 #profile-nav {
-  background-image: url(http://i.imgur.com/DZyl6xx.png);
-  height: 400px;
+  background-image: url(http://i.imgur.com/vO4QM0W.jpg?1);
+  min-height: 75%;
   background-repeat: no-repeat;
-  /*background-size: cover;*/
   background-attachment: fixed;
-  /*width:auto;*/
 }
 #results-nav {
-  background-image: url(http://i.imgur.com/pE9tswG.png);
+  background-image: url(http://i.imgur.com/xKreHsf.jpg?2);
+  min-height:75%;
   background-repeat: no-repeat;
-  /*background-size: cover;*/
   background-attachment: fixed;
-  /*width:auto;*/
 }
 #main-page-image {
   background-repeat: no-repeat;
@@ -288,8 +283,6 @@ text-align: inherit;
 .fade:hover{
   opacity:0.6;
 }
-@media only screen and (max-width: 800px) {
-  body {
-    background-image: url(images/background-photo-mobile-devices.jpg);
-  }
+#note-input {
+  display: inline;
 }

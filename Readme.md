@@ -27,6 +27,7 @@ Easily search and find all adorable and adoptable pets in your area. For more ab
 * MongoDB
 * Mongoose
 * mLab Cloud Database
+* Postman to expose our API 
 * PetFinder API - database with over 300,000 adoptable pets and 11,000 animal welfare organizations
 * Git for version control
 * GitHub for team remote repositories control
@@ -38,11 +39,15 @@ Easily search and find all adorable and adoptable pets in your area. For more ab
 #### Restful API Routes
 Verb | URI Path | Purpose 
 ---- | -------- | -------
-GET | '/api/results' | Retrieves all pets
-GET | '/api/:id' | Retrieves one pet
-POST | 'api/' | Adds pet to your favorites
-PUT | '/api/:id' | Update pet from your favorite 
-DELETE | '/api/pets/:id' | Delete pet from your favorites
+GET | '/api/results' | Retrieves all pets from petfinder API
+POST | '/api/favorites/:id' | Add pet to your favorites
+GET | '/api/favorites/:id' | Retrieves one favorite pet
+POST | '/:petId/comments' | Add new comment on specific pet 
+DELETE | '/:petId/comments/:commentId' | Delete comments from a specific pet 
+PUT | '/users' | Create users initial preferences
+POST | '/users/profile' | Update users preferences on their profile 
+
+
 
 [Adopted](https://adopted.herokuapp.com/ "Adopted on Heroku")
 
