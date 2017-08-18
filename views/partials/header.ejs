@@ -20,6 +20,7 @@
             <li><a href="/#SEARCH_LINK">SEARCH PETS</a>&nbsp; | &nbsp;</li>
             <li><a href="/logout">LOG OUT</a></li>
           </ul>
+          <div id="welcome-box"> <h2 id="welcome-title"> ADOPTED </h2><h4 id="welcome-subtitle"> Perfecting Your Pet Adoption Experience </h4> </div>
         </nav>
       <% } else if (user) { %>
         <nav id="profile-nav" role="navigation">
@@ -30,6 +31,7 @@
             <li><a href="/#SEARCH_LINK">SEARCH PETS</a>&nbsp; | &nbsp;</li>
             <li><a href="/logout">LOG OUT</a></li>
           </ul>
+          <div id="welcome-box"> <h2 id="welcome-title"> ADOPTED </h2><h4 id="welcome-subtitle"> Perfecting Your Pet Adoption Experience </h4> </div>
         </nav>
       <% } else { %>
         <nav id="results-nav" role="navigation">
@@ -37,5 +39,7 @@
           <ul id="primaryToolbar" class="clearfix">
             <li>To Search Adoptable Pets, <a href="/auth/google">Login with Google </a> Here.</li>
           </ul>
+          <div id="welcome-box"> <h2 id="welcome-title"> ADOPTED </h2><h4 id="welcome-subtitle"> Perfecting Your Pet Adoption Experience </h4> </div>
         </nav>
       <% } %>
+
