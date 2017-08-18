@@ -286,3 +286,29 @@ text-align: inherit;
 #note-input {
   display: inline;
 }
+#welcome-title {
+opacity: .6;
+width: 300px;
+text-align: left;
+font-size: 50px;
+/* position: absolute; */
+background-color: white;
+padding: 5px;
+font-weight: bolder;
+}
+#welcome-subtitle {
+  opacity: .6;
+  width: 450px;
+  text-align: left;
+  font-size: 20px;
+  /* position: absolute; */
+  background-color: white;
+  padding: 5px;
+  font-weight: bolder;
+}
+#welcome-box {
+    width: 800px;
+    margin-left: 100px;
+    margin-top: 150px;
+    display: inline-grid;
+}
