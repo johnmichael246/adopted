@@ -23,7 +23,6 @@ function search(req,res,next) {
         request(options.url, function(err,response,body) {
             var showNavbar = true;
             let doc = JSON.parse(body);
-            let dog = doc.petfinder.pets.pet
             var petArray = [];
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
