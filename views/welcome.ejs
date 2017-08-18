@@ -40,18 +40,10 @@
             </div>
             <div class="control-group col-xs-12">
               <label class="control-label">Near..</label>
-              <div class="controls col-xs-12">
-                <input id="postal-code-welcome" name="zip" type="text" placeholder="zip or postal code"
-                class="input-xlarge" maxlength="5" required pattern=^\d{5}$>
-                <p class="help-block"></p>
-              </div>
             </div>
-            <div class="input-group-btn col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
-              <button type="submit" id="sub" class="btn-change">Search!</button>
-            </div>
+            <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
+            <button type="submit" class="btn-change"id="find2">Search!</button>
         </form>
-        </div>
-        </div>
         <% } else { %><br>
           <p><b> Our Mission:</b><br>
             To use Internet technology and the resources it can generate to:<br>
@@ -63,8 +55,6 @@
         <% } %>
       </div>
     </div>
-  </div>
-</div>
 </div>
 <br>
 <div id="petsuccess" style="overflow: hidden"> PET SUCCESS PICTURES </div> 
