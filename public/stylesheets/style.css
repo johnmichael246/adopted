@@ -261,12 +261,14 @@ body,html {
   display: -webkit-inline-flex;
 }
 .text-field-padding {
-  padding:4%;
-  
+  padding:4%;  
 }
 
 .col-xs-2 {
   display: inline-table;
+}
+.resize-glyph {
+  font-size:30px;
 }
 
 
