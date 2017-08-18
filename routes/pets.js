@@ -13,12 +13,13 @@ router.get('/:id', loggedIn, petsCtrl.show);
 
 router.get('/favorites/:id', loggedIn, petsCtrl.showFavPet);
 
+router.get('/favorites/api/favorites/:id', loggedIn, apiCtrl.toggleFav);
+
 router.get('/api/favorites/:id', loggedIn, apiCtrl.toggleFav);
 
 router.post('/results', loggedIn, function(req,res) {
   res.render('results', {results})
 }) 
-
 router.post('/:petId/comments', loggedIn, petsCtrl.createComment)
 
 router.delete('/:petId/comments/:commentId', loggedIn, petsCtrl.deleteComment)

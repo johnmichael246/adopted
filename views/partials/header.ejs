@@ -9,13 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/jquery-3.2.1.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
   </head>
   <body>
       <% if (user && showNavbar) { %>
         <nav id="main-nav" role="navigation" >
           <ul id="primaryToolbar" class="clearfix">
-            <li>Hello <%=user.first_name%> &nbsp; | &nbsp;</li>
+            <li>Hello, <%=user.first_name%>! &nbsp; | &nbsp;</li>
             <li><a href="/profile">PROFILE</a> &nbsp; | &nbsp;</li>
             <li><a href="/#SEARCH_LINK">SEARCH PETS</a>&nbsp; | &nbsp;</li>
             <li><a href="/logout">LOG OUT</a></li>
@@ -24,7 +23,7 @@
       <% } else if (user) { %>
         <nav id="profile-nav" role="navigation">
           <ul id="primaryToolbar" class="clearfix">
-            <li>Hello <%=user.first_name%>&nbsp; | &nbsp;</li>
+            <li>Hello, <%=user.first_name%>!&nbsp; | &nbsp;</li>
             <li><a href="/">HOME</a>&nbsp; | &nbsp;</li>
             <li><a href="/#SEARCH_LINK">SEARCH PETS</a>&nbsp; | &nbsp;</li>
             <li><a href="/logout">LOG OUT</a></li>

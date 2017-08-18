@@ -13,7 +13,6 @@ function search(req,res,next) {
         zip: req.body.zip,
         offset: req.body.offset || 0
     }
-    console.log(query)
 
     var options = {
         url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=25&offset=${query.offset}`,
