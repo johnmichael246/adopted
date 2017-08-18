@@ -110,15 +110,14 @@ function createComment(req, res) {
 }
 
 function deleteComment(req, res) {
-    console.log('deleteComment has been reached')
-    // var _id = req.params.petId
-    // var comment = 
-    // Pet.findById(_id, function(err, pet) {
-    //     Comment.findById()
-    //     if(err) console.log(err)
-    //     pet.comment.remove()
-    // })
-    // res.render('')
+    var _id = req.params.petId
+    Pet.findById(_id, function (err, pet) {
+       pet.comments.remove(req.params.commentId);
+       pet.save()
+        res.redirect('/pets/favorites/' + pet.petfinderId )
+        console.log("this is the pet", pet)
+        console.log('pet comments: ', pet.comments)
+       })
 }
 
 module.exports = {
