@@ -35,10 +35,17 @@ function show(req,res,next) {
         var showNavbar = false;
         let doc = JSON.parse(body);
         var petArray = [];
+        var _id = '';
+        var commentsArray = [];
+        
         user.favPets.forEach( (animal) => {
             petArray.push(animal.petfinderId)
+            if (animal.petfinderId === req.params.id) {
+                _id = animal._id
+                commentsArray = animal.comments
+            }
         })
-        res.render('showpet', {doc, showNavbar, user:req.user, petArray});
+        res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
     });
     })
 }
