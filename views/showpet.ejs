@@ -52,12 +52,7 @@
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             <% } %>
-<<<<<<< HEAD
-            <div>
-=======
             <br>
-                <label>Notes:</label>
->>>>>>> master
                 <% commentsArray.forEach(function(comment) { %> 
                 <label <% commentsArray.length === 0 ? "hidden" : "" %>>Notes:</label>
                     <p><%= comment.content %></p>
