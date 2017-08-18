@@ -57,6 +57,7 @@ function toggleFav(req, res) {
                     method: 'GET'
                     };
                     request(options.url, function( err, response, body) {
+
                         let doc = JSON.parse(body);
                         let dog = doc.petfinder.pet;
                         Pet.create({

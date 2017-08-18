@@ -4,9 +4,19 @@ var User = require('./../models/user');
 var Pet = require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
 
+
 function search(req,res,next) {
+    var query = {
+        size: req.body.size,
+        age: req.body.age,
+        animal: req.body.animal,
+        zip: req.body.zip,
+        offset: req.body.offset || 0
+    }
+    console.log(query)
+
     var options = {
-        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${req.body.size}&age=${req.body.age}&animal=${req.body.animal}&location=${req.body.zip}&count=27`,
+        url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=25&offset=${query.offset}`,
         method: 'GET'
     };
     User.populate(req.user, 'favPets',function(err, user) {
@@ -18,7 +28,10 @@ function search(req,res,next) {
                 petArray.push(animal.petfinderId)
             })
 
-            res.render('results', {doc, showNavbar, user, petArray});
+            query.offset = doc.petfinder.lastOffset.$t
+            console.log(query.offset)
+            console.log('\n\n asdfasdf \n\n\n')
+            res.render('results', {doc, showNavbar, user, petArray, query});
         });
     })
 }
