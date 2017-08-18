@@ -22,6 +22,11 @@ a:hover {
   font-size: 17px;
   padding-right: 50px;
   padding-top: 30px;
+  list-style-type: none;
+  display: -webkit-inline-box;
+  float: right;
+  font-weight: bolder;
+
 }
 .container-fluid {
   float: left;
@@ -257,12 +262,9 @@ body,html {
   padding:4%;
   
 }
-.li {
-  font-weight: bolder;
-  float: none;
-  display: inline-block;
 
-}
 .col-xs-2 {
   display: inline-table;
 }
+
+
