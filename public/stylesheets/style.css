@@ -276,5 +276,6 @@ text-align: inherit;
 
 .col-xs-8 {
   margin-top: 9px;
+  padding-left: inherit;
   
 }
