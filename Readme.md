@@ -10,7 +10,6 @@ Adopted was created by three dog-loving developers who are set out on a mission 
 
 * Ease of usability for the users
 
-
 ##### Pet Details
 ![Screenshot](http://i.imgur.com/YBmYwKn.png "Show Pet Screenshot")
 Easily search and find all adorable and adoptable pets in your area. For more about the pet, click the pets picture to see detailed information about the pet, add them to your favorites or send the shelter a message about the pet!
@@ -45,27 +44,15 @@ POST | 'api/' | Adds pet to your favorites
 PUT | '/api/:id' | Update pet from your favorite 
 DELETE | '/api/pets/:id' | Delete pet from your favorites
 
-
-
 [Adopted](https://adopted.herokuapp.com/ "Adopted on Heroku")
 
 [Adopted Trello Board](https://trello.com/b/0c88vfvE/pet-finder "Adopted on Trello")
 
 [Adopted Pitch Deck](https://ga-students.slack.com/files/jessbakk/F6N2A9A0P/adopted_pitch_deck.key)
 
-
 ![Problems](http://i.imgur.com/zGB99kW.png "Unsolved Problems")
 
---
---
-
-** TO BE ADDED AT THE END **
-Description of any unsolved problems your team had to overcome
-
---
---
---
-
+* **Search by Radius** - One of our next steps is to include a feature to search for pets within a certain mile radius. We will include Google maps for a better user experience.
 
 ![Enhancements](http://i.imgur.com/DGsB3Pg.png "Future Enhancements")
 
@@ -80,7 +67,6 @@ Description of any unsolved problems your team had to overcome
 * **Donations** - Users to be able to make donations directly to the shelters, organizations or sponsor a pet directly, if unable to adopt or would like to help many pets.
 
 * **Share Success Stories** - Social platform to share success stories and pictures.
-
 
 ![Thank You](http://i.imgur.com/GnnLNQs.png "Thank You")
 
