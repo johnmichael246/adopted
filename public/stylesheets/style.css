@@ -312,3 +312,8 @@ font-weight: bolder;
     margin-top: 150px;
     display: inline-grid;
 }
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
