@@ -42,17 +42,23 @@
                 <option value="L" <%= user.preferences.size === 'L' ?  'selected' : ''  %>>Large</option>
               </select>
             </div>
-            <div class="control-group col-xs-12">
-              <label class="control-label">Near..</label>
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="control-group col-xs-12">
+                  <label class="control-label">Near..</label>
+                </div>
+                <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
+                <button type="submit" class="btn-change"id="find2" >Search!</button>
+              </form>
             </div>
-            <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
-            <button type="submit" class="btn-change"id="find2" >Search!</button>
-          </form>
-          OR:
-          <form action="/search/shelters" method="POST">
-            <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
-            <button type="submit"class="btn-change">Search Nearby Shelters</button>
-          </form>
+            <div class="col-xs-6">
+            OR:
+            <form action="/search/shelters" method="POST">
+              <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
+              <button type="submit"class="btn-change">Search Shelters</button>
+            </form>
+          </div>
+        </div>
         <% } else { %><br>
           <p><b> Our Mission:</b><br>
             To use Internet technology and the resources it can generate to:<br>
