@@ -136,7 +136,6 @@ function toggleFav(req, res) {
     })
 };
 
-
 function createComment(req, res) {
     var _id = req.params.petId
     var name = req.user.first_name
@@ -168,7 +167,6 @@ function searchShelters(req,res,next) {
         zip: req.body.zip,
         offset: req.body.offset || 0
     }
-    console.log(query)
     var options = {
         url: `${basePath}shelter.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&location=${query.zip}&count=27&offset=${query.offset}`,
         method: 'GET'
@@ -181,6 +179,30 @@ function searchShelters(req,res,next) {
     });
 }
 
+function showShelter(req,res,next) {
+    var query = {
+        offset: req.body.offset || 0,
+    }
+    console.log(req.params.id)
+    console.log(query)
+    var options = {
+        url: `${basePath}shelter.getPets?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}&count=27&offset=${query.offset}`,
+        method: 'GET'
+    };
+    User.populate(req.user, 'favPets', function(err, user) {
+        request(options.url, function(err,response,body) {
+            var showNavbar = true;
+            let doc = JSON.parse(body);
+            var petArray =[];
+            user.favPets.forEach(function(pet) {
+                petArray.push(pet.petfinderId)
+            });
+            query.offset = doc.petfinder.lastOffset.$t
+            res.render('showshelter', {doc, showNavbar, user:req.user, petArray, query});
+        });
+    });
+}
+
 module.exports = {
     search,
     show,
@@ -188,5 +210,6 @@ module.exports = {
     createComment,
     deleteComment,
     toggleFav,
-    searchShelters
+    searchShelters,
+    showShelter
 }

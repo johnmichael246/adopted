@@ -15,12 +15,13 @@ router.get('/favorited/:id', loggedIn, searchCtrl.showFavPet);
 
 router.post('/shelters', loggedIn, searchCtrl.searchShelters);
 
+router.get('/shelters/:id', loggedIn, searchCtrl.showShelter);
+
 router.get('/favorited/search/favorites/:id', loggedIn, searchCtrl.toggleFav);
 
 router.post('/:petId/comments', loggedIn, searchCtrl.createComment)
 
 router.delete('/:petId/comments/:commentId', loggedIn, searchCtrl.deleteComment)
-
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

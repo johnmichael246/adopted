@@ -5,15 +5,15 @@
 <a id="sticky-link" href="/"><i class="glyphicon glyphicon-backward"></i> | Back To Search</a><br>
 <div class="container" style="box-sizing: content-box;display: inherit;">
     <div class="row">
-        <form action ="/pets" method="POST" class="form-inline centered3">
-            <div class="input-group col-xs-6 col-sm-2 ">
+        <form action ="/search" method="POST" class="form-inline centered3">
+            <div class="input-group col-xs-2">
                 <label for="Select1">Im looking to Adopt a..</label>
                 <select class="form-control" id="Select1" name="animal">
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                 </select>
             </div>
-            <div class="input-group col-xs-6 col-sm-2">
+            <div class="input-group col-xs-2">
                 <label for="Select2">That is a..</label>
                 <select class="form-control" id="Select2" name="age">
                     <option>Baby</option>
@@ -22,7 +22,7 @@
                     <option>Senior</option>
                 </select>
             </div>
-            <div class="input-group col-xs-6 col-sm-2">
+            <div class="input-group col-xs-2">
                 <label for="Select3">And is..</label>
                 <select class="form-control" id="Select3" name="size">
                     <option value="S">Small</option>
@@ -30,7 +30,7 @@
                     <option value="L">Large</option>
                 </select>
             </div>
-            <div class="input-group col-xs-6 col-sm-2">
+            <div class="input-group col-xs-2">
                 <label class="control-label">Near..</label><br>
                 <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="text-field-padding">
             </div>
@@ -40,21 +40,24 @@
             </div>
         </form>
     </div>
-        <% if (doc.petfinder.shelters === undefined || doc.petfinder.shelters.shelter === undefined) { %>
+        <% if (doc.petfinder.pets === undefined) { %>
             <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
         <% } else { %>
-            <% doc.petfinder.shelters.shelter.forEach(function(shelter) {%>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 centered">
-                    <a href="/search/shelters/<%=shelter.id.$t%>" class="shelter"name="<%=shelter.id.$t%>"><h3><%=shelter.name.$t%></h3></a>
-                    <p class="centered">
-                        <% if(shelter.phone.$t) { %>
-                            <%=shelter.phone.$t%>
-                        <% } %> |
-                        <% if (shelter.email.$t) { %>
-                            <%=shelter.email.$t %>
-                        <% } %></br>
-                        <%= shelter.city.$t%>&nbsp;,&nbsp;<%= shelter.state.$t%>
-                    </p>
+            <% doc.petfinder.pets.pet.forEach(function(pet) {%>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 centered">
+                    <h2 id="pet-name"><%=pet.name.$t%></h2>
+                    <% if (pet.media.photos === undefined || pet.media === undefined) { %>
+                    <a href="/search/<%=pet.id.$t%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize round image fade"></a>
+                    <% } else { %>
+                    <a href="/search/<%=pet.id.$t%>"><img src="<%=pet.media.photos.photo[2].$t%>" class="photo-resize round color fade"></a>       
+                    <% }; %>
+                    <p class="centered"><%=pet.contact.city.$t%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=pet.contact.state.$t%>&nbsp;&nbsp;|&nbsp;&nbsp; <%=pet.contact.zip.$t%></br>
+                    <% if (pet.sex.$t === "M") { %>
+                    Male
+                    <% } else { %>
+                    Female
+                    <% } %></br>
+                    <span id="<%= pet.id.$t %>" class="b glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(pet.id.$t) > -1) {%> red <%}%>" aria-hidden="true" data-userid='<%= user._id %>' name ="<%= pet.id.$t%>"></span>
                 </div>
             <% }); %>
         <% } %>
@@ -63,14 +66,20 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="col-xs-6"style="text-align:right">
-            <form action ="/search/shelters" method="POST" id="results-search">
+            <form action ="/pets" method="POST" id="results-search">
+                <input class="hidden" value="<%=query.animal%>" name="animal">
+                <input class="hidden" value="<%=query.age%>" name="age">
+                <input class="hidden" value="<%=query.size%>" name="size">
                 <input name="zip"class="hidden" value= "<%=query.zip%>" name="zip">
                 <input class="hidden" name="offset" value="<%= query.offset - 50 < 0 ? 0 : query.offset - 50  %>">
                 <button type="submit" class="btn-change"><i class="glyphicon glyphicon-chevron-left"> </i></button>
             </form>
         </div>
         <div class="col-xs-6"style="text-align:left">
-            <form action ="/search/shelters" method="POST" id="results-search">
+            <form action ="/pets" method="POST" id="results-search">
+                <input class="hidden" value="<%=query.animal%>" name="animal">
+                <input class="hidden" value="<%=query.age%>" name="age">
+                <input class="hidden" value="<%=query.size%>" name="size">
                 <input name="zip"class="hidden" value= "<%=query.zip%>" name="zip">
                 <input class="hidden" name="offset" value="<%= query.offset %>">
                 <button type="submit" class="btn-change"><i class="glyphicon glyphicon-chevron-right"></i></button>
