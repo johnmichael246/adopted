@@ -10,10 +10,8 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 require('dotenv').config();
-
 var welcome = require('./routes/welcome');
-var users = require('./routes/users');
-var pets = require('./routes/pets');
+var search = require('./routes/search');
 var api = require('./routes/api');
 require('./config/database');
 require('./config/passport');
@@ -41,9 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
 
 app.use('/', welcome);
-app.use('/users', users);
 app.use('/api', api);
-app.use('/pets', pets);
+app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
