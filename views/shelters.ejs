@@ -40,12 +40,13 @@
             </div>
         </form>
     </div>
+    </br>
         <% if (doc.petfinder.shelters === undefined || doc.petfinder.shelters.shelter === undefined) { %>
             <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
         <% } else { %>
             <% doc.petfinder.shelters.shelter.forEach(function(shelter) {%>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 centered">
-                    <a href="/search/shelters/<%=shelter.id.$t%>" class="shelter"name="<%=shelter.id.$t%>"><h3><%=shelter.name.$t%></h3></a>
+                    <a href="/search/shelters/<%=shelter.id.$t%>" class="shelter"name="<%=shelter.id.$t%>"><h3 class="centered"><%=shelter.name.$t%></h3></a>
                     <p class="centered">
                         <% if(shelter.phone.$t) { %>
                             <%=shelter.phone.$t%>
@@ -54,7 +55,7 @@
                             <%=shelter.email.$t %>
                         <% } %></br>
                         <%= shelter.city.$t%>&nbsp;,&nbsp;<%= shelter.state.$t%>
-                    </p>
+                    </p></br>
                 </div>
             <% }); %>
         <% } %>
