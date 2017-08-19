@@ -1,34 +1,33 @@
 <%- include('./partials/header') %>
 <br>
-
 <div class="container" id="profile">
     <div class="row" id="pref">
         <div class="col-xs-12">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6 lead"><i class="fa fa-paw" aria-hidden="true"></i> | User profile<hr></div>
-                </div>
-                <div class="row">
-			        <div class="col-xs-12 col-sm-6 col-med-6 col-lg-6 col-xl-6 text-center">
-                        <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto;" src='<%=user.photo%>' height="100" width="100">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6 lead"><i class="fa fa-paw" aria-hidden="true"></i> | User profile<hr></div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6">
-                        <h1 class="only-bottom-margin"><%=user.first_name%> <%=user.last_name%></h1>
-                            <span class="text-muted">Email:</span><%=user.email%> <br>
-                            </div>
-                            <div class="col-xs-12">
-                                <form action ="/profile" method="POST" class:"pet-pref" style="-webkit-user-select:none; 
+                    <div class="row">
+			            <div class="col-xs-12 col-sm-6 col-med-6 col-lg-6 col-xl-6 text-center">
+                            <img class="img-circle avatar avatar-original" style="-webkit-user-select:none; display:block; margin:auto;" src='<%=user.photo%>' height="100" width="100">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-med-6 col-lg-6 col-xl-6 centered3">
+                            <h1 class="only-bottom-margin"><%=user.first_name%> <%=user.last_name%></h1>
+                            <span class="text-muted">Email:</br><%=user.email%></span> <br>
+                        </div>
+                        <div class="col-xs-12">
+                            <form action ="/profile" method="POST" class:"pet-pref" style="-webkit-user-select:none; 
                                 display:block; margin:auto">
-                                    <h3><i class="fa fa-paw" aria-hidden="true"></i> | Pet Preferences:</h3>
-                                <div class="input-group col-xs-8">
+                                <h3><i class="fa fa-paw" aria-hidden="true"></i> | Pet Preferences:</h3>
+                                <div class="input-group col-xs-8 form-actions">
                                     <label for="Select1">Im looking to Adopt a..</label>
                                     <select class="form-control" id="Select1" value="<%= user.preferences.species %>" name="animal">
                                         <option class="species" value="dog" <%= user.preferences.species === 'dog' ?  'selected' : ''  %>>Dog</option>
                                         <option class="species" value="cat" <%= user.preferences.species === 'cat' ?  'selected' : ''  %>>Cat</option>
                                     </select>
                                 </div>
-                                <div class="input-group col-xs-8">
+                                <div class="input-group col-xs-8 form-actions">
                                     <label for="Select2">Age:</label>
                                     <select class="form-control" id="Select2" id="age" value="<%= user.preferences.age %>" name="age">
                                     <option class="age" value="Baby" <%= user.preferences.age === 'Baby' ?  'selected' : ''  %>>Baby</option>
@@ -37,7 +36,7 @@
                                     <option class="age" value="Senior" <%= user.preferences.age === 'Senior' ?  'selected' : ''  %>>Senior</option>
                                   </select>
                                 </div>
-                                <div class="input-group col-xs-8">
+                                <div class="input-group col-xs-8 form-actions">
                                     <label for="Select3">Size:</label>
                                     <select class="form-control" id="Select3" value="<%= user.preferences.size %>" name="size">
                                         <option class="size" value="S" <%= user.preferences.size === 'S' ?  'selected' : ''  %> >Small</option>
@@ -45,14 +44,13 @@
                                         <option class="size" value="L" <%= user.preferences.size === 'L' ?  'selected' : ''  %>>Large </option>
                                     </select>
                                 </div>
-                                <div class="control-group col-xs-8">
+                                <div class="control-group col-xs-8 form-actions">
                                     <label>Zip Code:</label><br>
                                     <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
-                                    <!-- <p class="help-block"></p> -->
-                                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Save</button>       
+                                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Update Preferences</button>     
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,36 +58,34 @@
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="panel-body">
-                            <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6 lead"><i class="fa fa-paw" aria-hidden="true"></i> | Favorite Pets<hr></div>
+                        <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6 lead">
+                            <i class="fa fa-paw" aria-hidden="true"></i> | Favorite Pets<hr>
                         </div>
-                        <div class="row pet-favorites">
-                            <% if(user.favPets.length === 0) { %>
-                                <h3>No favorites, click here to find your furry friend!</h3>
-                            <% } else { %>
-                                <h4>Select a pet to view details.</h4>
-                                <div class="row">
-                                    <div class="col-xs-12">
+                    </div>
+                    <div class="row pet-favorites">
+                        <% if(user.favPets.length === 0) { %>
+                            <h4 class="centered3">No favorites, click here to find your furry friend!</h4></br></br>
+                        <% } else { %>
+                            <h4>Select a pet to view details.</h4>
+                            <div class="row">
+                                <div class="col-xs-12">
                                     <% user.favPets.forEach(function(dog) { %>
-                                        <div class="col-xs-2">
+                                        <div class="col-xs-1 col-xs-2">
                                             <h4 id="pet-name"><%= dog.name %></h4>
                                             <% if (dog.photos === undefined) { %>
                                                 <a href="/search/favorited/<%=dog.petfinderId%>"><img src="http://i.imgur.com/vI1T0h6.jpg?1" class="photo-resize2 round image fade"></a>
-                                                <% } else { %>
+                                            <% } else { %>
                                                 <a href="/search/favorited/<%=dog.petfinderId%>"><img src="<%=dog.photos[0]%>" class="photo-resize2 round color fade"></a>       
-                                                <% }; %>
+                                            <% }; %>
                                         </div> 
                                     <% }); %>
-                                    </div>
                                 </div>
-                            <% } %>
-                        </div>
+                            </div>
+                        <% } %>
                     </div>
                 </div> 
             </div>
         </div>
+    </div>
 </div>       
-
-<!--<script src="/javascripts/profile.js"></script>-->
-
 <%- include('./partials/footer') %>

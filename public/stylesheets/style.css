@@ -203,10 +203,10 @@ h3 {
     font-size: 30px;
     cursor: pointer;
 }
-div.row {
+/*div.row {
   padding-left: inherit;
   display: inline;
-}
+}*/
 #pet-name {
   overflow: hidden;
   display: -webkit-box;
@@ -291,7 +291,6 @@ opacity: .6;
 width: 300px;
 text-align: left;
 font-size: 50px;
-/* position: absolute; */
 background-color: white;
 padding: 5px;
 font-weight: bolder;
@@ -301,7 +300,6 @@ font-weight: bolder;
   width: 450px;
   text-align: left;
   font-size: 20px;
-  /* position: absolute; */
   background-color: white;
   padding: 5px;
   font-weight: bolder;
