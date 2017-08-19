@@ -28,6 +28,7 @@
           <ul id="primaryToolbar" class="clearfix">
             <li>Hello, <%=user.first_name%>!&nbsp; | &nbsp;</li>
             <li><a href="/">HOME</a>&nbsp; | &nbsp;</li>
+            <li><a href="/profile">PROFILE</a>&nbsp; | &nbsp;</li>
             <li><a href="/#SEARCH_LINK">SEARCH PETS</a>&nbsp; | &nbsp;</li>
             <li><a href="/logout">LOG OUT</a></li>
           </ul>
@@ -37,9 +38,11 @@
         <nav id="results-nav" role="navigation">
           <img src="http://i.imgur.com/SfNzX78.png?1" width="40px" height="40px">          
           <ul id="primaryToolbar" class="clearfix">
-            <li>To Search Adoptable Pets, <a href="/auth/google">Login with Google </a> Here.</li>
+            <li>To Search Adoptable Pets, <a href="/auth/google">Login with Google </a> Here</li>
           </ul>
-          <div id="welcome-box"> <h2 id="welcome-title"> ADOPTED </h2><h4 id="welcome-subtitle"> Perfecting Your Pet Adoption Experience </h4> </div>
+          <div id="welcome-box"> 
+            <h2 id="welcome-title"> ADOPTED </h2>
+            <h4 id="welcome-subtitle"> Perfecting Your Pet Adoption Experience </h4> </div>
         </nav>
       <% } %>
 
