@@ -320,3 +320,6 @@ font-weight: bolder;
   /*background-color:grey*/
   border-radius:10%;
 }
+h1 {
+  font-size:30px;
+}
