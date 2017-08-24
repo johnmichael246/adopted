@@ -41,6 +41,7 @@
         </form>
     </div>
     </br>
+        <div id="map2" class="centered3"><div>
         <% if (doc.petfinder.shelters === undefined || doc.petfinder.shelters.shelter === undefined) { %>
             <h1>Sorry, we couldnt find any friends near here, try a different area!</h1>
         <% } else { %>
@@ -79,10 +80,27 @@
         </div>
     </div>
 </div>
-
-
-
 <script src="/javascripts/results.js"></script>
+<script>
+    function initMap() {
+    //   console.log(position.results[0].geometry.location.lat)
+    let latitude = <%- JSON.stringify(position.results[0].geometry.location.lat) %>;
+    let longitude= <%- JSON.stringify(position.results[0].geometry.location.lng) %>;
+    let mapOptions = {
+            center:{lat:latitude, lng:longitude},
+            zoom:12
+        }
+    var map = new google.maps.Map(document.getElementById('map2'), 
+        mapOptions);
+    marker = new google.maps.Marker({
+        position: mapOptions.center,
+        map: map
+    });
+    }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK8vdBhGeopGpTPRv6lT4S99xT7FqmuUA&callback=initMap">
+</script>
 
 
 

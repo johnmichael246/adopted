@@ -314,3 +314,9 @@ font-weight: bolder;
   /*background-color:grey*/
   border-radius:10%;
 }
+#map2 {
+  width:65%;
+  height:250px;
+  /*background-color:grey*/
+  border-radius:10%;
+}
