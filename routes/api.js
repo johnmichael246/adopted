@@ -7,7 +7,6 @@ router.get('/:id', apiCtrl.getOnePet);
 router.put('/:id', apiCtrl.updatePet);
 router.post('/', apiCtrl.createPet);
 router.delete('/:id', apiCtrl.deletePet);
-router.get('/favorites/:id', loggedIn, apiCtrl.toggleFav);
 
 function loggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

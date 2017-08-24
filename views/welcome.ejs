@@ -1,5 +1,4 @@
 <%- include('./partials/header') %>
-<br>
 <div class="row">
   <div class="col-xs-12">
     <div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -13,11 +12,12 @@
         <h4 id="subtext"><strong>SAVE A LIFE</strong></h4>          
         <% if (user) { %>
         <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xl-8">
-          <form action ="/pets" method="POST" class:"main-search">
+          <form action ="/search" method="POST" class:"main-search">
             <div class="input-group col-xs-12">
               <label for="Select1">Im looking to Adopt a..</label>
               <select class="form-control" id="Select1" name="animal" value="<%= user.preferences.species %>">
                 <option value="dog" <%= user.preferences.species === 'dog' ?  'selected' : ''  %>>Dog</option>
+                <option value="cat" <%= user.preferences.species === 'dog' ?  'selected' : ''  %>>Cat</option>
                 <option value="horse" <%= user.preferences.species === 'cat' ?  'selected' : ''  %>>Horse</option>
                 <option value="reptile" <%= user.preferences.species === 'cat' ?  'selected' : ''  %>>Reptile</option>
                 <option value="bird" <%= user.preferences.species === 'cat' ?  'selected' : ''  %>>Bird</option>
@@ -41,12 +41,25 @@
                 <option value="L" <%= user.preferences.size === 'L' ?  'selected' : ''  %>>Large</option>
               </select>
             </div>
-            <div class="control-group col-xs-12">
-              <label class="control-label">Near..</label>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6">
+              Near..
+              <div class="form-actions">
+              <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
+              <button type="submit" class="btn-change">Search!</button>
+              </div>
             </div>
+          </form>
+          <div class="col-xs-12 col-sm-12 col-med-6 col-lg-6 col-xl-6">
+          OR...
+          <form action="/search/shelters" method="POST">
+            <div class="form-actions">
             <input name="zip" type="text" placeholder="zip or postal code" maxlength="5" required pattern=^\d{5}$ class="input-xlarge text-field-padding">
-            <button type="submit" class="btn-change"id="find2" >Search!</button>
-        </form>
+            <button type="submit"class="btn-change">Search Shelters</button>
+            </div>
+          </form>
+        </div>
+      </div>
         <% } else { %><br>
           <p><b> Our Mission:</b><br>
             To use Internet technology and the resources it can generate to:<br>

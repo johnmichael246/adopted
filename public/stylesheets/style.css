@@ -107,11 +107,8 @@ a:hover {
   background-attachment: fixed;
 }
 #main-page-image {
-  background-repeat: no-repeat;
   padding-top: 40px;
   padding-bottom: 40px;
-  display: inline-block;
-  float: none;
 }
 #save-life {
   padding-top: 20px;
@@ -203,10 +200,6 @@ h3 {
     font-size: 30px;
     cursor: pointer;
 }
-div.row {
-  padding-left: inherit;
-  display: inline;
-}
 #pet-name {
   overflow: hidden;
   display: -webkit-box;
@@ -291,7 +284,6 @@ opacity: .6;
 width: 300px;
 text-align: left;
 font-size: 50px;
-/* position: absolute; */
 background-color: white;
 padding: 5px;
 font-weight: bolder;
@@ -301,7 +293,6 @@ font-weight: bolder;
   width: 450px;
   text-align: left;
   font-size: 20px;
-  /* position: absolute; */
   background-color: white;
   padding: 5px;
   font-weight: bolder;
@@ -311,4 +302,15 @@ font-weight: bolder;
     margin-left: 100px;
     margin-top: 150px;
     display: inline-grid;
+}
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+#map {
+  width:65%;
+  height:250px;
+  /*background-color:grey*/
+  border-radius:10%;
 }

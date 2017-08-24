@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
 <h1><i class="fa fa-paw" aria-hidden="true"></i> | Pet Details</h1>
-<a id="sticky-link"  action="action" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Go Back</a>
+<a id="sticky-link" onclick="window.history.go(-1); return false;"><i class="glyphicon glyphicon-backward"></i> | Back To Profile</a>
 <div class="container" align="center">
     <div class="row">
         <div class="col-xs-12 col-med-6 col-lg-6 col-xl-6">
@@ -14,10 +14,12 @@
             <br>
             <span id="<%= doc.petfinder.pet.id.$t %>" class="b glyphicon glyphicon-heart resize-glyph <% if(petArray.indexOf(doc.petfinder.pet.id.$t) > -1) {%> red <%}%>"  aria-hidden="true" data-userid='<%= user._id %>' name ="<%= doc.petfinder.pet.id.$t%>">
             </span> &nbsp;&nbsp;&nbsp;
-            <span><a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>?subject=Im interested in <%=doc.petfinder.pet.name.$t%>!"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a></span>
+            <span><a href="mailto:<%=doc.petfinder.pet.contact.email.$t%>?subject=I'm interested in <%=doc.petfinder.pet.name.$t%>!"><i class="glyphicon glyphicon-envelope resize-glyph"></i></a></span>
         </div>
         <div class="col-xs-12 col-med-6 col-lg-6 col-xl-6">
-            <br><br><br>
+            <br>
+            <div id="map">Map is here</div>
+            <hr width="65%">
             <strong>Located In:</strong>&nbsp;<%=doc.petfinder.pet.contact.city.$t%> &nbsp;|&nbsp; <%=doc.petfinder.pet.contact.state.$t%>&nbsp;&nbsp;|&nbsp;&nbsp;<%=doc.petfinder.pet.contact.zip.$t%><br>
             Shelter Phone Number: <a href ="tel:+<%=doc.petfinder.pet.contact.phone.$t%>"><%=doc.petfinder.pet.contact.phone.$t%></a><br>
             Age:<%=doc.petfinder.pet.age.$t%> |
@@ -33,6 +35,15 @@
                 <% } else { %>
                     Female
                 <% } %><br>
+                 Breed(s):<% if (doc.petfinder.pet.breeds === undefined || doc.petfinder.pet.breeds.breed === undefined) { %>
+                Mixed
+                <% } else if (doc.petfinder.pet.breeds.breed.length != 1){ %> 
+                <%=doc.petfinder.pet.breeds.breed.$t %> 
+                <% } else { %>
+                <% doc.petfinder.pet.breeds.breed.forEach( (breed) => { %>
+                <%=breed.$t%>
+                <% }); %>
+                <% } %>
             <% if (doc.petfinder.pet.shelterPetId.$t) { %>
                 My Shelter id is <%=doc.petfinder.pet.shelterPetId.$t%>!
             <% } %>
@@ -44,29 +55,47 @@
                 <%=doc.petfinder.pet.description.$t%></p>
             <% } %>     
         </div>      
-        <div class="row">
+        <!--<div class="row">-->
             <div class="input-group input-group-lg">   
-            <% if(_id) { %>
-                <form action="/pets/<%= _id %>/comments" method="post">
-                    <div class="form-group">
-                        <input type="text" name="comment" class="form-control" placeholder="add note for <%= doc.petfinder.pet.name.$t %>">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            <% } %>
-            <br>
+                <% if(_id) { %>
+                    <form action="/search/<%= _id %>/comments" method="post">
+                        <div class="form-group">
+                            <input type="text" name="comment" class="form-control" placeholder="add note for <%= doc.petfinder.pet.name.$t %>">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                <% } %><br>
                 <% commentsArray.forEach(function(comment) { %> 
-                <label <% commentsArray.length === 0 ? "hidden" : "" %>>Notes:</label>
+                    <label <% commentsArray.length === 0 ? "hidden" : "" %>>Notes:</label>
                     <p><%= comment.content %></p>
                     <p>By: <%= comment.name %>
-                    <form action=" /pets/<%= _id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                    <form action=" /search/<%= _id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i></button></p>
                     </form>
-                    <% }) %>
-            </div>
+                <% }) %>
+            <!--</div>-->
         </div>
     </div>
 </div>
 <script src="/javascripts/results.js"></script>
-
+<script>
+    function initMap() {
+    //   console.log(position.results[0].geometry.location.lat)
+    let latitude = <%- JSON.stringify(position.results[0].geometry.location.lat) %>;
+    let longitude= <%- JSON.stringify(position.results[0].geometry.location.lng) %>;
+    let mapOptions = {
+            center:{lat:latitude, lng:longitude},
+            zoom:12
+        }
+    var map = new google.maps.Map(document.getElementById('map'), 
+        mapOptions);
+    marker = new google.maps.Marker({
+        position: mapOptions.center,
+        map: map
+    });
+    }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK8vdBhGeopGpTPRv6lT4S99xT7FqmuUA&callback=initMap">
+</script>
 <%- include('./partials/footer') %>
