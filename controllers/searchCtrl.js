@@ -3,6 +3,7 @@ var request = require('request');
 var User = require('./../models/user');
 var Pet = require('./../models/favpet');
 const basePath = "http://api.petfinder.com/"
+const rootPath = "https://maps.googleapis.com/maps/api/geocode/json?"
 
 function search(req,res,next) {
     var query = {
@@ -17,7 +18,13 @@ function search(req,res,next) {
         url: `${basePath}pet.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&size=${query.size}&age=${query.age}&animal=${query.animal}&location=${query.zip}&count=27&offset=${query.offset}`,
         method: 'GET'
     };
+    var options2 = {
+        url: `${rootPath}${query.zip}`,
+        method:'GET'
+    }
     User.populate(req.user, 'favPets',function(err, user) {
+        request(options2.url, function(err, response,body) {
+            let position = JSON.parse(body)
         request(options.url, function(err,response,body) {
             var showNavbar = true;
             let doc = JSON.parse(body);
@@ -26,16 +33,17 @@ function search(req,res,next) {
                 petArray.push(animal.petfinderId)
             })
             query.offset = doc.petfinder.lastOffset.$t
-            res.render('results', {doc, showNavbar, user, petArray, query});
+            res.render('results', {doc, showNavbar, user, petArray, query, position});
+            });
         });
-    })
+    });
 }
-
 function show(req,res,next) {
      var options = {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
+    
     Pet.where({petfinderId: req.params.id}).find(function (err, allPets) {
         if (err) console.log(err)
         var commentsArray = [];
@@ -53,13 +61,19 @@ function show(req,res,next) {
                     if (animal.petfinderId === req.params.id) {
                         _id = animal._id
                     }
-                })
-                res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
+                });
+                var options2 = {
+                    url: `${rootPath}address=${doc.petfinder.pet.contact.zip.$t}&key=${process.env.GOOGLE_MAPS}`,
+                    method:'GET'
+                    }
+                request(options2.url, function(err,response,body) {
+                    let position = JSON.parse(body)
+                res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray, position});
+                });
             });
         })
     })
 }
-
 function showFavPet(req,res) {
     var options = {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,

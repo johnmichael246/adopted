@@ -107,11 +107,8 @@ a:hover {
   background-attachment: fixed;
 }
 #main-page-image {
-  background-repeat: no-repeat;
   padding-top: 40px;
   padding-bottom: 40px;
-  display: inline-block;
-  float: none;
 }
 #save-life {
   padding-top: 20px;
@@ -203,10 +200,6 @@ h3 {
     font-size: 30px;
     cursor: pointer;
 }
-/*div.row {
-  padding-left: inherit;
-  display: inline;
-}*/
 #pet-name {
   overflow: hidden;
   display: -webkit-box;
@@ -314,4 +307,10 @@ font-weight: bolder;
     margin: 0;
     background-color: transparent;
     text-align: center;
+}
+#map {
+  width:65%;
+  height:250px;
+  /*background-color:grey*/
+  border-radius:10%;
 }
