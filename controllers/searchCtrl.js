@@ -79,6 +79,7 @@ function showFavPet(req,res) {
         url: `${basePath}pet.get?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&id=${req.params.id}`,
         method: 'GET'
     };
+
         User.populate(req.user, 'favPets',function(err, user) {
             request(options.url, function(err,response,body) {
                 var showNavbar = false;
@@ -92,8 +93,16 @@ function showFavPet(req,res) {
                         _id = animal._id
                         commentsArray = animal.comments
                     }
-                })  
-                res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray});
+                })
+                var options2= {
+                    url: `${rootPath}address=${doc.petfinder.pet.contact.zip.$t}&key=${process.env.GOOGLE_MAPS}`,
+                    method:'GET'
+                }
+                request(options2.url, function(err,response,body) {
+                    let position = JSON.parse(body)
+                    console.log(body)
+                res.render('showpet', {doc, showNavbar, user:req.user, petArray, _id, commentsArray, position});
+                });
             });
     })
 }
@@ -185,11 +194,18 @@ function searchShelters(req,res,next) {
         url: `${basePath}shelter.find?&key=${process.env.PETFINDER_KEY}&secret=${process.env.PETFINDER_SECRET}&format=json&location=${query.zip}&count=27&offset=${query.offset}`,
         method: 'GET'
     };
+    var options2= {
+        url: `${rootPath}address=${req.body.zip}&key=${process.env.GOOGLE_MAPS}`,
+        method:'GET'
+    }
     request(options.url, function(err,response,body) {
         var showNavbar = true;
         let doc = JSON.parse(body);
-        query.offset = doc.petfinder.lastOffset.$t
-        res.render('shelters', {doc, showNavbar, user:req.user, query});
+        query.offset = doc.petfinder.lastOffset.$t;
+        request(options2.url, function(err, response, body) {
+            let position = JSON.parse(body);
+            res.render('shelters', {doc, showNavbar, user:req.user, query, position});
+        });
     });
 }
 
