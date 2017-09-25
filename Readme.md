@@ -1,79 +1,53 @@
-# Adopted | Perfecting your pet adoption experience
+# CryptoNow | CryptoCurrencyPrices at you Fingertips
 
-![Adopted](http://i.imgur.com/5cDtZvD.png "Introduction")
+![Adopted](https://i.imgur.com/ymmZJ2Z.png)
 
-Adopted was created by three dog-loving developers who are set out on a mission to match adobatable pets to their new forever homes. By utilizing internet technology and the resources it can generate, we want to:
+CyptoNow is a mobile friendly, self updating site that brings current prices of all major coins on the market to your doorstep. This app was to address the main problem of cryptocurrency monitoring (a highly volatile market), and that most site rely on the user actively nagivating through the site to provide 'refreshes to the page'. CryptoNow updates every 2 minutes to provide the most current prices available in order for you to make decisions on your coins. In addition, the app marks coins that are mineable, should you choose to investigate further :)
+CryptoNow also provides ease of usability for the users, favorite your stocks and view them all in one place, with prices updating every 2 minutes.
 
-* Increase public awareness of the availability of high-quality adoptable pets
 
-* Increase the overall effectiveness of pet adoption programs across North America to the extent that the euthanasia of adoptable pets is eliminated
 
-* Ease of usability for the users
-
-##### Pet Details
-![Screenshot](http://i.imgur.com/YBmYwKn.png "Show Pet Screenshot")
-Easily search and find all adorable and adoptable pets in your area. For more about the pet, click the pets picture to see detailed information about the pet, add them to your favorites or send the shelter a message about the pet!
-
-![Technologies](http://i.imgur.com/NLs9sbH.png "Technologies Used")
+##### Stock Details
+![Screenshot](https://i.imgur.com/oRUKhFV.png)
+Aftr signing up or logging in, you will be taken to the main page, which displays. a chart of the top coins currently on the market.
+![Technologies](https://i.imgur.com/cOPS7Xi.png)
 
 * HTML5
 * CSS3
-* Bootstrap
+* React Materialize
 * JavaScript
-* jQuery
 * VS Code
 * Node.js
 * Express
 * MongoDB
 * Mongoose
+* React
 * mLab Cloud Database
-* Postman to expose our API 
-* PetFinder API - database with over 300,000 adoptable pets and 11,000 animal welfare organizations
-* Git for version control
-* GitHub for team remote repositories control
-* Trello for project management  
-* Imgur for display
+* Coin Market API - database with most up to date currencies 
+* Trello for project management 
+* News API- to display news articles relevant to tech and cryptocurrency in general 
 * Heroku
-* OAuth
-
-#### Restful API Routes
-Verb | URI Path | Purpose 
----- | -------- | -------
-GET | '/api/results' | Retrieves all pets from petfinder API
-POST | '/api/favorites/:id' | Add pet to your favorites
-GET | '/api/favorites/:id' | Retrieves one favorite pet
-POST | '/:petId/comments' | Add new comment on specific pet 
-DELETE | '/:petId/comments/:commentId' | Delete comments from a specific pet 
-PUT | '/users' | Create users initial preferences
-POST | '/users/profile' | Update users preferences on their profile 
+* tokenAuth
 
 
 
-[Adopted](https://adopted.herokuapp.com/ "Adopted on Heroku")
+[CryptoNow](http://cryptonow.herokuapp.com// "CryptoNow on Heroku")
 
-[Adopted Trello Board](https://trello.com/b/0c88vfvE/pet-finder "Adopted on Trello")
+[CryptoNow Trello Board](https://trello.com/b/fuJEfWiN/cryptonow
+ "CryptoNow on Trello")
 
 [Adopted Pitch Deck](https://ga-students.slack.com/files/jessbakk/F6N2A9A0P/adopted_pitch_deck.key)
 
-![Problems](http://i.imgur.com/zGB99kW.png "Unsolved Problems")
+#Unsolved Problems
 
-* **Search by Radius** - One of our next steps is to include a feature to search for pets within a certain mile radius. We will include Google maps for a better user experience.
+* **Watchlist Page** - i had an unknown bug that necessitated a rolback, so this component is no longer working, but it will be back up as soon as i reprogram the component.
 
-![Enhancements](http://i.imgur.com/DGsB3Pg.png "Future Enhancements")
+#Future Enhancements
 
-* **Put my pet up for adoption** - Put your pet up for adoption to a reputable shelter and match them with active users looking for a new addition to their family.
+* **Server side program running to store Coin data** - create a program to run server side to fetch the price of the coin data from each stock at 8pm and then store in the database(to allow graphing of th data)
 
-* **Pet's History** - See a history of all the pets including their shot records, their background (if known)
+* **Graph stock data history** - reference above :)
 
-* **Pet Accessory Options** - Once you have favorited pets or adopted a new friend, show relevant pet accessories based off of your preferences and the pet's needs.
 
-* **Volunteer Opportunities** - If you are unable to adopt or are looking for opportunities to help out, find all the information you need from shelters right through Adopted.
+* **Share News Articles** - Share articles with friends via nodemailer
 
-* **Donations** - Users to be able to make donations directly to the shelters, organizations or sponsor a pet directly, if unable to adopt or would like to help many pets.
-
-* **Share Success Stories** - Social platform to share success stories and pictures.
-
-![Thank You](http://i.imgur.com/GnnLNQs.png "Thank You")
-
-<3 The Adopted Team
-![Adopted Team](http://i.imgur.com/vVHZhTg.png "Furry Friends")
