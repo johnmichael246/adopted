@@ -344,3 +344,14 @@ font-weight: bolder;
 h1 {
   font-size:30px;
 }
+
+@media only screen and (max-width:620px) {
+  #petsuccess {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width:500px) {
+  #petsuccess {
+    font-size: 30px;
+  }
+}
