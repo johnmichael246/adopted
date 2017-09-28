@@ -11,8 +11,28 @@
     <script src="/javascripts/jquery-3.2.1.min.js"></script>
   </head>
   <body>
-      <% if (user && showNavbar) { %>
-        <nav id="main-nav" role="navigation" >
+    <% if (user && showNavbar) { %>
+      <nav class="navbar navbar-inverse custom-nav" role='navigation' id='main-nav'>
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <img src="http://i.imgur.com/SfNzX78.png?1" width="40px" height="40px">
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="">HELLO, <%= user.first_name.toUpperCase()%></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span>PROFILE</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>SEARCH PETS</a></li>
+              <li><a href="#">LOG OUT</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+        <!--<nav id="main-nav" role="navigation" >
           <img src="http://i.imgur.com/SfNzX78.png?1" width="40px" height="40px">
           <ul id="primaryToolbar" class="clearfix">
             <li>Hello, <%=user.first_name%>! &nbsp; | &nbsp;</li>
@@ -21,7 +41,7 @@
             <li><a href="/logout">LOG OUT</a></li>
           </ul>
           <div id="welcome-box"> <h2 id="welcome-title"> ADOPTED </h2><h4 id="welcome-subtitle"> Perfecting Your Pet Adoption Experience </h4> </div>
-        </nav>
+        </nav>-->
       <% } else if (user) { %>
         <nav id="profile-nav" role="navigation">
           <img src="http://i.imgur.com/SfNzX78.png?1" width="40px" height="40px">          

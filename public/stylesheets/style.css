@@ -1,5 +1,4 @@
 body {
-  /*padding: 50px;*/
   font-family: 'Montserrat', sans-serif;
 }
 a, a:visited, .black {
@@ -14,6 +13,10 @@ a:hover {
 #find2 {
   display: block;
 }
+.custom-nav{
+  background:transparent;
+  border-color:transparent;
+}
 #primaryToolbar {
   text-align: right;
   font-size: 17px;
@@ -24,10 +27,10 @@ a:hover {
   float: right;
   font-weight: bolder;
 }
-.container-fluid {
+/*.container-fluid {
   float: left;
   color: transparent;
-}
+}*/
 #block, #pref {
   display: inline-block;
 }
@@ -95,7 +98,7 @@ a:hover {
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size:cover;
-  background-position:center;
+  /*background-position:center;*/
   height:375px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -204,7 +207,6 @@ h3 {
 }
 .centered {
   text-align: center;
-  display: table-cell;
 }
 .col-md-4 text-center {
   height: 100px;
@@ -228,9 +230,6 @@ body,html {
   height:100%;
   overflow-y: scroll;
   
-}
-html {
-  overflow-y: scroll;
 }
 #sticky-link {
   position: fixed;
@@ -353,5 +352,11 @@ h1 {
 @media only screen and (max-width:500px) {
   #petsuccess {
     font-size: 30px;
+  }
+}
+@media only screen and (max-width:430px) {
+  h3#SEARCH_LINK {
+    font-size: 30px;
+    text-align:center;
   }
 }
