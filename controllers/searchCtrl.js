@@ -6,6 +6,7 @@ const basePath = "http://api.petfinder.com/"
 const rootPath = "https://maps.googleapis.com/maps/api/geocode/json?"
 
 function search(req,res,next) {
+    console.log('trying to update form')
     var query = {
         size: req.body.size,
         age: req.body.age,
@@ -22,6 +23,7 @@ function search(req,res,next) {
         url: `${rootPath}${query.zip}`,
         method:'GET'
     }
+    console.log(query)
     User.populate(req.user, 'favPets',function(err, user) {
         request(options2.url, function(err, response,body) {
             let position = JSON.parse(body)
@@ -32,7 +34,8 @@ function search(req,res,next) {
             user.favPets.forEach( (animal) => {
                 petArray.push(animal.petfinderId)
             })
-            query.offset = doc.petfinder.lastOffset.$t
+            query.offset = doc.petfinder.lastOffset.$t;
+            console.log('the new query is',query)
             res.render('results', {doc, showNavbar, user, petArray, query, position});
             });
         });
