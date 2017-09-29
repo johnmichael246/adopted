@@ -4,9 +4,6 @@ body {
 a, a:visited, .black {
   color: black;
 }
-a:hover {
-  text-decoration: underline;
-}
 #find {
   float: right;
 }
@@ -27,10 +24,6 @@ a:hover {
   float: right;
   font-weight: bolder;
 }
-/*.container-fluid {
-  float: left;
-  color: transparent;
-}*/
 #block, #pref {
   display: inline-block;
 }
@@ -41,12 +34,6 @@ a:hover {
 .banner {
   background-repeat: no-repeat;
   background-position: right top;
-}
-.affix-top {
-  /* navbar style at top */
-  background:transparent;
-  border-color:transparent;
-  padding: 15px;
 }
 .navbar {
   width: 100%;
@@ -60,12 +47,12 @@ a:hover {
 /* The controlsy */
 .carousel-control {
 	left: -12px;
-    height: 40px;
+  height: 40px;
 	width: 40px;
-    background: none repeat scroll 0 0 #222222;
-    border: 4px solid #FFFFFF;
-    border-radius: 23px 23px 23px 23px;
-    margin-top: 90px;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  margin-top: 90px;
 }
 .carousel-control.right {
 	right: -12px;
@@ -208,9 +195,6 @@ h3 {
 .centered {
   text-align: center;
 }
-.col-md-4 text-center {
-  height: 100px;
-}
 #profile {
   width: 100%;
   margin: 0 auto;
@@ -229,7 +213,6 @@ h3 {
 body,html {
   height:100%;
   overflow-y: scroll;
-  
 }
 #sticky-link {
   position: fixed;
@@ -259,14 +242,6 @@ body,html {
 .resize-glyph {
   font-size:30px;
 }
-.control-group col-xs-8 {
-margin-top: 10px;
-text-align: inherit;
-}
-.col-xs-8 {
-  margin-top: 9px;
-  padding-left: inherit;  
-}
 .overlay {
   position: absolute;
   bottom: 0;
@@ -278,9 +253,6 @@ text-align: inherit;
   height: 0;
   transition: .5s ease;
   opacity: .7;
-}
-.col-md-3:hover .overlay {
-  height: 75%;
 }
 .carousel-story, #pet-info {
   text-align: center;
@@ -343,7 +315,6 @@ font-weight: bolder;
 h1 {
   font-size:30px;
 }
-
 @media only screen and (max-width:620px) {
   #petsuccess {
     font-size: 40px;
